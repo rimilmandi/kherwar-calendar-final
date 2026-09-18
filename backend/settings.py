@@ -11,6 +11,27 @@ ALLOWED_HOSTS = [
     'kherwarcalendar.co.in',
     '*',                          # ← সব allow (temporary debug-এর জন্য)
 ]
+# ============================================================
+# CSRF — Production-এর জন্য অপরিহার্য
+# ============================================================
+CSRF_TRUSTED_ORIGINS = [
+    'https://kherwarcalendar.co.in',
+    'https://www.kherwarcalendar.co.in',
+    'https://*.up.railway.app',
+    'https://*.railway.app',
+    'http://127.0.0.1:8000',
+    'http://localhost:8000',
+]
+
+# Railway reverse proxy-র জন্য
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# Cookie security
+CSRF_COOKIE_SECURE = not DEBUG
+SESSION_COOKIE_SECURE = not DEBUG
+CSRF_COOKIE_HTTPONLY = False
+CSRF_COOKIE_SAMESITE = 'Lax'
+SESSION_COOKIE_SAMESITE = 'Lax'
 INSTALLED_APPS = ['django.contrib.admin','django.contrib.auth','django.contrib.contenttypes','django.contrib.sessions','django.contrib.messages','django.contrib.staticfiles','store']
 MIDDLEWARE = ['django.middleware.security.SecurityMiddleware','django.contrib.sessions.middleware.SessionMiddleware','django.middleware.common.CommonMiddleware','django.middleware.csrf.CsrfViewMiddleware','django.contrib.auth.middleware.AuthenticationMiddleware','django.contrib.messages.middleware.MessageMiddleware']
 ROOT_URLCONF = 'backend.urls'
