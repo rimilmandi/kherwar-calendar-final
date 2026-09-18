@@ -1,0 +1,322 @@
+[
+{
+  "model": "store.lunarmonth",
+  "pk": 1,
+  "fields": {
+    "order": 1,
+    "olchiki_name": "ᱢᱟᱜᱽ",
+    "english_name": "MAG",
+    "is_extra": false,
+    "active": true
+  }
+},
+{
+  "model": "store.lunarmonth",
+  "pk": 2,
+  "fields": {
+    "order": 2,
+    "olchiki_name": "ᱯᱷᱟᱹᱜᱩᱱ",
+    "english_name": "FAGUN",
+    "is_extra": false,
+    "active": true
+  }
+},
+{
+  "model": "store.lunarmonth",
+  "pk": 3,
+  "fields": {
+    "order": 3,
+    "olchiki_name": "ᱪᱟᱹᱛ",
+    "english_name": "CHAIT",
+    "is_extra": false,
+    "active": true
+  }
+},
+{
+  "model": "store.lunarmonth",
+  "pk": 4,
+  "fields": {
+    "order": 4,
+    "olchiki_name": "ᱵᱟᱹᱭᱥᱟᱹᱠ",
+    "english_name": "BAISAK",
+    "is_extra": false,
+    "active": true
+  }
+},
+{
+  "model": "store.lunarmonth",
+  "pk": 5,
+  "fields": {
+    "order": 5,
+    "olchiki_name": "ᱡᱷᱮᱸᱴ",
+    "english_name": "JHET",
+    "is_extra": false,
+    "active": true
+  }
+},
+{
+  "model": "store.lunarmonth",
+  "pk": 6,
+  "fields": {
+    "order": 6,
+    "olchiki_name": "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ",
+    "english_name": "BADYA JHET",
+    "is_extra": true,
+    "active": true
+  }
+},
+{
+  "model": "store.lunarmonth",
+  "pk": 7,
+  "fields": {
+    "order": 7,
+    "olchiki_name": "ᱟᱥᱟᱲ",
+    "english_name": "ASAR",
+    "is_extra": false,
+    "active": true
+  }
+},
+{
+  "model": "store.lunarmonth",
+  "pk": 8,
+  "fields": {
+    "order": 8,
+    "olchiki_name": "ᱥᱟᱱ",
+    "english_name": "SAN",
+    "is_extra": false,
+    "active": true
+  }
+},
+{
+  "model": "store.lunarmonth",
+  "pk": 9,
+  "fields": {
+    "order": 9,
+    "olchiki_name": "ᱵᱷᱟᱫᱚᱨ",
+    "english_name": "BHADOR",
+    "is_extra": false,
+    "active": true
+  }
+},
+{
+  "model": "store.lunarmonth",
+  "pk": 10,
+  "fields": {
+    "order": 10,
+    "olchiki_name": "ᱫᱟᱸᱥᱟᱸᱭ",
+    "english_name": "DANSAY",
+    "is_extra": false,
+    "active": true
+  }
+},
+{
+  "model": "store.lunarmonth",
+  "pk": 11,
+  "fields": {
+    "order": 11,
+    "olchiki_name": "ᱥᱚᱦᱨᱟᱭ",
+    "english_name": "SARHAY",
+    "is_extra": false,
+    "active": true
+  }
+},
+{
+  "model": "store.lunarmonth",
+  "pk": 12,
+  "fields": {
+    "order": 12,
+    "olchiki_name": "ᱟᱸᱜᱷᱟᱲ",
+    "english_name": "ANGHAR",
+    "is_extra": false,
+    "active": true
+  }
+},
+{
+  "model": "store.lunarmonth",
+  "pk": 13,
+  "fields": {
+    "order": 13,
+    "olchiki_name": "ᱯᱩᱥ",
+    "english_name": "PUS",
+    "is_extra": false,
+    "active": true
+  }
+},
+{
+  "model": "store.lunarevent",
+  "pk": 1,
+  "fields": {
+    "month_order": null,
+    "month_name": "ᱢᱟᱜᱽ",
+    "day": 5,
+    "title": "ᱢᱟᱜᱽ ᱥᱤᱢ",
+    "description": "Magh Sim, ‍Saraswati/Basanta Panchami",
+    "image": "/media/calendar_images/e99ac3bc9c894d6180306816102fc629.png",
+    "label": "",
+    "active": true,
+    "event_type": "lunar_day"
+  }
+},
+{
+  "model": "store.lunarevent",
+  "pk": 2,
+  "fields": {
+    "month_order": 2,
+    "month_name": "ᱯᱷᱟᱹᱜᱩᱱ",
+    "day": 5,
+    "title": "ᱵᱟᱦᱟ",
+    "description": "বাহা",
+    "image": "/media/calendar_images/f6363489d31e4681b14fe6b5f2b8b819.jpg",
+    "label": "",
+    "active": true,
+    "event_type": "lunar_day"
+  }
+},
+{
+  "model": "store.lunarevent",
+  "pk": 3,
+  "fields": {
+    "month_order": 11,
+    "month_name": "ᱥᱚᱦᱨᱟᱭ",
+    "day": 15,
+    "title": "ᱥᱚᱦᱨᱟᱭ ᱠᱩᱱᱟᱹᱢᱤ, ᱞᱩᱜᱩ ᱵᱩᱨᱩ",
+    "description": "Sahrai Kuami, Lugu Buru",
+    "image": "/media/calendar_images/40f5ef44f83246daaa5604a9d11f4e55.jpg",
+    "label": "",
+    "active": true,
+    "event_type": "full_moon"
+  }
+},
+{
+  "model": "store.lunarevent",
+  "pk": 5,
+  "fields": {
+    "month_order": null,
+    "month_name": "ᱵᱷᱟᱫᱚᱨ",
+    "day": 0,
+    "title": "ᱟᱢᱟᱵᱟᱹᱥᱤᱭᱟᱹ",
+    "description": "Mahalaya, Ashwin Amabasya",
+    "image": "",
+    "label": "",
+    "active": true,
+    "event_type": "new_moon"
+  }
+},
+{
+  "model": "store.lunarevent",
+  "pk": 6,
+  "fields": {
+    "month_order": null,
+    "month_name": "ᱫᱟᱸᱥᱟᱸᱭ",
+    "day": 10,
+    "title": "ᱫᱟᱸᱥᱟᱸᱭ",
+    "description": "Dansay, Dasami",
+    "image": "/media/calendar_images/e6776f541b624fb5829c6af28eadd421.jpg",
+    "label": "",
+    "active": true,
+    "event_type": "lunar_day"
+  }
+},
+{
+  "model": "store.lunarevent",
+  "pk": 7,
+  "fields": {
+    "month_order": 10,
+    "month_name": "ᱫᱟᱸᱥᱟᱸᱭ",
+    "day": 6,
+    "title": "ᱫᱟᱸᱥᱟᱸᱭ ᱮᱱᱮᱪ",
+    "description": "Dansay Enech",
+    "image": "/media/calendar_images/a13f437241a841529ed022a4a7dcafcc.jpg",
+    "label": "",
+    "active": true,
+    "event_type": "lunar_day"
+  }
+},
+{
+  "model": "store.lunarevent",
+  "pk": 9,
+  "fields": {
+    "month_order": 4,
+    "month_name": "ᱵᱟᱹᱭᱥᱟᱹᱠ",
+    "day": 3,
+    "title": "অক্ষয় তৃতীয়া",
+    "description": "",
+    "image": "/media/calendar_images/6f2fa1e3e6664fcebe5a9e558f654239.jpg",
+    "label": "",
+    "active": true,
+    "event_type": "lunar_day"
+  }
+},
+{
+  "model": "store.lunarevent",
+  "pk": 10,
+  "fields": {
+    "month_order": null,
+    "month_name": "ᱥᱟᱱ",
+    "day": 0,
+    "title": "সান কুনামি",
+    "description": "স",
+    "image": "",
+    "label": "",
+    "active": true,
+    "event_type": "full_moon"
+  }
+},
+{
+  "model": "store.lunarevent",
+  "pk": 11,
+  "fields": {
+    "month_order": null,
+    "month_name": "ᱵᱟᱹᱭᱥᱟᱹᱠ",
+    "day": 0,
+    "title": "ᱜᱩᱨᱩ ᱜᱚᱢᱠᱮ ᱡᱟᱱᱟᱢ",
+    "description": "Pandit Raghunath Murmu Birth Day",
+    "image": "/media/calendar_images/00f48c8bf03c4909b5496935be97d2d3.jpg",
+    "label": "",
+    "active": true,
+    "event_type": "full_moon"
+  }
+},
+{
+  "model": "store.advertisement",
+  "pk": 1,
+  "fields": {
+    "slot": "featured",
+    "business_name": "",
+    "image": "/media/calendar_images/ba128a4c1d4e4ff8ba068fefa71973a2.jpg",
+    "target_url": "",
+    "start_date": "2026-09-16",
+    "end_date": "2026-09-17",
+    "priority": 8,
+    "active": true
+  }
+},
+{
+  "model": "store.advertisement",
+  "pk": 2,
+  "fields": {
+    "slot": "additional_1",
+    "business_name": "",
+    "image": "/media/calendar_images/50edd0a839e24b0c9da56f96c80f2277.png",
+    "target_url": "https://www.santaliopendictionary.com/",
+    "start_date": "2026-09-16",
+    "end_date": "2030-12-31",
+    "priority": 10,
+    "active": true
+  }
+},
+{
+  "model": "store.advertisement",
+  "pk": 3,
+  "fields": {
+    "slot": "additional_2",
+    "business_name": "",
+    "image": "/media/calendar_images/d337e8c5d3a747a483466ce489172bba.png",
+    "target_url": "https://www.disommart.com/",
+    "start_date": "2026-09-17",
+    "end_date": "2026-10-31",
+    "priority": 0,
+    "active": true
+  }
+}
+]
