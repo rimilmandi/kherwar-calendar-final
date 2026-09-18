@@ -1726,56 +1726,6 @@
     }
 }
 
-/* Lunar event title — bold & different color */
-.lunar-item .lunar-event-title{
-  display: block;
-  font-weight: 800;
-  color: #c5390e;          /* গাঢ় সবুজ — চাইলে পরিবর্তন করুন */
-  font-size: .92rem;
-  margin: 2px 0 4px;
-  line-height: 1.25;
-}
-
-/* English / Bengali / Lunar year — প্রতিটি এক লাইনে, গ্যাপ কম */
-.lunar-item .fixed-date{
-  display: block;
-  margin-top: 4px;
-  line-height: 1.3;
-  font-size: .78rem;
-  color: #355b4d;
-  font-weight: 700;
-}
-
-/* প্রতিটি date-line এখন inline-block, তাই ভাঙবে না */
-.lunar-item .fixed-date .date-line{
-  display: block;
-  white-space: nowrap;        /* এক লাইনে জোর করে রাখে */
-  overflow: hidden;
-  text-overflow: ellipsis;    /* অনেক লম্বা হলে ... দেখাবে */
-  line-height: 1.3;
-  margin: 0;
-  padding: 0;
-}
-
-/* Label (Eng:/বাং:/ᱥᱮᱨᱢᱟ:) এখন inline, বাকি টেক্সটের সাথে এক লাইনে */
-.lunar-item .fixed-date .date-line b{
-  display: inline;
-  font-weight: 800;
-  color: #087f5b;
-  margin-right: 3px;
-}
-.lunar-item .fixed-date br{
-  line-height: 1.15;       /* br এর পরের লাইন-হাইট কম */
-}
-.lunar-item .fixed-date small{
-  display: inline-block;
-  line-height: 1.2;
-  margin: 0;
-  padding: 0;
-  font-weight: 500;
-  color: #687970;
-}
-
 /* ============================================================
    EXTRA SMALL (max-width: 320px) — অত্যন্ত ছোট মোবাইলের জন্য
    ============================================================ */
@@ -2142,124 +2092,6 @@
     }
 }
 
-/* =========================================================
-   KHERWAR LUNAR EVENT CONTAINER — BOUNDED SCROLL
-   ========================================================= */
-
-.events-container .event-carousel{
-    max-height: 390px !important;
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-}
-
-.events-container .event-track{
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 10px !important;
-    transform: none !important;
-    overflow: visible !important;
-}
-
-/* Mobile */
-@media (max-width: 600px){
-    .events-container .event-carousel{
-        height: 300px !important;
-        max-height: 300px !important;
-        overflow-y: auto !important;
-        overflow-x: hidden !important;
-    }
-}
-
-/* Small mobile */
-@media (max-width: 380px){
-    .events-container .event-carousel{
-        height: 250px !important;
-        max-height: 250px !important;
-    }
-}
-
-/* =========================================================
-   ADDITIONAL ADVERTISEMENT BOXES
-   ========================================================= */
-
-.additional-ads{
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:14px;
-    margin:16px 0;
-}
-
-.additional-ad-box{
-    min-height:150px;
-    border:1px solid #dfe8df;
-    border-radius:14px;
-    background:
-        linear-gradient(
-            135deg,
-            #f8fbf7,
-            #ffffff
-        );
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    overflow:hidden;
-    position:relative;
-    box-shadow:0 5px 16px rgba(15,47,29,.06);
-    cursor:pointer;
-}
-
-.additional-ad-box img{
-    width:100%;
-    height:100%;
-    min-height:150px;
-    object-fit:cover;
-    display:block;
-}
-
-.additional-ad-label{
-    position:absolute;
-    top:8px;
-    left:8px;
-    z-index:2;
-    background:rgba(0,0,0,.58);
-    color:#fff;
-    font-size:.62rem;
-    padding:3px 7px;
-    border-radius:5px;
-    letter-spacing:.04em;
-}
-
-.additional-ad-box a{
-    width:100%;
-    height:100%;
-    display:block;
-    color:inherit;
-    text-decoration:none;
-}
-
-@media(max-width:600px){
-
-    .additional-ads{
-        grid-template-columns:1fr;
-        gap:10px;
-        margin:12px 0;
-    }
-
-    .additional-ad-box{
-        min-height:125px;
-    }
-
-    .additional-ad-box img{
-        min-height:125px;
-    }
-
-}
-
-
 </style>
 
 <style id="business-calendar-layout">
@@ -2503,7 +2335,7 @@ body{background:#eef3ef!important;padding:0!important}
         let activeEventImages = {}; // For managing multiple event images per day
         
         // সাঁওতালি মাস এবং দিনের নাম
-        const santaliMonths = ["ᱯᱩᱥ", "ᱢᱟᱜᱽ", "ᱯᱷᱟᱹᱜᱩᱱ", "ᱪᱟᱹᱛ", "ᱵᱟᱹᱭᱥᱟᱹᱠ", "ᱡᱷᱮᱸᱴ", "ᱟᱥᱟᱲ", "ᱥᱟᱱ", "ᱵᱷᱟᱫᱚᱨ", "ᱫᱟᱸᱥᱟᱸᱭ", "ᱥᱚᱦᱨᱟᱭ", "ᱟᱸᱜᱷᱟᱲ"];
+        const santaliMonths = ["ᱯᱩᱥ", "ᱢᱟᱜᱽ", "ᱯᱷᱟᱹᱜᱩᱱ", "ᱪᱟᱹᱛ", "ᱵᱟᱹᱭᱥᱟᱹᱠ", "ᱡᱷᱮᱸᱴ", "ᱟᱥᱟᱲ", "ᱥᱟᱱ", "ᱵᱷᱟᱫᱚᱨ", "ᱫᱟᱸᱥᱟᱸᱭ", "ᱥᱚᱨᱦᱟᱭ", "ᱟᱸᱜᱷᱟᱲ"];
         const santaliDays = ["ᱥᱤᱸᱜᱮ", "ᱚᱛᱮ", "ᱵᱟᱞᱮ", "ᱥᱟᱹᱜᱩᱱ", "ᱥᱟᱹᱨᱫᱤ", "ᱡᱟᱹᱨᱩᱢ", "ᱧᱩᱦᱩᱢ"];
         
         // বাংলা মাস এবং দিনের নাম
@@ -3032,7 +2864,7 @@ body{background:#eef3ef!important;padding:0!important}
                 title: "ᱡᱮᱜᱮᱫ ᱟᱹᱫᱤᱵᱟᱹᱥᱤ ᱢᱟᱦᱟ",
                 description: "World Indigenous Day - 1995",
                 santaliTitle: "ᱡᱮᱜᱮᱫ ᱟᱹᱫᱤᱵᱟᱹᱥᱤ ᱢᱟᱦᱟ",
-                bengaliTitle: "বিশ্ব আদিবাসী দিবস - 1995",
+                bengaliTitle: "বিশ্বি আদিবাসী দিবস - 1995",
                 image: "/static/images/adivasi.png",
                 eventLabel: ""
             },
@@ -3133,9 +2965,9 @@ function getEventsForDate(dateString) {
     if (moonPhases[dateString]) {
         const moonType = moonPhases[dateString];
         events.push({
-            title: moonType === 'fullmoon' ? 'ᱠᱩᱱᱟᱹᱢᱤ' : 'ᱟᱢᱟᱵᱟᱹᱥᱤᱭᱟ',
+            title: moonType === 'fullmoon' ? 'ᱯᱩᱱᱱᱤᱢᱟ' : 'ᱟᱢᱟᱣᱥᱮ',
             description: moonType === 'fullmoon' ? 'Full Moon' : 'New Moon',
-            santaliTitle: moonType === 'fullmoon' ? 'ᱠᱩᱱᱟᱹᱢᱤ' : 'ᱟᱢᱟᱵᱟᱹᱥᱤᱭᱟ',
+            santaliTitle: moonType === 'fullmoon' ? 'ᱯᱩᱱᱱᱤᱢᱟ' : 'ᱟᱢᱟᱣᱥᱮ',
             bengaliTitle: moonType === 'fullmoon' ? 'পূর্ণিমা' : 'অমাবস্যা',
             image: moonType === 'fullmoon' ? "{% static 'images/fullmoon.png' %}" : "{% static 'images/newmoon.png' %}",
             eventLabel: ''
@@ -3187,7 +3019,7 @@ function getEventsForDate(dateString) {
             "2026-07-29": "fullmoon",
             "2026-07-14": "newmoon",
             "2026-08-28": "fullmoon",
-            "2026-08-11": "newmoon",
+            "2026-08-12": "newmoon",
             "2026-09-26": "fullmoon",
             "2026-09-11": "newmoon",
             "2026-10-26": "fullmoon",
@@ -3207,7 +3039,7 @@ function getEventsForDate(dateString) {
             "2027-05-20": "fullmoon",
             "2027-05-06": "newmoon",
             "2027-06-19": "fullmoon",
-            "2027-06-05": "newmoon",
+            "2027-06-04": "newmoon",
             "2027-07-18": "fullmoon",
             "2027-07-04": "newmoon",
             "2027-08-17": "fullmoon",
@@ -3341,490 +3173,9 @@ function getEventsForDate(dateString) {
             "2032-11-17": "fullmoon",
             "2032-11-03": "newmoon",
             "2032-12-17": "fullmoon",
-            "2032-12-03": "newmoon",
-                           // ===== 2033 =====
-"2033-01-01": "newmoon",
-"2033-01-15": "fullmoon",
-"2033-01-31": "newmoon",
-"2033-02-13": "fullmoon",
-"2033-03-01": "newmoon",
-"2033-03-15": "fullmoon",
-"2033-03-30": "newmoon",
-"2033-04-13": "fullmoon",
-"2033-04-29": "newmoon",
-"2033-05-13": "fullmoon",
-"2033-05-28": "newmoon",
-"2033-06-11": "fullmoon",
-"2033-06-27": "newmoon",
-"2033-07-11": "fullmoon",
-"2033-07-26": "newmoon",
-"2033-08-09": "fullmoon",
-"2033-08-25": "newmoon",
-"2033-09-08": "fullmoon",
-"2033-09-23": "newmoon",
-"2033-10-07": "fullmoon",
-"2033-10-23": "newmoon",
-"2033-11-06": "fullmoon",
-"2033-11-22": "newmoon",
-"2033-12-05": "fullmoon",
-"2033-12-22": "newmoon",
+            "2032-12-03": "newmoon"
 
-// ===== 2034 =====
-"2034-01-04": "fullmoon",
-"2034-01-20": "newmoon",
-"2034-02-02": "fullmoon",
-"2034-02-19": "newmoon",
-"2034-03-05": "fullmoon",
-"2034-03-20": "newmoon",
-"2034-04-03": "fullmoon",
-"2034-04-19": "newmoon",
-"2034-05-03": "fullmoon",
-"2034-05-18": "newmoon",
-"2034-06-01": "fullmoon",
-"2034-06-16": "newmoon",
-"2034-06-30": "fullmoon",
-"2034-07-15": "newmoon",
-"2034-07-30": "fullmoon",
-"2034-08-14": "newmoon",
-"2034-08-28": "fullmoon",
-"2034-09-12": "newmoon",
-"2034-09-27": "fullmoon",
-"2034-10-12": "newmoon",
-"2034-10-26": "fullmoon",
-"2034-11-11": "newmoon",
-"2034-11-25": "fullmoon",
-"2034-12-11": "newmoon",
-"2034-12-25": "fullmoon",
-
-// ===== 2035 =====
-"2035-01-09": "newmoon",
-"2035-01-23": "fullmoon",
-"2035-02-08": "newmoon",
-"2035-02-22": "fullmoon",
-"2035-03-10": "newmoon",
-"2035-03-23": "fullmoon",
-"2035-04-08": "newmoon",
-"2035-04-22": "fullmoon",
-"2035-05-08": "newmoon",
-"2035-05-21": "fullmoon",
-"2035-06-06": "newmoon",
-"2035-06-20": "fullmoon",
-"2035-07-05": "newmoon",
-"2035-07-19": "fullmoon",
-"2035-08-03": "newmoon",
-"2035-08-18": "fullmoon",
-"2035-09-02": "newmoon",
-"2035-09-16": "fullmoon",
-"2035-10-01": "newmoon",
-"2035-10-16": "fullmoon",
-"2035-11-14": "fullmoon",
-"2035-11-30": "newmoon",
-"2035-12-14": "fullmoon",
-"2035-12-29": "newmoon",
-
-// ===== 2036 =====
-"2036-01-13": "fullmoon",
-"2036-01-28": "newmoon",
-"2036-02-11": "fullmoon",
-"2036-02-27": "newmoon",
-"2036-03-12": "fullmoon",
-"2036-03-28": "newmoon",
-"2036-04-10": "fullmoon",
-"2036-04-26": "newmoon",
-"2036-05-10": "fullmoon",
-"2036-05-26": "newmoon",
-"2036-06-08": "fullmoon",
-"2036-06-24": "newmoon",
-"2036-07-08": "fullmoon",
-"2036-07-23": "newmoon",
-"2036-08-07": "fullmoon",
-"2036-08-21": "newmoon",
-"2036-09-05": "fullmoon",
-"2036-09-20": "newmoon",
-"2036-10-05": "fullmoon",
-"2036-10-19": "newmoon",
-"2036-11-03": "fullmoon",
-"2036-11-18": "newmoon",
-"2036-12-03": "fullmoon",
-"2036-12-17": "newmoon",
-
-// ===== 2037 =====
-"2037-01-02": "fullmoon",
-"2037-01-16": "newmoon",
-"2037-01-31": "fullmoon",
-"2037-02-15": "newmoon",
-"2037-03-02": "fullmoon",
-"2037-03-17": "newmoon",
-"2037-03-31": "fullmoon",
-"2037-04-15": "newmoon",
-"2037-04-29": "fullmoon",
-"2037-05-15": "newmoon",
-"2037-05-29": "fullmoon",
-"2037-06-13": "newmoon",
-"2037-06-27": "fullmoon",
-"2037-07-13": "newmoon",
-"2037-07-27": "fullmoon",
-"2037-08-11": "newmoon",
-"2037-08-25": "fullmoon",
-"2037-09-09": "newmoon",
-"2037-09-24": "fullmoon",
-"2037-10-09": "newmoon",
-"2037-10-24": "fullmoon",
-"2037-11-07": "newmoon",
-"2037-11-22": "fullmoon",
-"2037-12-07": "newmoon",
-"2037-12-22": "fullmoon",
-
-// ===== 2038 =====
-"2038-01-05": "newmoon",
-"2038-01-21": "fullmoon",
-"2038-02-04": "newmoon",
-"2038-02-19": "fullmoon",
-"2038-03-06": "newmoon",
-"2038-03-21": "fullmoon",
-"2038-04-04": "newmoon",
-"2038-04-19": "fullmoon",
-"2038-05-05": "newmoon",
-"2038-05-18": "fullmoon",
-"2038-06-03": "newmoon",
-"2038-06-17": "fullmoon",
-"2038-07-02": "newmoon",
-"2038-07-16": "fullmoon",
-"2038-08-01": "newmoon",
-"2038-08-14": "fullmoon",
-"2038-08-30": "newmoon",
-"2038-09-13": "fullmoon",
-"2038-09-29": "newmoon",
-"2038-10-13": "fullmoon",
-"2038-10-28": "newmoon",
-"2038-11-11": "fullmoon",
-"2038-11-26": "newmoon",
-"2038-12-11": "fullmoon",
-"2038-12-26": "newmoon",
-
-// ===== 2039 =====
-"2039-01-10": "fullmoon",
-"2039-01-24": "newmoon",
-"2039-02-09": "fullmoon",
-"2039-02-23": "newmoon",
-"2039-03-10": "fullmoon",
-"2039-03-24": "newmoon",
-"2039-04-09": "fullmoon",
-"2039-04-23": "newmoon",
-"2039-05-08": "fullmoon",
-"2039-05-23": "newmoon",
-"2039-06-06": "fullmoon",
-"2039-06-21": "newmoon",
-"2039-07-06": "fullmoon",
-"2039-07-21": "newmoon",
-"2039-08-04": "fullmoon",
-"2039-08-20": "newmoon",
-"2039-09-02": "fullmoon",
-"2039-09-18": "newmoon",
-"2039-10-02": "fullmoon",
-"2039-10-18": "newmoon",
-"2039-10-31": "fullmoon",
-"2039-11-16": "newmoon",
-"2039-11-30": "fullmoon",
-"2039-12-15": "newmoon",
-"2039-12-30": "fullmoon",
-
-// ===== 2040 =====
-"2040-01-14": "newmoon",
-"2040-01-29": "fullmoon",
-"2040-02-12": "newmoon",
-"2040-02-27": "fullmoon",
-"2040-03-13": "newmoon",
-"2040-03-28": "fullmoon",
-"2040-04-11": "newmoon",
-"2040-04-27": "fullmoon",
-"2040-05-11": "newmoon",
-"2040-05-26": "fullmoon",
-"2040-06-09": "newmoon",
-"2040-06-24": "fullmoon",
-"2040-07-09": "newmoon",
-"2040-07-24": "fullmoon",
-"2040-08-08": "newmoon",
-"2040-08-22": "fullmoon",
-"2040-09-06": "newmoon",
-"2040-09-20": "fullmoon",
-"2040-10-06": "newmoon",
-"2040-10-20": "fullmoon",
-"2040-11-04": "newmoon",
-"2040-11-18": "fullmoon",
-"2040-12-04": "newmoon",
-"2040-12-18": "fullmoon",
-
-// ===== 2041 =====
-"2041-01-03": "newmoon",
-"2041-01-17": "fullmoon",
-"2041-02-01": "newmoon",
-"2041-02-16": "fullmoon",
-"2041-03-02": "newmoon",
-"2041-03-17": "fullmoon",
-"2041-04-01": "newmoon",
-"2041-04-16": "fullmoon",
-"2041-04-30": "newmoon",
-"2041-05-16": "fullmoon",
-"2041-05-30": "newmoon",
-"2041-06-14": "fullmoon",
-"2041-06-28": "newmoon",
-"2041-07-13": "fullmoon",
-"2041-07-28": "newmoon",
-"2041-08-12": "fullmoon",
-"2041-08-26": "newmoon",
-"2041-09-10": "fullmoon",
-"2041-09-25": "newmoon",
-"2041-10-09": "fullmoon",
-"2041-10-25": "newmoon",
-"2041-11-08": "fullmoon",
-"2041-11-23": "newmoon",
-"2041-12-07": "fullmoon",
-"2041-12-23": "newmoon",
-
-// ===== 2042 =====
-"2042-01-06": "fullmoon",
-"2042-01-22": "newmoon",
-"2042-02-05": "fullmoon",
-"2042-02-20": "newmoon",
-"2042-03-06": "fullmoon",
-"2042-03-21": "newmoon",
-"2042-04-05": "fullmoon",
-"2042-04-20": "newmoon",
-"2042-05-05": "fullmoon",
-"2042-05-19": "newmoon",
-"2042-06-03": "fullmoon",
-"2042-06-18": "newmoon",
-"2042-07-03": "fullmoon",
-"2042-07-17": "newmoon",
-"2042-08-01": "fullmoon",
-"2042-08-15": "newmoon",
-"2042-08-31": "fullmoon",
-"2042-09-14": "newmoon",
-"2042-09-29": "fullmoon",
-"2042-10-14": "newmoon",
-"2042-10-28": "fullmoon",
-"2042-11-13": "newmoon",
-"2042-11-27": "fullmoon",
-"2042-12-12": "newmoon",
-"2042-12-26": "fullmoon",
-
-// ===== 2043 =====
-"2043-01-11": "newmoon",
-"2043-01-25": "fullmoon",
-"2043-02-10": "newmoon",
-"2043-02-23": "fullmoon",
-"2043-03-11": "newmoon",
-"2043-03-25": "fullmoon",
-"2043-04-10": "newmoon",
-"2043-04-24": "fullmoon",
-"2043-05-09": "newmoon",
-"2043-05-23": "fullmoon",
-"2043-06-07": "newmoon",
-"2043-06-22": "fullmoon",
-"2043-07-06": "newmoon",
-"2043-07-22": "fullmoon",
-"2043-08-05": "newmoon",
-"2043-08-20": "fullmoon",
-"2043-09-03": "newmoon",
-"2043-09-19": "fullmoon",
-"2043-10-03": "newmoon",
-"2043-10-18": "fullmoon",
-"2043-11-02": "newmoon",
-"2043-11-16": "fullmoon",
-"2043-12-01": "newmoon",
-"2043-12-16": "fullmoon",
-"2043-12-31": "newmoon",
-
-// ===== 2044 =====
-"2044-01-14": "fullmoon",
-"2044-01-30": "newmoon",
-"2044-02-13": "fullmoon",
-"2044-02-29": "newmoon",
-"2044-03-13": "fullmoon",
-"2044-03-29": "newmoon",
-"2044-04-12": "fullmoon",
-"2044-04-28": "newmoon",
-"2044-05-12": "fullmoon",
-"2044-05-27": "newmoon",
-"2044-06-10": "fullmoon",
-"2044-06-25": "newmoon",
-"2044-07-10": "fullmoon",
-"2044-07-24": "newmoon",
-"2044-08-08": "fullmoon",
-"2044-08-23": "newmoon",
-"2044-09-07": "fullmoon",
-"2044-09-21": "newmoon",
-"2044-10-07": "fullmoon",
-"2044-10-21": "newmoon",
-"2044-11-05": "fullmoon",
-"2044-11-19": "newmoon",
-"2044-12-04": "fullmoon",
-"2044-12-19": "newmoon",
-
-// ===== 2045 =====
-"2045-01-03": "fullmoon",
-"2045-01-18": "newmoon",
-"2045-02-01": "fullmoon",
-"2045-02-17": "newmoon",
-"2045-03-03": "fullmoon",
-"2045-03-18": "newmoon",
-"2045-04-01": "fullmoon",
-"2045-04-17": "newmoon",
-"2045-05-01": "fullmoon",
-"2045-05-16": "newmoon",
-"2045-05-30": "fullmoon",
-"2045-06-15": "newmoon",
-"2045-06-29": "fullmoon",
-"2045-07-14": "newmoon",
-"2045-07-28": "fullmoon",
-"2045-08-12": "newmoon",
-"2045-08-27": "fullmoon",
-"2045-09-11": "newmoon",
-"2045-09-26": "fullmoon",
-"2045-10-10": "newmoon",
-"2045-10-25": "fullmoon",
-"2045-11-09": "newmoon",
-"2045-11-24": "fullmoon",
-"2045-12-08": "newmoon",
-"2045-12-23": "fullmoon",
-
-// ===== 2046 =====
-"2046-01-07": "newmoon",
-"2046-01-22": "fullmoon",
-"2046-02-06": "newmoon",
-"2046-02-20": "fullmoon",
-"2046-03-07": "newmoon",
-"2046-03-22": "fullmoon",
-"2046-04-06": "newmoon",
-"2046-04-20": "fullmoon",
-"2046-05-04": "newmoon",
-"2046-05-20": "fullmoon",
-"2046-06-04": "newmoon",
-"2046-06-18": "fullmoon",
-"2046-07-02": "newmoon",
-"2046-07-18": "fullmoon",
-"2046-08-02": "newmoon",
-"2046-08-16": "fullmoon",
-"2046-08-31": "newmoon",
-"2046-09-15": "fullmoon",
-"2046-09-30": "newmoon",
-"2046-10-14": "fullmoon",
-"2046-10-29": "newmoon",
-"2046-11-13": "fullmoon",
-"2046-11-28": "newmoon",
-"2046-12-13": "fullmoon",
-"2046-12-27": "newmoon",
-
-// ===== 2047 =====
-"2047-01-12": "fullmoon",
-"2047-01-26": "newmoon",
-"2047-02-10": "fullmoon",
-"2047-02-24": "newmoon",
-"2047-03-12": "fullmoon",
-"2047-03-26": "newmoon",
-"2047-04-10": "fullmoon",
-"2047-04-25": "newmoon",
-"2047-05-09": "fullmoon",
-"2047-05-25": "newmoon",
-"2047-06-08": "fullmoon",
-"2047-06-23": "newmoon",
-"2047-07-07": "fullmoon",
-"2047-07-23": "newmoon",
-"2047-08-05": "fullmoon",
-"2047-08-21": "newmoon",
-"2047-09-04": "fullmoon",
-"2047-09-20": "newmoon",
-"2047-10-03": "fullmoon",
-"2047-10-19": "newmoon",
-"2047-11-02": "fullmoon",
-"2047-11-17": "newmoon",
-"2047-12-02": "fullmoon",
-"2047-12-17": "newmoon",
-
-// ===== 2048 =====
-"2048-01-01": "fullmoon",
-"2048-01-15": "newmoon",
-"2048-01-31": "fullmoon",
-"2048-02-14": "newmoon",
-"2048-02-29": "fullmoon",
-"2048-03-14": "newmoon",
-"2048-03-30": "fullmoon",
-"2048-04-13": "newmoon",
-"2048-04-28": "fullmoon",
-"2048-05-13": "newmoon",
-"2048-05-27": "fullmoon",
-"2048-06-11": "newmoon",
-"2048-06-26": "fullmoon",
-"2048-07-11": "newmoon",
-"2048-07-25": "fullmoon",
-"2048-08-09": "newmoon",
-"2048-08-23": "fullmoon",
-"2048-09-08": "newmoon",
-"2048-09-22": "fullmoon",
-"2048-10-07": "newmoon",
-"2048-10-21": "fullmoon",
-"2048-11-06": "newmoon",
-"2048-11-20": "fullmoon",
-"2048-12-05": "newmoon",
-"2048-12-20": "fullmoon",
-
-// ===== 2049 =====
-"2049-01-04": "newmoon",
-"2049-01-19": "fullmoon",
-"2049-02-02": "newmoon",
-"2049-02-17": "fullmoon",
-"2049-03-04": "newmoon",
-"2049-03-19": "fullmoon",
-"2049-04-02": "newmoon",
-"2049-04-18": "fullmoon",
-"2049-05-02": "newmoon",
-"2049-05-17": "fullmoon",
-"2049-05-31": "newmoon",
-"2049-06-15": "fullmoon",
-"2049-06-30": "newmoon",
-"2049-07-15": "fullmoon",
-"2049-07-30": "newmoon",
-"2049-08-13": "fullmoon",
-"2049-08-28": "newmoon",
-"2049-09-11": "fullmoon",
-"2049-09-27": "newmoon",
-"2049-10-11": "fullmoon",
-"2049-10-26": "newmoon",
-"2049-11-09": "fullmoon",
-"2049-11-25": "newmoon",
-"2049-12-09": "fullmoon",
-"2049-12-24": "newmoon",
-
-// ===== 2050 =====
-"2050-01-07": "fullmoon",
-"2050-01-23": "newmoon",
-"2050-02-06": "fullmoon",
-"2050-02-21": "newmoon",
-"2050-03-08": "fullmoon",
-"2050-03-23": "newmoon",
-"2050-04-07": "fullmoon",
-"2050-04-21": "newmoon",
-"2050-05-06": "fullmoon",
-"2050-05-21": "newmoon",
-"2050-06-05": "fullmoon",
-"2050-06-19": "newmoon",
-"2050-07-04": "fullmoon",
-"2050-07-19": "newmoon",
-"2050-08-03": "fullmoon",
-"2050-08-17": "newmoon",
-"2050-09-01": "fullmoon",
-"2050-09-16": "newmoon",
-"2050-09-30": "fullmoon",
-"2050-10-16": "newmoon",
-"2050-10-30": "fullmoon",
-"2050-11-14": "newmoon",
-"2050-11-28": "fullmoon",
-"2050-12-14": "newmoon",
-"2050-12-28": "fullmoon"
-            
-
-            };
+        };
         
         // Global variables for carousel
         let currentSlide = 0;
@@ -3857,7 +3208,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1901, 2, 21), endDate: new Date(1901, 3, 18, 23, 59), year: 4901, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1901, 3, 19), endDate: new Date(1901, 4, 18, 23, 59), year: 4901, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1901, 4, 19), endDate: new Date(1901, 5, 16, 23, 59), year: 4901, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1901, 5, 17), endDate: new Date(1901, 6, 15, 23, 59), year: 4901, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1901, 5, 17), endDate: new Date(1901, 6, 15, 23, 59), year: 4901, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1901, 6, 16), endDate: new Date(1901, 7, 14, 23, 59), year: 4901, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1901, 7, 15), endDate: new Date(1901, 8, 12, 23, 59), year: 4901, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1901, 8, 13), endDate: new Date(1901, 9, 12, 23, 59), year: 4901, color: "#e53935", order: 9 },
@@ -3909,7 +3260,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1904, 2, 18), endDate: new Date(1904, 3, 15, 23, 59), year: 4904, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1904, 3, 16), endDate: new Date(1904, 4, 15, 23, 59), year: 4904, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1904, 4, 16), endDate: new Date(1904, 5, 13, 23, 59), year: 4904, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1904, 5, 14), endDate: new Date(1904, 6, 13, 23, 59), year: 4904, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1904, 5, 14), endDate: new Date(1904, 6, 13, 23, 59), year: 4904, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1904, 6, 14), endDate: new Date(1904, 7, 11, 23, 59), year: 4904, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1904, 7, 12), endDate: new Date(1904, 8, 9, 23, 59), year: 4904, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1904, 8, 10), endDate: new Date(1904, 9, 9, 23, 59), year: 4904, color: "#e53935", order: 9 },
@@ -3961,7 +3312,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1907, 2, 15), endDate: new Date(1907, 3, 12, 23, 59), year: 4907, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1907, 3, 13), endDate: new Date(1907, 4, 12, 23, 59), year: 4907, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1907, 4, 13), endDate: new Date(1907, 5, 10, 23, 59), year: 4907, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1907, 5, 11), endDate: new Date(1907, 6, 10, 23, 59), year: 4907, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1907, 5, 11), endDate: new Date(1907, 6, 10, 23, 59), year: 4907, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1907, 6, 11), endDate: new Date(1907, 7, 9, 23, 59), year: 4907, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1907, 7, 10), endDate: new Date(1907, 8, 7, 23, 59), year: 4907, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1907, 8, 8), endDate: new Date(1907, 9, 7, 23, 59), year: 4907, color: "#e53935", order: 9 },
@@ -3996,7 +3347,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1909, 2, 22), endDate: new Date(1909, 3, 20, 23, 59), year: 4909, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1909, 3, 21), endDate: new Date(1909, 4, 19, 23, 59), year: 4909, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1909, 4, 20), endDate: new Date(1909, 5, 18, 23, 59), year: 4909, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1909, 5, 19), endDate: new Date(1909, 6, 17, 23, 59), year: 4909, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1909, 5, 19), endDate: new Date(1909, 6, 17, 23, 59), year: 4909, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1909, 6, 18), endDate: new Date(1909, 7, 15, 23, 59), year: 4909, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1909, 7, 16), endDate: new Date(1909, 8, 14, 23, 59), year: 4909, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1909, 8, 15), endDate: new Date(1909, 9, 14, 23, 59), year: 4909, color: "#e53935", order: 9 },
@@ -4048,7 +3399,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1912, 2, 19), endDate: new Date(1912, 3, 17, 23, 59), year: 4912, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1912, 3, 18), endDate: new Date(1912, 4, 16, 23, 59), year: 4912, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1912, 4, 17), endDate: new Date(1912, 5, 15, 23, 59), year: 4912, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1912, 5, 16), endDate: new Date(1912, 6, 14, 23, 59), year: 4912, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1912, 5, 16), endDate: new Date(1912, 6, 14, 23, 59), year: 4912, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1912, 6, 15), endDate: new Date(1912, 7, 12, 23, 59), year: 4912, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1912, 7, 13), endDate: new Date(1912, 8, 11, 23, 59), year: 4912, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1912, 8, 12), endDate: new Date(1912, 9, 10, 23, 59), year: 4912, color: "#e53935", order: 9 },
@@ -4100,7 +3451,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1915, 2, 16), endDate: new Date(1915, 3, 14, 23, 59), year: 4915, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1915, 3, 15), endDate: new Date(1915, 4, 14, 23, 59), year: 4915, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1915, 4, 15), endDate: new Date(1915, 5, 12, 23, 59), year: 4915, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1915, 5, 13), endDate: new Date(1915, 6, 12, 23, 59), year: 4915, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1915, 5, 13), endDate: new Date(1915, 6, 12, 23, 59), year: 4915, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1915, 6, 13), endDate: new Date(1915, 7, 10, 23, 59), year: 4915, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1915, 7, 11), endDate: new Date(1915, 8, 9, 23, 59), year: 4915, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1915, 8, 10), endDate: new Date(1915, 9, 8, 23, 59), year: 4915, color: "#e53935", order: 9 },
@@ -4135,7 +3486,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1917, 2, 24), endDate: new Date(1917, 3, 21, 23, 59), year: 4917, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1917, 3, 22), endDate: new Date(1917, 4, 21, 23, 59), year: 4917, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1917, 4, 22), endDate: new Date(1917, 5, 19, 23, 59), year: 4917, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1917, 5, 20), endDate: new Date(1917, 6, 19, 23, 59), year: 4917, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1917, 5, 20), endDate: new Date(1917, 6, 19, 23, 59), year: 4917, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1917, 6, 20), endDate: new Date(1917, 7, 17, 23, 59), year: 4917, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1917, 7, 18), endDate: new Date(1917, 8, 16, 23, 59), year: 4917, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1917, 8, 17), endDate: new Date(1917, 9, 16, 23, 59), year: 4917, color: "#e53935", order: 9 },
@@ -4187,7 +3538,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1920, 2, 21), endDate: new Date(1920, 3, 18, 23, 59), year: 4920, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1920, 3, 19), endDate: new Date(1920, 4, 18, 23, 59), year: 4920, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1920, 4, 19), endDate: new Date(1920, 5, 16, 23, 59), year: 4920, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1920, 5, 17), endDate: new Date(1920, 6, 15, 23, 59), year: 4920, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1920, 5, 17), endDate: new Date(1920, 6, 15, 23, 59), year: 4920, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1920, 6, 16), endDate: new Date(1920, 7, 14, 23, 59), year: 4920, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1920, 7, 15), endDate: new Date(1920, 8, 12, 23, 59), year: 4920, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1920, 8, 13), endDate: new Date(1920, 9, 12, 23, 59), year: 4920, color: "#e53935", order: 9 },
@@ -4239,7 +3590,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1923, 2, 18), endDate: new Date(1923, 3, 16, 23, 59), year: 4923, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1923, 3, 17), endDate: new Date(1923, 4, 15, 23, 59), year: 4923, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1923, 4, 16), endDate: new Date(1923, 5, 14, 23, 59), year: 4923, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1923, 5, 15), endDate: new Date(1923, 6, 14, 23, 59), year: 4923, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1923, 5, 15), endDate: new Date(1923, 6, 14, 23, 59), year: 4923, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1923, 6, 15), endDate: new Date(1923, 7, 12, 23, 59), year: 4923, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1923, 7, 13), endDate: new Date(1923, 8, 10, 23, 59), year: 4923, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1923, 8, 11), endDate: new Date(1923, 9, 10, 23, 59), year: 4923, color: "#e53935", order: 9 },
@@ -4291,7 +3642,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1926, 2, 15), endDate: new Date(1926, 3, 12, 23, 59), year: 4926, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1926, 3, 13), endDate: new Date(1926, 4, 11, 23, 59), year: 4926, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1926, 4, 12), endDate: new Date(1926, 5, 10, 23, 59), year: 4926, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1926, 5, 11), endDate: new Date(1926, 6, 9, 23, 59), year: 4926, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1926, 5, 11), endDate: new Date(1926, 6, 9, 23, 59), year: 4926, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1926, 6, 10), endDate: new Date(1926, 7, 8, 23, 59), year: 4926, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1926, 7, 9), endDate: new Date(1926, 8, 7, 23, 59), year: 4926, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1926, 8, 8), endDate: new Date(1926, 9, 6, 23, 59), year: 4926, color: "#e53935", order: 9 },
@@ -4326,7 +3677,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1928, 2, 22), endDate: new Date(1928, 3, 20, 23, 59), year: 4928, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1928, 3, 21), endDate: new Date(1928, 4, 19, 23, 59), year: 4928, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1928, 4, 20), endDate: new Date(1928, 5, 17, 23, 59), year: 4928, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1928, 5, 18), endDate: new Date(1928, 6, 17, 23, 59), year: 4928, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1928, 5, 18), endDate: new Date(1928, 6, 17, 23, 59), year: 4928, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1928, 6, 18), endDate: new Date(1928, 7, 15, 23, 59), year: 4928, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1928, 7, 16), endDate: new Date(1928, 8, 14, 23, 59), year: 4928, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1928, 8, 15), endDate: new Date(1928, 9, 13, 23, 59), year: 4928, color: "#e53935", order: 9 },
@@ -4378,7 +3729,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1931, 2, 20), endDate: new Date(1931, 3, 17, 23, 59), year: 4931, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1931, 3, 18), endDate: new Date(1931, 4, 17, 23, 59), year: 4931, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1931, 4, 18), endDate: new Date(1931, 5, 16, 23, 59), year: 4931, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1931, 5, 17), endDate: new Date(1931, 6, 15, 23, 59), year: 4931, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1931, 5, 17), endDate: new Date(1931, 6, 15, 23, 59), year: 4931, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1931, 6, 16), endDate: new Date(1931, 7, 13, 23, 59), year: 4931, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1931, 7, 14), endDate: new Date(1931, 8, 12, 23, 59), year: 4931, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1931, 8, 13), endDate: new Date(1931, 9, 11, 23, 59), year: 4931, color: "#e53935", order: 9 },
@@ -4430,7 +3781,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1934, 2, 16), endDate: new Date(1934, 3, 14, 23, 59), year: 4934, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1934, 3, 15), endDate: new Date(1934, 4, 13, 23, 59), year: 4934, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1934, 4, 14), endDate: new Date(1934, 5, 12, 23, 59), year: 4934, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1934, 5, 13), endDate: new Date(1934, 6, 11, 23, 59), year: 4934, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1934, 5, 13), endDate: new Date(1934, 6, 11, 23, 59), year: 4934, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1934, 6, 12), endDate: new Date(1934, 7, 10, 23, 59), year: 4934, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1934, 7, 11), endDate: new Date(1934, 8, 8, 23, 59), year: 4934, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1934, 8, 9), endDate: new Date(1934, 9, 8, 23, 59), year: 4934, color: "#e53935", order: 9 },
@@ -4465,7 +3816,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1936, 2, 24), endDate: new Date(1936, 3, 21, 23, 59), year: 4936, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1936, 3, 22), endDate: new Date(1936, 4, 20, 23, 59), year: 4936, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1936, 4, 21), endDate: new Date(1936, 5, 19, 23, 59), year: 4936, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1936, 5, 20), endDate: new Date(1936, 6, 18, 23, 59), year: 4936, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1936, 5, 20), endDate: new Date(1936, 6, 18, 23, 59), year: 4936, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1936, 6, 19), endDate: new Date(1936, 7, 17, 23, 59), year: 4936, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1936, 7, 18), endDate: new Date(1936, 8, 15, 23, 59), year: 4936, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1936, 8, 16), endDate: new Date(1936, 9, 15, 23, 59), year: 4936, color: "#e53935", order: 9 },
@@ -4517,7 +3868,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1939, 2, 22), endDate: new Date(1939, 3, 19, 23, 59), year: 4939, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1939, 3, 20), endDate: new Date(1939, 4, 19, 23, 59), year: 4939, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1939, 4, 20), endDate: new Date(1939, 5, 17, 23, 59), year: 4939, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1939, 5, 18), endDate: new Date(1939, 6, 16, 23, 59), year: 4939, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1939, 5, 18), endDate: new Date(1939, 6, 16, 23, 59), year: 4939, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1939, 6, 17), endDate: new Date(1939, 7, 15, 23, 59), year: 4939, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1939, 7, 16), endDate: new Date(1939, 8, 13, 23, 59), year: 4939, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1939, 8, 14), endDate: new Date(1939, 9, 12, 23, 59), year: 4939, color: "#e53935", order: 9 },
@@ -4569,7 +3920,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1942, 2, 17), endDate: new Date(1942, 3, 15, 23, 59), year: 4942, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1942, 3, 16), endDate: new Date(1942, 4, 15, 23, 59), year: 4942, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1942, 4, 16), endDate: new Date(1942, 5, 13, 23, 59), year: 4942, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1942, 5, 14), endDate: new Date(1942, 6, 13, 23, 59), year: 4942, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1942, 5, 14), endDate: new Date(1942, 6, 13, 23, 59), year: 4942, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1942, 6, 14), endDate: new Date(1942, 7, 12, 23, 59), year: 4942, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1942, 7, 13), endDate: new Date(1942, 8, 10, 23, 59), year: 4942, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1942, 8, 11), endDate: new Date(1942, 9, 10, 23, 59), year: 4942, color: "#e53935", order: 9 },
@@ -4621,7 +3972,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1945, 2, 15), endDate: new Date(1945, 3, 12, 23, 59), year: 4945, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1945, 3, 13), endDate: new Date(1945, 4, 11, 23, 59), year: 4945, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1945, 4, 12), endDate: new Date(1945, 5, 10, 23, 59), year: 4945, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1945, 5, 11), endDate: new Date(1945, 6, 9, 23, 59), year: 4945, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1945, 5, 11), endDate: new Date(1945, 6, 9, 23, 59), year: 4945, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1945, 6, 10), endDate: new Date(1945, 7, 8, 23, 59), year: 4945, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1945, 7, 9), endDate: new Date(1945, 8, 6, 23, 59), year: 4945, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1945, 8, 7), endDate: new Date(1945, 9, 6, 23, 59), year: 4945, color: "#e53935", order: 9 },
@@ -4656,7 +4007,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1947, 2, 23), endDate: new Date(1947, 3, 21, 23, 59), year: 4947, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1947, 3, 22), endDate: new Date(1947, 4, 20, 23, 59), year: 4947, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1947, 4, 21), endDate: new Date(1947, 5, 18, 23, 59), year: 4947, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1947, 5, 19), endDate: new Date(1947, 6, 18, 23, 59), year: 4947, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1947, 5, 19), endDate: new Date(1947, 6, 18, 23, 59), year: 4947, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1947, 6, 19), endDate: new Date(1947, 7, 16, 23, 59), year: 4947, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1947, 7, 17), endDate: new Date(1947, 8, 14, 23, 59), year: 4947, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1947, 8, 15), endDate: new Date(1947, 9, 14, 23, 59), year: 4947, color: "#e53935", order: 9 },
@@ -4708,7 +4059,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1950, 2, 19), endDate: new Date(1950, 3, 17, 23, 59), year: 4950, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1950, 3, 18), endDate: new Date(1950, 4, 16, 23, 59), year: 4950, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1950, 4, 17), endDate: new Date(1950, 5, 15, 23, 59), year: 4950, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1950, 5, 16), endDate: new Date(1950, 6, 15, 23, 59), year: 4950, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1950, 5, 16), endDate: new Date(1950, 6, 15, 23, 59), year: 4950, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1950, 6, 16), endDate: new Date(1950, 7, 13, 23, 59), year: 4950, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1950, 7, 14), endDate: new Date(1950, 8, 12, 23, 59), year: 4950, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1950, 8, 13), endDate: new Date(1950, 9, 11, 23, 59), year: 4950, color: "#e53935", order: 9 },
@@ -4760,7 +4111,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1953, 2, 16), endDate: new Date(1953, 3, 13, 23, 59), year: 4953, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1953, 3, 14), endDate: new Date(1953, 4, 13, 23, 59), year: 4953, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1953, 4, 14), endDate: new Date(1953, 5, 11, 23, 59), year: 4953, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1953, 5, 12), endDate: new Date(1953, 6, 11, 23, 59), year: 4953, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1953, 5, 12), endDate: new Date(1953, 6, 11, 23, 59), year: 4953, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1953, 6, 12), endDate: new Date(1953, 7, 9, 23, 59), year: 4953, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1953, 7, 10), endDate: new Date(1953, 8, 8, 23, 59), year: 4953, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1953, 8, 9), endDate: new Date(1953, 9, 7, 23, 59), year: 4953, color: "#e53935", order: 9 },
@@ -4795,7 +4146,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1955, 2, 25), endDate: new Date(1955, 3, 22, 23, 59), year: 4955, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1955, 3, 23), endDate: new Date(1955, 4, 21, 23, 59), year: 4955, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1955, 4, 22), endDate: new Date(1955, 5, 20, 23, 59), year: 4955, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1955, 5, 21), endDate: new Date(1955, 6, 19, 23, 59), year: 4955, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1955, 5, 21), endDate: new Date(1955, 6, 19, 23, 59), year: 4955, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1955, 6, 20), endDate: new Date(1955, 7, 17, 23, 59), year: 4955, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1955, 7, 18), endDate: new Date(1955, 8, 16, 23, 59), year: 4955, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1955, 8, 17), endDate: new Date(1955, 9, 15, 23, 59), year: 4955, color: "#e53935", order: 9 },
@@ -4847,7 +4198,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1958, 2, 21), endDate: new Date(1958, 3, 19, 23, 59), year: 4958, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1958, 3, 20), endDate: new Date(1958, 4, 18, 23, 59), year: 4958, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1958, 4, 19), endDate: new Date(1958, 5, 17, 23, 59), year: 4958, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1958, 5, 18), endDate: new Date(1958, 6, 16, 23, 59), year: 4958, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1958, 5, 18), endDate: new Date(1958, 6, 16, 23, 59), year: 4958, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1958, 6, 17), endDate: new Date(1958, 7, 15, 23, 59), year: 4958, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1958, 7, 16), endDate: new Date(1958, 8, 13, 23, 59), year: 4958, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1958, 8, 14), endDate: new Date(1958, 9, 12, 23, 59), year: 4958, color: "#e53935", order: 9 },
@@ -4899,7 +4250,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1961, 2, 17), endDate: new Date(1961, 3, 15, 23, 59), year: 4961, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1961, 3, 16), endDate: new Date(1961, 4, 14, 23, 59), year: 4961, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1961, 4, 15), endDate: new Date(1961, 5, 13, 23, 59), year: 4961, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1961, 5, 14), endDate: new Date(1961, 6, 12, 23, 59), year: 4961, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1961, 5, 14), endDate: new Date(1961, 6, 12, 23, 59), year: 4961, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1961, 6, 13), endDate: new Date(1961, 7, 11, 23, 59), year: 4961, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1961, 7, 12), endDate: new Date(1961, 8, 10, 23, 59), year: 4961, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1961, 8, 11), endDate: new Date(1961, 9, 9, 23, 59), year: 4961, color: "#e53935", order: 9 },
@@ -4934,7 +4285,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1963, 2, 26), endDate: new Date(1963, 3, 23, 23, 59), year: 4963, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1963, 3, 24), endDate: new Date(1963, 4, 23, 23, 59), year: 4963, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1963, 4, 24), endDate: new Date(1963, 5, 21, 23, 59), year: 4963, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1963, 5, 22), endDate: new Date(1963, 6, 20, 23, 59), year: 4963, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1963, 5, 22), endDate: new Date(1963, 6, 20, 23, 59), year: 4963, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1963, 6, 21), endDate: new Date(1963, 7, 19, 23, 59), year: 4963, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1963, 7, 20), endDate: new Date(1963, 8, 17, 23, 59), year: 4963, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1963, 8, 18), endDate: new Date(1963, 9, 17, 23, 59), year: 4963, color: "#e53935", order: 9 },
@@ -4986,7 +4337,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1966, 2, 23), endDate: new Date(1966, 3, 20, 23, 59), year: 4966, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1966, 3, 21), endDate: new Date(1966, 4, 20, 23, 59), year: 4966, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1966, 4, 21), endDate: new Date(1966, 5, 18, 23, 59), year: 4966, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1966, 5, 19), endDate: new Date(1966, 6, 18, 23, 59), year: 4966, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1966, 5, 19), endDate: new Date(1966, 6, 18, 23, 59), year: 4966, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1966, 6, 19), endDate: new Date(1966, 7, 16, 23, 59), year: 4966, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1966, 7, 17), endDate: new Date(1966, 8, 14, 23, 59), year: 4966, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1966, 8, 15), endDate: new Date(1966, 9, 13, 23, 59), year: 4966, color: "#e53935", order: 9 },
@@ -5037,7 +4388,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1969, 2, 19), endDate: new Date(1969, 3, 16, 23, 59), year: 4969, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1969, 3, 17), endDate: new Date(1969, 4, 16, 23, 59), year: 4969, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1969, 4, 17), endDate: new Date(1969, 5, 14, 23, 59), year: 4969, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1969, 5, 15), endDate: new Date(1969, 6, 14, 23, 59), year: 4969, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1969, 5, 15), endDate: new Date(1969, 6, 14, 23, 59), year: 4969, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1969, 6, 15), endDate: new Date(1969, 7, 13, 23, 59), year: 4969, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1969, 7, 14), endDate: new Date(1969, 8, 11, 23, 59), year: 4969, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1969, 8, 12), endDate: new Date(1969, 9, 11, 23, 59), year: 4969, color: "#e53935", order: 9 },
@@ -5089,7 +4440,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1972, 2, 16), endDate: new Date(1972, 3, 13, 23, 59), year: 4972, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1972, 3, 14), endDate: new Date(1972, 4, 13, 23, 59), year: 4972, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1972, 4, 14), endDate: new Date(1972, 5, 11, 23, 59), year: 4972, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1972, 5, 12), endDate: new Date(1972, 6, 10, 23, 59), year: 4972, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1972, 5, 12), endDate: new Date(1972, 6, 10, 23, 59), year: 4972, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1972, 6, 11), endDate: new Date(1972, 7, 9, 23, 59), year: 4972, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1972, 7, 10), endDate: new Date(1972, 8, 7, 23, 59), year: 4972, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1972, 8, 8), endDate: new Date(1972, 9, 7, 23, 59), year: 4972, color: "#e53935", order: 9 },
@@ -5124,7 +4475,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1974, 2, 24), endDate: new Date(1974, 3, 22, 23, 59), year: 4974, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1974, 3, 23), endDate: new Date(1974, 4, 21, 23, 59), year: 4974, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1974, 4, 22), endDate: new Date(1974, 5, 20, 23, 59), year: 4974, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1974, 5, 21), endDate: new Date(1974, 6, 19, 23, 59), year: 4974, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1974, 5, 21), endDate: new Date(1974, 6, 19, 23, 59), year: 4974, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1974, 6, 20), endDate: new Date(1974, 7, 17, 23, 59), year: 4974, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1974, 7, 18), endDate: new Date(1974, 8, 16, 23, 59), year: 4974, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1974, 8, 17), endDate: new Date(1974, 9, 15, 23, 59), year: 4974, color: "#e53935", order: 9 },
@@ -5176,7 +4527,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1977, 2, 20), endDate: new Date(1977, 3, 18, 23, 59), year: 4977, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1977, 3, 19), endDate: new Date(1977, 4, 18, 23, 59), year: 4977, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1977, 4, 19), endDate: new Date(1977, 5, 16, 23, 59), year: 4977, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1977, 5, 17), endDate: new Date(1977, 6, 16, 23, 59), year: 4977, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1977, 5, 17), endDate: new Date(1977, 6, 16, 23, 59), year: 4977, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1977, 6, 17), endDate: new Date(1977, 7, 14, 23, 59), year: 4977, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1977, 7, 15), endDate: new Date(1977, 8, 13, 23, 59), year: 4977, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1977, 8, 14), endDate: new Date(1977, 9, 12, 23, 59), year: 4977, color: "#e53935", order: 9 },
@@ -5228,7 +4579,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1980, 2, 17), endDate: new Date(1980, 3, 15, 23, 59), year: 4980, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1980, 3, 16), endDate: new Date(1980, 4, 14, 23, 59), year: 4980, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1980, 4, 15), endDate: new Date(1980, 5, 12, 23, 59), year: 4980, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1980, 5, 13), endDate: new Date(1980, 6, 12, 23, 59), year: 4980, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1980, 5, 13), endDate: new Date(1980, 6, 12, 23, 59), year: 4980, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1980, 6, 13), endDate: new Date(1980, 7, 10, 23, 59), year: 4980, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1980, 7, 11), endDate: new Date(1980, 8, 9, 23, 59), year: 4980, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1980, 8, 10), endDate: new Date(1980, 9, 9, 23, 59), year: 4980, color: "#e53935", order: 9 },
@@ -5263,7 +4614,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1982, 2, 26), endDate: new Date(1982, 3, 23, 23, 59), year: 4982, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1982, 3, 24), endDate: new Date(1982, 4, 23, 23, 59), year: 4982, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1982, 4, 24), endDate: new Date(1982, 5, 21, 23, 59), year: 4982, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1982, 5, 22), endDate: new Date(1982, 6, 20, 23, 59), year: 4982, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1982, 5, 22), endDate: new Date(1982, 6, 20, 23, 59), year: 4982, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1982, 6, 21), endDate: new Date(1982, 7, 19, 23, 59), year: 4982, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1982, 7, 20), endDate: new Date(1982, 8, 17, 23, 59), year: 4982, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1982, 8, 18), endDate: new Date(1982, 9, 17, 23, 59), year: 4982, color: "#e53935", order: 9 },
@@ -5315,7 +4666,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1985, 2, 22), endDate: new Date(1985, 3, 20, 23, 59), year: 4985, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1985, 3, 21), endDate: new Date(1985, 4, 19, 23, 59), year: 4985, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1985, 4, 20), endDate: new Date(1985, 5, 18, 23, 59), year: 4985, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1985, 5, 19), endDate: new Date(1985, 6, 18, 23, 59), year: 4985, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1985, 5, 19), endDate: new Date(1985, 6, 18, 23, 59), year: 4985, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1985, 6, 19), endDate: new Date(1985, 7, 16, 23, 59), year: 4985, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1985, 7, 17), endDate: new Date(1985, 8, 14, 23, 59), year: 4985, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1985, 8, 15), endDate: new Date(1985, 9, 14, 23, 59), year: 4985, color: "#e53935", order: 9 },
@@ -5366,7 +4717,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1988, 2, 19), endDate: new Date(1988, 3, 16, 23, 59), year: 4988, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1988, 3, 17), endDate: new Date(1988, 4, 15, 23, 59), year: 4988, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1988, 4, 16), endDate: new Date(1988, 5, 14, 23, 59), year: 4988, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1988, 5, 15), endDate: new Date(1988, 6, 13, 23, 59), year: 4988, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1988, 5, 15), endDate: new Date(1988, 6, 13, 23, 59), year: 4988, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1988, 6, 14), endDate: new Date(1988, 7, 12, 23, 59), year: 4988, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1988, 7, 13), endDate: new Date(1988, 8, 11, 23, 59), year: 4988, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1988, 8, 12), endDate: new Date(1988, 9, 10, 23, 59), year: 4988, color: "#e53935", order: 9 },
@@ -5418,7 +4769,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1991, 2, 17), endDate: new Date(1991, 3, 14, 23, 59), year: 4991, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1991, 3, 15), endDate: new Date(1991, 4, 14, 23, 59), year: 4991, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1991, 4, 15), endDate: new Date(1991, 5, 12, 23, 59), year: 4991, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1991, 5, 13), endDate: new Date(1991, 6, 11, 23, 59), year: 4991, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1991, 5, 13), endDate: new Date(1991, 6, 11, 23, 59), year: 4991, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1991, 6, 12), endDate: new Date(1991, 7, 10, 23, 59), year: 4991, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1991, 7, 11), endDate: new Date(1991, 8, 8, 23, 59), year: 4991, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1991, 8, 9), endDate: new Date(1991, 9, 7, 23, 59), year: 4991, color: "#e53935", order: 9 },
@@ -5453,7 +4804,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1993, 2, 24), endDate: new Date(1993, 3, 21, 23, 59), year: 4993, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1993, 3, 22), endDate: new Date(1993, 4, 21, 23, 59), year: 4993, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1993, 4, 22), endDate: new Date(1993, 5, 20, 23, 59), year: 4993, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1993, 5, 21), endDate: new Date(1993, 6, 19, 23, 59), year: 4993, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1993, 5, 21), endDate: new Date(1993, 6, 19, 23, 59), year: 4993, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1993, 6, 20), endDate: new Date(1993, 7, 17, 23, 59), year: 4993, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1993, 7, 18), endDate: new Date(1993, 8, 16, 23, 59), year: 4993, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1993, 8, 17), endDate: new Date(1993, 9, 15, 23, 59), year: 4993, color: "#e53935", order: 9 },
@@ -5505,7 +4856,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1996, 2, 20), endDate: new Date(1996, 3, 17, 23, 59), year: 4996, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1996, 3, 18), endDate: new Date(1996, 4, 17, 23, 59), year: 4996, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1996, 4, 18), endDate: new Date(1996, 5, 16, 23, 59), year: 4996, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1996, 5, 17), endDate: new Date(1996, 6, 15, 23, 59), year: 4996, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1996, 5, 17), endDate: new Date(1996, 6, 15, 23, 59), year: 4996, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1996, 6, 16), endDate: new Date(1996, 7, 14, 23, 59), year: 4996, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1996, 7, 15), endDate: new Date(1996, 8, 12, 23, 59), year: 4996, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1996, 8, 13), endDate: new Date(1996, 9, 12, 23, 59), year: 4996, color: "#e53935", order: 9 },
@@ -5557,7 +4908,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1999, 2, 18), endDate: new Date(1999, 3, 16, 23, 59), year: 4999, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(1999, 3, 17), endDate: new Date(1999, 4, 15, 23, 59), year: 4999, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(1999, 4, 16), endDate: new Date(1999, 5, 13, 23, 59), year: 4999, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(1999, 5, 14), endDate: new Date(1999, 6, 13, 23, 59), year: 4999, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(1999, 5, 14), endDate: new Date(1999, 6, 13, 23, 59), year: 4999, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(1999, 6, 14), endDate: new Date(1999, 7, 11, 23, 59), year: 4999, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(1999, 7, 12), endDate: new Date(1999, 8, 9, 23, 59), year: 4999, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(1999, 8, 10), endDate: new Date(1999, 9, 9, 23, 59), year: 4999, color: "#e53935", order: 9 },
@@ -5592,7 +4943,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(2001, 2, 25), endDate: new Date(2001, 3, 23, 23, 59), year: 5001, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(2001, 3, 24), endDate: new Date(2001, 4, 23, 23, 59), year: 5001, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(2001, 4, 24), endDate: new Date(2001, 5, 21, 23, 59), year: 5001, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(2001, 5, 22), endDate: new Date(2001, 6, 20, 23, 59), year: 5001, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(2001, 5, 22), endDate: new Date(2001, 6, 20, 23, 59), year: 5001, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(2001, 6, 21), endDate: new Date(2001, 7, 19, 23, 59), year: 5001, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(2001, 7, 20), endDate: new Date(2001, 8, 17, 23, 59), year: 5001, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(2001, 8, 18), endDate: new Date(2001, 9, 16, 23, 59), year: 5001, color: "#e53935", order: 9 },
@@ -5644,7 +4995,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(2004, 2, 21), endDate: new Date(2004, 3, 19, 23, 59), year: 5004, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(2004, 3, 20), endDate: new Date(2004, 4, 19, 23, 59), year: 5004, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(2004, 4, 20), endDate: new Date(2004, 5, 17, 23, 59), year: 5004, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(2004, 5, 18), endDate: new Date(2004, 6, 17, 23, 59), year: 5004, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(2004, 5, 18), endDate: new Date(2004, 6, 17, 23, 59), year: 5004, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(2004, 6, 18), endDate: new Date(2004, 7, 16, 23, 59), year: 5004, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(2004, 7, 17), endDate: new Date(2004, 8, 14, 23, 59), year: 5004, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(2004, 8, 15), endDate: new Date(2004, 9, 14, 23, 59), year: 5004, color: "#e53935", order: 9 },
@@ -5695,7 +5046,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(2007, 2, 20), endDate: new Date(2007, 3, 17, 23, 59), year: 5007, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(2007, 3, 18), endDate: new Date(2007, 4, 16, 23, 59), year: 5007, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(2007, 4, 17), endDate: new Date(2007, 5, 15, 23, 59), year: 5007, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(2007, 5, 16), endDate: new Date(2007, 6, 14, 23, 59), year: 5007, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(2007, 5, 16), endDate: new Date(2007, 6, 14, 23, 59), year: 5007, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(2007, 6, 15), endDate: new Date(2007, 7, 12, 23, 59), year: 5007, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(2007, 7, 13), endDate: new Date(2007, 8, 11, 23, 59), year: 5007, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(2007, 8, 12), endDate: new Date(2007, 9, 11, 23, 59), year: 5007, color: "#e53935", order: 9 },
@@ -5747,7 +5098,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(2010, 2, 16), endDate: new Date(2010, 3, 14, 23, 59), year: 5010, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(2010, 3, 15), endDate: new Date(2010, 4, 14, 23, 59), year: 5010, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(2010, 4, 15), endDate: new Date(2010, 5, 12, 23, 59), year: 5010, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(2010, 5, 13), endDate: new Date(2010, 6, 11, 23, 59), year: 5010, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(2010, 5, 13), endDate: new Date(2010, 6, 11, 23, 59), year: 5010, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(2010, 6, 12), endDate: new Date(2010, 7, 10, 23, 59), year: 5010, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(2010, 7, 11), endDate: new Date(2010, 8, 8, 23, 59), year: 5010, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(2010, 8, 9), endDate: new Date(2010, 9, 7, 23, 59), year: 5010, color: "#e53935", order: 9 },
@@ -5782,7 +5133,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(2012, 2, 23), endDate: new Date(2012, 3, 21, 23, 59), year: 5012, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(2012, 3, 22), endDate: new Date(2012, 4, 20, 23, 59), year: 5012, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(2012, 4, 21), endDate: new Date(2012, 5, 19, 23, 59), year: 5012, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(2012, 5, 20), endDate: new Date(2012, 6, 19, 23, 59), year: 5012, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(2012, 5, 20), endDate: new Date(2012, 6, 19, 23, 59), year: 5012, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(2012, 6, 20), endDate: new Date(2012, 7, 17, 23, 59), year: 5012, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(2012, 7, 18), endDate: new Date(2012, 8, 16, 23, 59), year: 5012, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(2012, 8, 17), endDate: new Date(2012, 9, 15, 23, 59), year: 5012, color: "#e53935", order: 9 },
@@ -5834,7 +5185,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(2015, 2, 21), endDate: new Date(2015, 3, 18, 23, 59), year: 5015, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(2015, 3, 19), endDate: new Date(2015, 4, 18, 23, 59), year: 5015, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(2015, 4, 19), endDate: new Date(2015, 5, 16, 23, 59), year: 5015, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(2015, 5, 17), endDate: new Date(2015, 6, 16, 23, 59), year: 5015, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(2015, 5, 17), endDate: new Date(2015, 6, 16, 23, 59), year: 5015, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(2015, 6, 17), endDate: new Date(2015, 7, 14, 23, 59), year: 5015, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(2015, 7, 15), endDate: new Date(2015, 8, 13, 23, 59), year: 5015, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(2015, 8, 14), endDate: new Date(2015, 9, 12, 23, 59), year: 5015, color: "#e53935", order: 9 },
@@ -5886,7 +5237,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(2018, 2, 18), endDate: new Date(2018, 3, 16, 23, 59), year: 5018, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(2018, 3, 17), endDate: new Date(2018, 4, 15, 23, 59), year: 5018, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(2018, 4, 16), endDate: new Date(2018, 5, 13, 23, 59), year: 5018, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(2018, 5, 14), endDate: new Date(2018, 6, 13, 23, 59), year: 5018, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(2018, 5, 14), endDate: new Date(2018, 6, 13, 23, 59), year: 5018, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(2018, 6, 14), endDate: new Date(2018, 7, 11, 23, 59), year: 5018, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(2018, 7, 12), endDate: new Date(2018, 8, 9, 23, 59), year: 5018, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(2018, 8, 10), endDate: new Date(2018, 9, 9, 23, 59), year: 5018, color: "#e53935", order: 9 },
@@ -5921,7 +5272,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(2020, 2, 25), endDate: new Date(2020, 3, 23, 23, 59), year: 5020, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(2020, 3, 24), endDate: new Date(2020, 4, 22, 23, 59), year: 5020, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(2020, 4, 23), endDate: new Date(2020, 5, 21, 23, 59), year: 5020, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(2020, 5, 22), endDate: new Date(2020, 6, 20, 23, 59), year: 5020, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(2020, 5, 22), endDate: new Date(2020, 6, 20, 23, 59), year: 5020, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(2020, 6, 21), endDate: new Date(2020, 7, 19, 23, 59), year: 5020, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(2020, 7, 20), endDate: new Date(2020, 8, 17, 23, 59), year: 5020, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(2020, 8, 18), endDate: new Date(2020, 9, 16, 23, 59), year: 5020, color: "#e53935", order: 9 },
@@ -5973,7 +5324,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱪᱟᱹᱛ", startDate: new Date(2023, 2, 22), endDate: new Date(2023, 3, 20, 23, 59), year: 5023, color: "#e53935", order: 3 },
             { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(2023, 3, 21), endDate: new Date(2023, 4, 19, 23, 59), year: 5023, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(2023, 4, 20), endDate: new Date(2023, 5, 18, 23, 59), year: 5023, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(2023, 5, 19), endDate: new Date(2023, 6, 17, 23, 59), year: 5023, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(2023, 5, 19), endDate: new Date(2023, 6, 17, 23, 59), year: 5023, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(2023, 6, 18), endDate: new Date(2023, 7, 16, 23, 59), year: 5023, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(2023, 7, 17), endDate: new Date(2023, 8, 14, 23, 59), year: 5023, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(2023, 8, 15), endDate: new Date(2023, 9, 14, 23, 59), year: 5023, color: "#e53935", order: 9 },
@@ -6022,10 +5373,10 @@ function getSantaliMonthMap(year) {
             { month: "ᱯᱩᱥ", startDate: new Date(2025, 11, 20), endDate: new Date(2026, 0, 18, 23, 59), year: 5025, color: "#388e3c", order: 12 },
             { month: "ᱢᱟᱜᱽ", startDate: new Date(2026, 0, 19), endDate: new Date(2026, 1, 17, 23, 59), year: 5026, color: "#e53935", order: 1 },
             { month: "ᱯᱷᱟᱹᱜᱩᱱ", startDate: new Date(2026, 1, 18), endDate: new Date(2026, 2, 19, 23, 59), year: 5026, color: "#388e3c", order: 2 },
-            { month: "ᱪᱟᱹᱛ", startDate: new Date(2026, 2, 20), endDate: new Date(2026, 3, 17, 23, 59), year: 5026, color: "#e53935", order: 3 },
-            { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(2026, 3, 18), endDate: new Date(2026, 4, 16, 23, 59), year: 5026, color: "#388e3c", order: 4 },
+            { month: "ᱪᱟᱹᱛ", startDate: new Date(2026, 2, 20), endDate: new Date(2026, 3, 23, 23, 59), year: 5026, color: "#e53935", order: 3 },
+            { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(2026, 3, 24), endDate: new Date(2026, 4, 16, 23, 59), year: 5026, color: "#388e3c", order: 4 },
             { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(2026, 4, 17), endDate: new Date(2026, 5, 15, 23, 59), year: 5026, color: "#e53935", order: 5 },
-            { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(2026, 5, 16), endDate: new Date(2026, 6, 14, 23, 59), year: 5026, color: "#388e3c", order: 6 },
+            { month: "ᱵᱟᱺᱡᱷᱮᱸᱴ", startDate: new Date(2026, 5, 16), endDate: new Date(2026, 6, 14, 23, 59), year: 5026, color: "#388e3c", order: 6 },
             { month: "ᱟᱥᱟᱲ", startDate: new Date(2026, 6, 15), endDate: new Date(2026, 7, 12, 23, 59), year: 5026, color: "#e53935", order: 7 },
             { month: "ᱥᱟᱱ", startDate: new Date(2026, 7, 13), endDate: new Date(2026, 8, 11, 23, 59), year: 5026, color: "#388e3c", order: 8 },
             { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(2026, 8, 12), endDate: new Date(2026, 9, 10, 23, 59), year: 5026, color: "#e53935", order: 9 },
@@ -6037,407 +5388,386 @@ function getSantaliMonthMap(year) {
     else if (year === 2027) {
         return [
             { month: "ᱟᱸᱜᱷᱟᱬ", startDate: new Date(2026, 11, 10), endDate: new Date(2027, 0, 7, 23, 59), year: 5026, color: "#388e3c", order: 12 },
-            { month: "ᱯᱩᱥ", startDate: new Date(2027, 0, 8), endDate: new Date(2027, 1, 5, 23, 59), year: 5026, color: "#e53935", order: 13 },
-            { month:"ᱢᱟᱜᱽ", startDate:new Date(2027,1,7), endDate:new Date(2027,2,8,23,59),  year:5027, color:"##388e3c", order:1  },
-            { month:"ᱯᱷᱟᱹᱜᱩᱱ", startDate:new Date(2027,2,9), endDate:new Date(2027,3,7,23,59),  year:5027, color:"#e53935", order:2 },
-            { month:"ᱪᱟᱹᱛ", startDate:new Date(2027,3,8), endDate:new Date(2027,4,6,23,59),  year:5027, color:"#388e3c", order:3 },
-            { month:"ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate:new Date(2027,4,7), endDate:new Date(2027,5,5,23,59),  year:5027, color:"#e53935", order:4 },
-            { month:"ᱡᱷᱮᱸᱴ", startDate:new Date(2027,5,6), endDate:new Date(2027,6,4,23,59),  year:5027, color:"#388e3c", order:5 },
-            { month:"ᱟᱥᱟᱲ", startDate:new Date(2027,6,5), endDate:new Date(2027,7,2,23,59), year:5027, color:"#e53935", order:6 },
-            { month:"ᱥᱟᱱ", startDate:new Date(2027,7,3), endDate:new Date(2027,7,31,23,59), year:5027, color:"#388e3c", order:7 },
-            { month:"ᱵᱷᱟᱫᱚᱨ", startDate:new Date(2027,8,1), endDate:new Date(2027,8,30,23,59), year:5027, color:"#e53935", order:8  },
-            { month:"ᱫᱟᱸᱥᱟᱸᱭ", startDate:new Date(2027,9,1), endDate:new Date(2027,9,29,23,59), year:5027, color:"##388e3c", order:9  },
-            { month:"ᱥᱚᱦᱨᱟᱭ", startDate:new Date(2027,9,30), endDate:new Date(2027,10,28,23,59),year:5027, color:"#e53935", order:10 },
-            { month:"ᱟᱸᱜᱷᱟᱲ", startDate:new Date(2027,10,29), endDate:new Date(2027,11,28,23,59),year:5027, color:"#388e3c", order:11 },
-            { month:"ᱯᱩᱥ", startDate:new Date(2027,11,29), endDate:new Date(2028,0,26,23,59), year:5027, color:"#388e3c", order:12 }
-    ];
+            { month: "ᱯᱩᱥ", startDate: new Date(2027, 0, 8), endDate: new Date(2027, 1, 5, 23, 59), year: 5026, color: "#e53935", order: 13 }
+        ];
     }
-   
+    // Manual mapping 2028–2050 preserved from the existing hard-coded manual map.
  else if (year === 2028) {
-    return [
-        { month:"ᱯᱩᱥ",    startDate:new Date(2027,11,29), endDate:new Date(2028,0,26,23,59), year:5028, color:"#388e3c", order:12 },
-        { month:"ᱢᱟᱜᱽ",   startDate:new Date(2028,0,27), endDate:new Date(2028,1,25,23,59), year:5028, color:"#e53935", order:1  },
-        { month:"ᱯᱷᱟᱹᱜᱩᱱ",startDate:new Date(2028,1,26), endDate:new Date(2028,2,26,23,59), year:5028, color:"#388e3c", order:2  },
-        { month:"ᱪᱟᱹᱛ",   startDate:new Date(2028,2,27), endDate:new Date(2028,3,24,23,59), year:5028, color:"#e53935", order:3  },
-        { month:"ᱵᱟᱹᱭᱥᱟᱹᱠ",startDate:new Date(2028,3,25), endDate:new Date(2028,4,24,23,59), year:5028, color:"#388e3c", order:4  },
-        { month:"ᱡᱷᱮᱸᱴ",  startDate:new Date(2028,4,25), endDate:new Date(2028,5,22,23,59), year:5028, color:"#e53935", order:5  },
-        { month:"ᱟᱥᱟᱲ",   startDate:new Date(2028,5,23), endDate:new Date(2028,6,22,23,59), year:5028, color:"#388e3c", order:6  },
-        { month:"ᱥᱟᱱ",    startDate:new Date(2028,6,23), endDate:new Date(2028,7,20,23,59), year:5028, color:"#e53935", order:7  },
-        { month:"ᱵᱷᱟᱫᱚᱨ",  startDate:new Date(2028,7,21), endDate:new Date(2028,8,18,23,59), year:5028, color:"#388e3c", order:8  },
-        { month:"ᱫᱟᱸᱥᱟᱸᱭ", startDate:new Date(2028,8,19), endDate:new Date(2028,9,18,23,59),year:5028, color:"#e53935", order:9  },
-        { month:"ᱥᱚᱦᱨᱟᱭ",  startDate:new Date(2028,9,19),endDate:new Date(2028,10,16,23,59),year:5028, color:"#388e3c", order:10 },
-        { month:"ᱟᱸᱜᱷᱟᱬ", startDate:new Date(2028,10,17),endDate:new Date(2029,11,16,23,59), year:5028, color:"#e53935", order:11 },
-        { month:"ᱯᱩᱥ",    startDate:new Date(2028,11,17),endDate:new Date(2029,0,14,23,59), year:5028, color:"#388e3c", order:12 }
-    ];
-}
-else if (year === 2029) {
-    return [
-        { month:"ᱯᱩᱥ",    startDate:new Date(2028,11,17), endDate:new Date(2029,0,14,23,59), year:5029, color:"#388e3c", order:12 },
-        { month:"ᱢᱟᱜᱽ",   startDate:new Date(2029,0,15), endDate:new Date(2029,1,13,23,59), year:5029, color:"#e53935", order:1  },
-        { month:"ᱯᱷᱟᱹᱜᱩᱱ",startDate:new Date(2029,1,14), endDate:new Date(2029,2,15,23,59), year:5029, color:"#388e3c", order:2  },
-        { month:"ᱪᱟᱹᱛ",   startDate:new Date(2029,2,16), endDate:new Date(2029,3,13,23,59), year:5029, color:"#e53935", order:3  },
-        { month:"ᱵᱟᱹᱭᱥᱟᱹᱠ",startDate:new Date(2029,3,14), endDate:new Date(2029,4,13,23,59), year:5029, color:"#388e3c", order:4  },
-        { month:"ᱡᱷᱮᱸᱴ",  startDate:new Date(2029,4,14), endDate:new Date(2029,5,12,23,59), year:5029, color:"#e53935", order:5  },
-        { month:"ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ",startDate:new Date(2029,5,13), endDate:new Date(2029,6,11,23,59), year:5029, color:"#388e3c", order:6  },
-        { month:"ᱟᱥᱟᱲ",   startDate:new Date(2029,6,12), endDate:new Date(2029,7,10,23,59),  year:5029, color:"#e53935", order:7  },
-        { month:"ᱥᱟᱱ",    startDate:new Date(2029,7,11),  endDate:new Date(2029,8,8,23,59),  year:5029, color:"#388e3c", order:8  },
-        { month:"ᱵᱷᱟᱫᱚᱨ",  startDate:new Date(2029,8,9),  endDate:new Date(2029,9,7,23,59), year:5029, color:"#e53935", order:9  },
-        { month:"ᱫᱟᱸᱥᱟᱸᱭ", startDate:new Date(2029,9,8), endDate:new Date(2029,10,6,23,59), year:5029, color:"#388e3c", order:10 },
-        { month:"ᱥᱚᱦᱨᱟᱭ",  startDate:new Date(2029,10,7), endDate:new Date(2029,11,5,23,59),  year:5029, color:"#e53935", order:11 },
-        { month:"ᱟᱸᱜᱷᱟᱬ", startDate:new Date(2029,11,6), endDate:new Date(2030,0,4,23,59),  year:5029, color:"#388e3c", order:11 }
-    ];
-}
-else if (year === 2030) {
-    return [
-        { month:"ᱟᱸᱜᱷᱟᱬ", startDate:new Date(2029,11,6), endDate:new Date(2030,0,4,23,59),  year:5029, color:"#388e3c", order:11 },
-        { month:"ᱯᱩᱥ",    startDate:new Date(2030,0,5),  endDate:new Date(2030,1,2,23,59),  year:5030, color:"#e53935", order:12 },
-        { month:"ᱢᱟᱜᱽ",   startDate:new Date(2030,1,3),  endDate:new Date(2030,2,4,23,59),  year:5030, color:"#388e3c", order:1  },
-        { month:"ᱯᱷᱟᱹᱜᱩᱱ",startDate:new Date(2030,2,5),  endDate:new Date(2030,3,3,23,59),  year:5030, color:"#e53935", order:2  },
-        { month:"ᱪᱟᱹᱛ",   startDate:new Date(2030,3,4),  endDate:new Date(2030,4,2,23,59),  year:5030, color:"#388e3c", order:3  },
-        { month:"ᱵᱟᱹᱭᱥᱟᱹᱠ",startDate:new Date(2030,4,3),  endDate:new Date(2030,5,1,23,59),  year:5030, color:"#e53935", order:4  },
-        { month:"ᱡᱷᱮᱸᱴ",  startDate:new Date(2030,5,2),  endDate:new Date(2030,6,1,23,59),  year:5030, color:"#388e3c", order:5  },
-        { month:"ᱟᱥᱟᱲ",   startDate:new Date(2030,6,2),  endDate:new Date(2030,6,30,23,59), year:5030, color:"#e53935", order:6  },
-        { month:"ᱥᱟᱱ",    startDate:new Date(2030,6,31), endDate:new Date(2030,7,29,23,59), year:5030, color:"#388e3c", order:7  },
-        { month:"ᱵᱷᱟᱫᱚᱨ",  startDate:new Date(2030,7,30), endDate:new Date(2030,8,27,23,59), year:5030, color:"#e53935", order:8  },
-        { month:"ᱫᱟᱸᱥᱟᱸᱭ", startDate:new Date(2030,8,28), endDate:new Date(2030,9,27,23,59), year:5030, color:"#388e3c", order:9  },
-        { month:"ᱥᱚᱦᱨᱟᱭ",  startDate:new Date(2030,9,28), endDate:new Date(2030,10,25,23,59),year:5030, color:"#e53935", order:10 },
-        { month:"ᱟᱸᱜᱷᱟᱬ",  startDate:new Date(2030,10,26),endDate:new Date(2030,11,24,23,59),year:5030, color:"#388e3c", order:11 }
-    ];
-}
-else if (year === 2031) {
-    return [
-        { month:"ᱟᱸᱜᱷᱟᱬ", startDate:new Date(2030,11,26),endDate:new Date(2031,0,23,23,59), year:5030, color:"#388e3c", order:11 },
-        { month:"ᱢᱟᱜᱽ",   startDate:new Date(2031,0,24), endDate:new Date(2031,1,21,23,59), year:5031, color:"#e53935", order:1  },
-        { month:"ᱯᱷᱟᱹᱜᱩᱱ",startDate:new Date(2031,1,22), endDate:new Date(2031,2,23,23,59), year:5031, color:"#388e3c", order:2  },
-        { month:"ᱪᱟᱹᱛ",   startDate:new Date(2031,2,24), endDate:new Date(2031,3,21,23,59), year:5031, color:"#e53935", order:3  },
-        { month:"ᱵᱟᱹᱭᱥᱟᱹᱠ",startDate:new Date(2031,3,22), endDate:new Date(2031,4,21,23,59), year:5031, color:"#388e3c", order:4  },
-        { month:"ᱡᱷᱮᱸᱴ",  startDate:new Date(2031,4,22), endDate:new Date(2031,5,20,23,59), year:5031, color:"#e53935", order:5  },
-        { month:"ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ",startDate:new Date(2031,5,21), endDate:new Date(2031,6,19,23,59), year:5031, color:"#388e3c", order:6  },
-        { month:"ᱟᱥᱟᱲ",   startDate:new Date(2031,6,20), endDate:new Date(2031,7,18,23,59), year:5031, color:"#e53935", order:7  },
-        { month:"ᱥᱟᱱ",    startDate:new Date(2031,7,19), endDate:new Date(2031,8,17,23,59), year:5031, color:"#388e3c", order:8  },
-        { month:"ᱵᱷᱟᱫᱚᱨ",  startDate:new Date(2031,8,18), endDate:new Date(2031,9,16,23,59), year:5031, color:"#e53935", order:9  },
-        { month:"ᱫᱟᱸᱥᱟᱸᱭ", startDate:new Date(2031,9,17), endDate:new Date(2031,10,15,23,59), year:5031, color:"#388e3c", order:10 },
-        { month:"ᱥᱚᱦᱨᱟᱭ",  startDate:new Date(2031,10,16),endDate:new Date(2031,11,14,23,59),year:5031, color:"#e53935", order:11 }
-    ];
-}
-else if (year === 2032) {
-    return [
-        { month:"ᱟᱸᱜᱷᱟᱬ", startDate:new Date(2031,11,15),endDate:new Date(2032,0,13,23,59), year:5031, color:"#388e3c", order:11 },
-        { month:"ᱯᱩᱥ",    startDate:new Date(2032,0,14), endDate:new Date(2032,1,11,23,59), year:5032, color:"#e53935", order:12 },
-        { month:"ᱢᱟᱜᱽ",   startDate:new Date(2032,1,12), endDate:new Date(2032,2,11,23,59), year:5032, color:"#388e3c", order:1  },
-        { month:"ᱯᱷᱟᱹᱜᱩᱱ",startDate:new Date(2032,2,12), endDate:new Date(2032,3,10,23,59), year:5032, color:"#e53935", order:2  },
-        { month:"ᱪᱟᱹᱛ",   startDate:new Date(2032,3,11), endDate:new Date(2032,4,9,23,59),  year:5032, color:"#388e3c", order:3  },
-        { month:"ᱵᱟᱹᱭᱥᱟᱹᱠ",startDate:new Date(2032,4,10), endDate:new Date(2032,5,8,23,59),  year:5032, color:"#e53935", order:4  },
-        { month:"ᱡᱷᱮᱸᱴ",  startDate:new Date(2032,5,9),  endDate:new Date(2032,6,7,23,59),  year:5032, color:"#388e3c", order:5  },
-        { month:"ᱟᱥᱟᱲ",   startDate:new Date(2032,6,8),  endDate:new Date(2032,7,6,23,59),  year:5032, color:"#e53935", order:6  },
-        { month:"ᱥᱟᱱ",    startDate:new Date(2032,7,7),  endDate:new Date(2032,8,5,23,59),  year:5032, color:"#388e3c", order:7  },
-        { month:"ᱵᱷᱟᱫᱚᱨ",  startDate:new Date(2032,8,6),  endDate:new Date(2032,9,4,23,59),  year:5032, color:"#e53935", order:8  },
-        { month:"ᱫᱟᱸᱥᱟᱸᱭ", startDate:new Date(2032,9,5),  endDate:new Date(2032,10,3,23,59), year:5032, color:"#388e3c", order:9  },
-        { month:"ᱥᱚᱦᱨᱟᱭ",  startDate:new Date(2032,10,4), endDate:new Date(2032,11,3,23,59), year:5032, color:"#e53935", order:10 },
-        { month:"ᱟᱸᱜᱷᱟᱬ",  startDate:new Date(2032,11,4), endDate:new Date(2033,0,1,23,59),  year:5032, color:"#388e3c", order:11 }
-    ];
-}
-else if (year === 2033) {
-    return [
-        { month:"ᱟᱸᱜᱷᱟᱬ", startDate:new Date(2032,11,4), endDate:new Date(2033,0,1,23,59),  year:5032, color:"#388e3c", order:11 },
-        { month:"ᱯᱩᱥ",    startDate:new Date(2033,0,2),  endDate:new Date(2033,0,31,23,59), year:5033, color:"#e53935", order:12 },
-        { month:"ᱢᱟᱜᱽ",   startDate:new Date(2033,1,1),  endDate:new Date(2033,2,1,23,59),  year:5033, color:"#388e3c", order:1  },
-        { month:"ᱯᱷᱟᱹᱜᱩᱱ",startDate:new Date(2033,2,2),  endDate:new Date(2033,2,30,23,59), year:5033, color:"#e53935", order:2  },
-        { month:"ᱪᱟᱹᱛ",   startDate:new Date(2033,2,31), endDate:new Date(2033,3,29,23,59), year:5033, color:"#388e3c", order:3  },
-        { month:"ᱵᱟᱹᱭᱥᱟᱹᱠ",startDate:new Date(2033,3,30), endDate:new Date(2033,4,28,23,59), year:5033, color:"#e53935", order:4  },
-        { month:"ᱡᱷᱮᱸᱴ",  startDate:new Date(2033,4,29), endDate:new Date(2033,5,27,23,59), year:5033, color:"#388e3c", order:5  },
-        { month:"ᱟᱥᱟᱲ",   startDate:new Date(2033,5,28), endDate:new Date(2033,6,26,23,59), year:5033, color:"#e53935", order:6  },
-        { month:"ᱥᱟᱱ",    startDate:new Date(2033,6,27), endDate:new Date(2033,7,25,23,59), year:5033, color:"#388e3c", order:7  },
-        { month:"ᱵᱷᱟᱫᱚᱨ",  startDate:new Date(2033,7,26), endDate:new Date(2033,8,23,23,59), year:5033, color:"#e53935", order:8  },
-        { month:"ᱫᱟᱸᱥᱟᱸᱭ", startDate:new Date(2033,8,24), endDate:new Date(2033,9,23,23,59), year:5033, color:"#388e3c", order:9  },
-        { month:"ᱥᱚᱦᱨᱟᱭ",  startDate:new Date(2033,9,24), endDate:new Date(2033,10,22,23,59),year:5033, color:"#e53935", order:10 },
-        { month:"ᱟᱸᱜᱷᱟᱬ",  startDate:new Date(2033,10,23),endDate:new Date(2033,11,22,23,59),year:5033, color:"#388e3c", order:11 },
-        { month:"ᱯᱩᱥ",     startDate:new Date(2033,11,23),endDate:new Date(2034,0,20,23,59), year:5033, color:"#e53935", order:12 }
-    ];
-}
-else if (year === 2034) {
-    return [
-        { month:"ᱟᱸᱜᱷᱟᱬ", startDate:new Date(2033,11,23),endDate:new Date(2034,0,20,23,59), year:5033, color:"#388e3c", order:11 },
-        { month:"ᱢᱟᱜᱽ",   startDate:new Date(2034,0,21), endDate:new Date(2034,1,19,23,59), year:5034, color:"#e53935", order:1  },
-        { month:"ᱯᱷᱟᱹᱜᱩᱱ",startDate:new Date(2034,1,20), endDate:new Date(2034,2,20,23,59), year:5034, color:"#388e3c", order:2  },
-        { month:"ᱪᱟᱹᱛ",   startDate:new Date(2034,2,21), endDate:new Date(2034,3,19,23,59), year:5034, color:"#e53935", order:3  },
-        { month:"ᱵᱟᱹᱭᱥᱟᱹᱠ",startDate:new Date(2034,3,20), endDate:new Date(2034,4,18,23,59), year:5034, color:"#388e3c", order:4  },
-        { month:"ᱡᱷᱮᱸᱴ",  startDate:new Date(2034,4,19), endDate:new Date(2034,5,16,23,59), year:5034, color:"#e53935", order:5  },
-        { month:"ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ",startDate:new Date(2034,5,17), endDate:new Date(2034,6,15,23,59), year:5034, color:"#388e3c", order:6  },
-        { month:"ᱟᱥᱟᱲ",   startDate:new Date(2034,6,16), endDate:new Date(2034,7,14,23,59), year:5034, color:"#e53935", order:7  },
-        { month:"ᱥᱟᱱ",    startDate:new Date(2034,7,15), endDate:new Date(2034,8,12,23,59), year:5034, color:"#388e3c", order:8  },
-        { month:"ᱵᱷᱟᱫᱚᱨ",  startDate:new Date(2034,8,13), endDate:new Date(2034,9,12,23,59), year:5034, color:"#e53935", order:9  },
-        { month:"ᱫᱟᱸᱥᱟᱸᱭ", startDate:new Date(2034,9,13), endDate:new Date(2034,10,11,23,59),year:5034, color:"#388e3c", order:10 },
-        { month:"ᱥᱚᱦᱨᱟᱭ",  startDate:new Date(2034,10,12),endDate:new Date(2034,11,11,23,59),year:5034, color:"#e53935", order:11 }
-    ];
-}
-else if (year === 2035) {
-    return [
-        { month:"ᱟᱸᱜᱷᱟᱬ", startDate:new Date(2034,11,12),endDate:new Date(2035,0,9,23,59),  year:5034, color:"#388e3c", order:11 },
-        { month:"ᱯᱩᱥ",    startDate:new Date(2035,0,10), endDate:new Date(2035,1,8,23,59),  year:5035, color:"#e53935", order:12 },
-        { month:"ᱢᱟᱜᱽ",   startDate:new Date(2035,1,9),  endDate:new Date(2035,2,10,23,59), year:5035, color:"#388e3c", order:1  },
-        { month:"ᱯᱷᱟᱹᱜᱩᱱ",startDate:new Date(2035,2,11), endDate:new Date(2035,3,8,23,59),  year:5035, color:"#e53935", order:2  },
-        { month:"ᱪᱟᱹᱛ",   startDate:new Date(2035,3,9),  endDate:new Date(2035,4,8,23,59),  year:5035, color:"#388e3c", order:3  },
-        { month:"ᱵᱟᱹᱭᱥᱟᱹᱠ",startDate:new Date(2035,4,9),  endDate:new Date(2035,5,6,23,59),  year:5035, color:"#e53935", order:4  },
-        { month:"ᱡᱷᱮᱸᱴ",  startDate:new Date(2035,5,7),  endDate:new Date(2035,6,5,23,59),  year:5035, color:"#388e3c", order:5  },
-        { month:"ᱟᱥᱟᱲ",   startDate:new Date(2035,6,6),  endDate:new Date(2035,7,3,23,59),  year:5035, color:"#e53935", order:6  },
-        { month:"ᱥᱟᱱ",    startDate:new Date(2035,7,4),  endDate:new Date(2035,8,2,23,59),  year:5035, color:"#388e3c", order:7  },
-        { month:"ᱵᱷᱟᱫᱚᱨ",  startDate:new Date(2035,8,3),  endDate:new Date(2035,9,1,23,59),  year:5035, color:"#e53935", order:8  },
-        { month:"ᱫᱟᱸᱥᱟᱸᱭ", startDate:new Date(2035,9,2),  endDate:new Date(2035,10,30,23,59),year:5035, color:"#388e3c", order:9  },
-        { month:"ᱥᱚᱦᱨᱟᱭ",  startDate:new Date(2035,11,1), endDate:new Date(2035,11,29,23,59),year:5035, color:"#e53935", order:10 },
-        { month:"ᱟᱸᱜᱷᱟᱬ",  startDate:new Date(2035,11,30),endDate:new Date(2036,0,28,23,59), year:5035, color:"#388e3c", order:11 }
-    ];
-}
-else if (year === 2036) {
-    return [
-        { month:"ᱟᱸᱜᱷᱟᱬ", startDate:new Date(2035,11,30),endDate:new Date(2036,0,28,23,59), year:5035, color:"#388e3c", order:11 },
-        { month:"ᱯᱩᱥ",    startDate:new Date(2036,0,29), endDate:new Date(2036,1,27,23,59), year:5036, color:"#e53935", order:12 },
-        { month:"ᱢᱟᱜᱽ",   startDate:new Date(2036,1,28), endDate:new Date(2036,2,28,23,59), year:5036, color:"#388e3c", order:1  },
-        { month:"ᱯᱷᱟᱹᱜᱩᱱ",startDate:new Date(2036,2,29), endDate:new Date(2036,3,26,23,59), year:5036, color:"#e53935", order:2  },
-        { month:"ᱪᱟᱹᱛ",   startDate:new Date(2036,3,27), endDate:new Date(2036,4,26,23,59), year:5036, color:"#388e3c", order:3  },
-        { month:"ᱵᱟᱹᱭᱥᱟᱹᱠ",startDate:new Date(2036,4,27), endDate:new Date(2036,5,24,23,59), year:5036, color:"#e53935", order:4  },
-        { month:"ᱡᱷᱮᱸᱴ",  startDate:new Date(2036,5,25), endDate:new Date(2036,6,23,23,59), year:5036, color:"#388e3c", order:5  },
-        { month:"ᱟᱥᱟᱲ",   startDate:new Date(2036,6,24), endDate:new Date(2036,7,21,23,59), year:5036, color:"#e53935", order:6  },
-        { month:"ᱥᱟᱱ",    startDate:new Date(2036,7,22), endDate:new Date(2036,8,20,23,59), year:5036, color:"#388e3c", order:7  },
-        { month:"ᱵᱷᱟᱫᱚᱨ",  startDate:new Date(2036,8,21), endDate:new Date(2036,9,19,23,59), year:5036, color:"#e53935", order:8  },
-        { month:"ᱫᱟᱸᱥᱟᱸᱭ", startDate:new Date(2036,9,20), endDate:new Date(2036,10,18,23,59),year:5036, color:"#388e3c", order:9  },
-        { month:"ᱥᱚᱦᱨᱟᱭ",  startDate:new Date(2036,10,19),endDate:new Date(2036,11,17,23,59),year:5036, color:"#e53935", order:10 },
-        { month:"ᱟᱸᱜᱷᱟᱬ",  startDate:new Date(2036,11,18),endDate:new Date(2037,0,16,23,59), year:5036, color:"#388e3c", order:11 }
-    ];
-}
-else if (year === 2037) {
-    return [
-        { month:"ᱟᱸᱜᱷᱟᱬ", startDate:new Date(2036,11,18),endDate:new Date(2037,0,16,23,59), year:5036, color:"#388e3c", order:11 },
-        { month:"ᱯᱩᱥ",    startDate:new Date(2037,0,17), endDate:new Date(2037,1,15,23,59), year:5037, color:"#e53935", order:12 },
-        { month:"ᱢᱟᱜᱽ",   startDate:new Date(2037,1,16), endDate:new Date(2037,2,17,23,59), year:5037, color:"#388e3c", order:1  },
-        { month:"ᱯᱷᱟᱹᱜᱩᱱ",startDate:new Date(2037,2,18), endDate:new Date(2037,3,15,23,59), year:5037, color:"#e53935", order:2  },
-        { month:"ᱪᱟᱹᱛ",   startDate:new Date(2037,3,16), endDate:new Date(2037,4,15,23,59), year:5037, color:"#388e3c", order:3  },
-        { month:"ᱵᱟᱹᱭᱥᱟᱹᱠ",startDate:new Date(2037,4,16), endDate:new Date(2037,5,13,23,59), year:5037, color:"#e53935", order:4  },
-        { month:"ᱡᱷᱮᱸᱴ",  startDate:new Date(2037,5,14), endDate:new Date(2037,6,13,23,59), year:5037, color:"#388e3c", order:5  },
-        { month:"ᱟᱥᱟᱲ",   startDate:new Date(2037,6,14), endDate:new Date(2037,7,11,23,59), year:5037, color:"#e53935", order:6  },
-        { month:"ᱥᱟᱱ",    startDate:new Date(2037,7,12), endDate:new Date(2037,8,9,23,59),  year:5037, color:"#388e3c", order:7  },
-        { month:"ᱵᱷᱟᱫᱚᱨ",  startDate:new Date(2037,8,10), endDate:new Date(2037,9,9,23,59),  year:5037, color:"#e53935", order:8  },
-        { month:"ᱫᱟᱸᱥᱟᱸᱭ", startDate:new Date(2037,9,10), endDate:new Date(2037,10,7,23,59), year:5037, color:"#388e3c", order:9  },
-        { month:"ᱥᱚᱦᱨᱟᱭ",  startDate:new Date(2037,10,8), endDate:new Date(2037,11,7,23,59), year:5037, color:"#e53935", order:10 },
-        { month:"ᱟᱸᱜᱷᱟᱬ",  startDate:new Date(2037,11,8), endDate:new Date(2038,0,5,23,59),  year:5037, color:"#388e3c", order:11 }
-    ];
-}
-else if (year === 2038) {
-    return [
-        { month:"ᱟᱸᱜᱷᱟᱬ", startDate:new Date(2037,11,8), endDate:new Date(2038,0,5,23,59),  year:5037, color:"#388e3c", order:11 },
-        { month:"ᱯᱩᱥ",    startDate:new Date(2038,0,6),  endDate:new Date(2038,1,4,23,59),  year:5038, color:"#e53935", order:12 },
-        { month:"ᱢᱟᱜᱽ",   startDate:new Date(2038,1,5),  endDate:new Date(2038,2,6,23,59),  year:5038, color:"#388e3c", order:1  },
-        { month:"ᱯᱷᱟᱹᱜᱩᱱ",startDate:new Date(2038,2,7),  endDate:new Date(2038,3,4,23,59),  year:5038, color:"#e53935", order:2  },
-        { month:"ᱪᱟᱹᱛ",   startDate:new Date(2038,3,5),  endDate:new Date(2038,4,5,23,59),  year:5038, color:"#388e3c", order:3  },
-        { month:"ᱵᱟᱹᱭᱥᱟᱹᱠ",startDate:new Date(2038,4,6),  endDate:new Date(2038,5,3,23,59),  year:5038, color:"#e53935", order:4  },
-        { month:"ᱡᱷᱮᱸᱴ",  startDate:new Date(2038,5,4),  endDate:new Date(2038,6,2,23,59),  year:5038, color:"#388e3c", order:5  },
-        { month:"ᱟᱥᱟᱲ",   startDate:new Date(2038,6,3),  endDate:new Date(2038,7,1,23,59),  year:5038, color:"#e53935", order:6  },
-        { month:"ᱥᱟᱱ",    startDate:new Date(2038,7,2),  endDate:new Date(2038,7,30,23,59), year:5038, color:"#388e3c", order:7  },
-        { month:"ᱵᱷᱟᱫᱚᱨ",  startDate:new Date(2038,7,31), endDate:new Date(2038,8,29,23,59), year:5038, color:"#e53935", order:8  },
-        { month:"ᱫᱟᱸᱥᱟᱸᱭ", startDate:new Date(2038,8,30), endDate:new Date(2038,9,28,23,59), year:5038, color:"#388e3c", order:9  },
-        { month:"ᱥᱚᱦᱨᱟᱭ",  startDate:new Date(2038,9,29), endDate:new Date(2038,10,26,23,59),year:5038, color:"#e53935", order:10 },
-        { month:"ᱟᱸᱜᱷᱟᱬ",  startDate:new Date(2038,10,27),endDate:new Date(2038,11,26,23,59),year:5038, color:"#388e3c", order:11 }
-    ];
-}
-else if (year === 2039) {
-    return [
-        { month:"ᱟᱸᱜᱷᱟᱬ", startDate:new Date(2038,11,27),endDate:new Date(2039,0,24,23,59), year:5038, color:"#388e3c", order:11 },
-        { month:"ᱢᱟᱜᱽ",   startDate:new Date(2039,0,25), endDate:new Date(2039,1,23,23,59), year:5039, color:"#e53935", order:1  },
-        { month:"ᱯᱷᱟᱹᱜᱩᱱ",startDate:new Date(2039,1,24), endDate:new Date(2039,2,24,23,59), year:5039, color:"#388e3c", order:2  },
-        { month:"ᱪᱟᱹᱛ",   startDate:new Date(2039,2,25), endDate:new Date(2039,3,23,23,59), year:5039, color:"#e53935", order:3  },
-        { month:"ᱵᱟᱹᱭᱥᱟᱹᱠ",startDate:new Date(2039,3,24), endDate:new Date(2039,4,23,23,59), year:5039, color:"#388e3c", order:4  },
-        { month:"ᱡᱷᱮᱸᱴ",  startDate:new Date(2039,4,24), endDate:new Date(2039,5,21,23,59), year:5039, color:"#e53935", order:5  },
-        { month:"ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ",startDate:new Date(2039,5,22), endDate:new Date(2039,6,21,23,59), year:5039, color:"#388e3c", order:6  },
-        { month:"ᱟᱥᱟᱲ",   startDate:new Date(2039,6,22), endDate:new Date(2039,7,20,23,59), year:5039, color:"#e53935", order:7  },
-        { month:"ᱥᱟᱱ",    startDate:new Date(2039,7,21), endDate:new Date(2039,8,18,23,59), year:5039, color:"#388e3c", order:8  },
-        { month:"ᱵᱷᱟᱫᱚᱨ",  startDate:new Date(2039,8,19), endDate:new Date(2039,9,18,23,59), year:5039, color:"#e53935", order:9  },
-        { month:"ᱫᱟᱸᱥᱟᱸᱭ", startDate:new Date(2039,9,19), endDate:new Date(2039,10,16,23,59),year:5039, color:"#388e3c", order:10 },
-        { month:"ᱥᱚᱦᱨᱟᱭ",  startDate:new Date(2039,10,17),endDate:new Date(2039,11,15,23,59),year:5039, color:"#e53935", order:11 }
-    ];
-}
-else if (year === 2040) {
-    return [
-        { month:"ᱟᱸᱜᱷᱟᱬ", startDate:new Date(2039,11,16),endDate:new Date(2040,0,14,23,59), year:5039, color:"#388e3c", order:11 },
-        { month:"ᱯᱩᱥ",    startDate:new Date(2040,0,15), endDate:new Date(2040,1,12,23,59), year:5040, color:"#e53935", order:12 },
-        { month:"ᱢᱟᱜᱽ",   startDate:new Date(2040,1,13), endDate:new Date(2040,2,13,23,59), year:5040, color:"#388e3c", order:1  },
-        { month:"ᱯᱷᱟᱹᱜᱩᱱ",startDate:new Date(2040,2,14), endDate:new Date(2040,3,11,23,59), year:5040, color:"#e53935", order:2  },
-        { month:"ᱪᱟᱹᱛ",   startDate:new Date(2040,3,12), endDate:new Date(2040,4,11,23,59), year:5040, color:"#388e3c", order:3  },
-        { month:"ᱵᱟᱹᱭᱥᱟᱹᱠ",startDate:new Date(2040,4,12), endDate:new Date(2040,5,9,23,59),  year:5040, color:"#e53935", order:4  },
-        { month:"ᱡᱷᱮᱸᱴ",  startDate:new Date(2040,5,10), endDate:new Date(2040,6,9,23,59),  year:5040, color:"#388e3c", order:5  },
-        { month:"ᱟᱥᱟᱲ",   startDate:new Date(2040,6,10), endDate:new Date(2040,7,8,23,59),  year:5040, color:"#e53935", order:6  },
-        { month:"ᱥᱟᱱ",    startDate:new Date(2040,7,9),  endDate:new Date(2040,8,6,23,59),  year:5040, color:"#388e3c", order:7  },
-        { month:"ᱵᱷᱟᱫᱚᱨ",  startDate:new Date(2040,8,7),  endDate:new Date(2040,9,6,23,59),  year:5040, color:"#e53935", order:8  },
-        { month:"ᱫᱟᱸᱥᱟᱸᱭ", startDate:new Date(2040,9,7),  endDate:new Date(2040,10,4,23,59), year:5040, color:"#388e3c", order:9  },
-        { month:"ᱥᱚᱦᱨᱟᱭ",  startDate:new Date(2040,10,5), endDate:new Date(2040,11,4,23,59), year:5040, color:"#e53935", order:10 },
-        { month:"ᱟᱸᱜᱷᱟᱬ",  startDate:new Date(2040,11,5), endDate:new Date(2041,0,3,23,59),  year:5040, color:"#388e3c", order:11 }
-    ];
-}
-else if (year === 2041) {
-    return [
-        { month:"ᱟᱸᱜᱷᱟᱬ", startDate:new Date(2040,11,5), endDate:new Date(2041,0,3,23,59),  year:5040, color:"#388e3c", order:11 },
-        { month:"ᱯᱩᱥ",    startDate:new Date(2041,0,4),  endDate:new Date(2041,1,1,23,59),  year:5041, color:"#e53935", order:12 },
-        { month:"ᱢᱟᱜᱽ",   startDate:new Date(2041,1,2),  endDate:new Date(2041,2,2,23,59),  year:5041, color:"#388e3c", order:1  },
-        { month:"ᱯᱷᱟᱹᱜᱩᱱ",startDate:new Date(2041,2,3),  endDate:new Date(2041,3,1,23,59),  year:5041, color:"#e53935", order:2  },
-        { month:"ᱪᱟᱹᱛ",   startDate:new Date(2041,3,2),  endDate:new Date(2041,3,30,23,59), year:5041, color:"#388e3c", order:3  },
-        { month:"ᱵᱟᱹᱭᱥᱟᱹᱠ",startDate:new Date(2041,4,1),  endDate:new Date(2041,4,30,23,59), year:5041, color:"#e53935", order:4  },
-        { month:"ᱡᱷᱮᱸᱴ",  startDate:new Date(2041,4,31), endDate:new Date(2041,5,28,23,59), year:5041, color:"#388e3c", order:5  },
-        { month:"ᱟᱥᱟᱲ",   startDate:new Date(2041,5,29), endDate:new Date(2041,6,28,23,59), year:5041, color:"#e53935", order:6  },
-        { month:"ᱥᱟᱱ",    startDate:new Date(2041,6,29), endDate:new Date(2041,7,26,23,59), year:5041, color:"#388e3c", order:7  },
-        { month:"ᱵᱷᱟᱫᱚᱨ",  startDate:new Date(2041,7,27), endDate:new Date(2041,8,25,23,59), year:5041, color:"#e53935", order:8  },
-        { month:"ᱫᱟᱸᱥᱟᱸᱭ", startDate:new Date(2041,8,26), endDate:new Date(2041,9,25,23,59), year:5041, color:"#388e3c", order:9  },
-        { month:"ᱥᱚᱦᱨᱟᱭ",  startDate:new Date(2041,9,26), endDate:new Date(2041,10,23,23,59),year:5041, color:"#e53935", order:10 },
-        { month:"ᱟᱸᱜᱷᱟᱬ",  startDate:new Date(2041,10,24),endDate:new Date(2041,11,23,23,59),year:5041, color:"#388e3c", order:11 },
-        { month:"ᱯᱩᱥ",     startDate:new Date(2041,11,24),endDate:new Date(2042,0,22,23,59), year:5041, color:"#e53935", order:12 }
-    ];
-}
-else if (year === 2042) {
-    return [
-        { month:"ᱟᱸᱜᱷᱟᱬ", startDate:new Date(2041,11,24),endDate:new Date(2042,0,22,23,59), year:5041, color:"#388e3c", order:11 },
-        { month:"ᱢᱟᱜᱽ",   startDate:new Date(2042,0,23), endDate:new Date(2042,1,20,23,59), year:5042, color:"#e53935", order:1  },
-        { month:"ᱯᱷᱟᱹᱜᱩᱱ",startDate:new Date(2042,1,21), endDate:new Date(2042,2,21,23,59), year:5042, color:"#388e3c", order:2  },
-        { month:"ᱪᱟᱹᱛ",   startDate:new Date(2042,2,22), endDate:new Date(2042,3,20,23,59), year:5042, color:"#e53935", order:3  },
-        { month:"ᱵᱟᱹᱭᱥᱟᱹᱠ",startDate:new Date(2042,3,21), endDate:new Date(2042,4,19,23,59), year:5042, color:"#388e3c", order:4  },
-        { month:"ᱡᱷᱮᱸᱴ",  startDate:new Date(2042,4,20), endDate:new Date(2042,5,18,23,59), year:5042, color:"#e53935", order:5  },
-        { month:"ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ",startDate:new Date(2042,5,19), endDate:new Date(2042,6,17,23,59), year:5042, color:"#388e3c", order:6  },
-        { month:"ᱟᱥᱟᱲ",   startDate:new Date(2042,6,18), endDate:new Date(2042,7,15,23,59), year:5042, color:"#e53935", order:7  },
-        { month:"ᱥᱟᱱ",    startDate:new Date(2042,7,16), endDate:new Date(2042,8,14,23,59), year:5042, color:"#388e3c", order:8  },
-        { month:"ᱵᱷᱟᱫᱚᱨ",  startDate:new Date(2042,8,15), endDate:new Date(2042,9,14,23,59), year:5042, color:"#e53935", order:9  },
-        { month:"ᱫᱟᱸᱥᱟᱸᱭ", startDate:new Date(2042,9,15), endDate:new Date(2042,10,13,23,59),year:5042, color:"#388e3c", order:10 },
-        { month:"ᱥᱚᱦᱨᱟᱭ",  startDate:new Date(2042,10,14),endDate:new Date(2042,11,12,23,59),year:5042, color:"#e53935", order:11 }
-    ];
-}
-else if (year === 2043) {
-    return [
-        { month:"ᱟᱸᱜᱷᱟᱬ", startDate:new Date(2042,11,13),endDate:new Date(2043,0,11,23,59), year:5042, color:"#388e3c", order:11 },
-        { month:"ᱯᱩᱥ",    startDate:new Date(2043,0,12), endDate:new Date(2043,1,10,23,59), year:5043, color:"#e53935", order:12 },
-        { month:"ᱢᱟᱜᱽ",   startDate:new Date(2043,1,11), endDate:new Date(2043,2,11,23,59), year:5043, color:"#388e3c", order:1  },
-        { month:"ᱯᱷᱟᱹᱜᱩᱱ",startDate:new Date(2043,2,12), endDate:new Date(2043,3,10,23,59), year:5043, color:"#e53935", order:2  },
-        { month:"ᱪᱟᱹᱛ",   startDate:new Date(2043,3,11), endDate:new Date(2043,4,9,23,59),  year:5043, color:"#388e3c", order:3  },
-        { month:"ᱵᱟᱹᱭᱥᱟᱹᱠ",startDate:new Date(2043,4,10), endDate:new Date(2043,5,7,23,59),  year:5043, color:"#e53935", order:4  },
-        { month:"ᱡᱷᱮᱸᱴ",  startDate:new Date(2043,5,8),  endDate:new Date(2043,6,6,23,59),  year:5043, color:"#388e3c", order:5  },
-        { month:"ᱟᱥᱟᱲ",   startDate:new Date(2043,6,7),  endDate:new Date(2043,7,5,23,59),  year:5043, color:"#e53935", order:6  },
-        { month:"ᱥᱟᱱ",    startDate:new Date(2043,7,6),  endDate:new Date(2043,8,3,23,59),  year:5043, color:"#388e3c", order:7  },
-        { month:"ᱵᱷᱟᱫᱚᱨ",  startDate:new Date(2043,8,4),  endDate:new Date(2043,9,3,23,59),  year:5043, color:"#e53935", order:8  },
-        { month:"ᱫᱟᱸᱥᱟᱸᱭ", startDate:new Date(2043,9,4),  endDate:new Date(2043,10,2,23,59), year:5043, color:"#388e3c", order:9  },
-        { month:"ᱥᱚᱦᱨᱟᱭ",  startDate:new Date(2043,10,3), endDate:new Date(2043,11,1,23,59), year:5043, color:"#e53935", order:10 },
-        { month:"ᱟᱸᱜᱷᱟᱬ",  startDate:new Date(2043,11,2), endDate:new Date(2043,11,31,23,59),year:5043, color:"#388e3c", order:11 }
-    ];
-}
-else if (year === 2044) {
-    return [
-        { month:"ᱯᱩᱥ",    startDate:new Date(2044,0,1),  endDate:new Date(2044,0,30,23,59), year:5044, color:"#e53935", order:12 },
-        { month:"ᱢᱟᱜᱽ",   startDate:new Date(2044,0,31), endDate:new Date(2044,1,29,23,59), year:5044, color:"#388e3c", order:1  },
-        { month:"ᱯᱷᱟᱹᱜᱩᱱ",startDate:new Date(2044,2,1),  endDate:new Date(2044,2,29,23,59), year:5044, color:"#e53935", order:2  },
-        { month:"ᱪᱟᱹᱛ",   startDate:new Date(2044,2,30), endDate:new Date(2044,3,28,23,59), year:5044, color:"#388e3c", order:3  },
-        { month:"ᱵᱟᱹᱭᱥᱟᱹᱠ",startDate:new Date(2044,3,29), endDate:new Date(2044,4,27,23,59), year:5044, color:"#e53935", order:4  },
-        { month:"ᱡᱷᱮᱸᱴ",  startDate:new Date(2044,4,28), endDate:new Date(2044,5,25,23,59), year:5044, color:"#388e3c", order:5  },
-        { month:"ᱟᱥᱟᱲ",   startDate:new Date(2044,5,26), endDate:new Date(2044,6,24,23,59), year:5044, color:"#e53935", order:6  },
-        { month:"ᱥᱟᱱ",    startDate:new Date(2044,6,25), endDate:new Date(2044,7,23,23,59), year:5044, color:"#388e3c", order:7  },
-        { month:"ᱵᱷᱟᱫᱚᱨ",  startDate:new Date(2044,7,24), endDate:new Date(2044,8,21,23,59), year:5044, color:"#e53935", order:8  },
-        { month:"ᱫᱟᱸᱥᱟᱸᱭ", startDate:new Date(2044,8,22), endDate:new Date(2044,9,21,23,59), year:5044, color:"#388e3c", order:9  },
-        { month:"ᱥᱚᱦᱨᱟᱭ",  startDate:new Date(2044,9,22), endDate:new Date(2044,10,19,23,59),year:5044, color:"#e53935", order:10 },
-        { month:"ᱟᱸᱜᱷᱟᱬ",  startDate:new Date(2044,10,20),endDate:new Date(2044,11,19,23,59),year:5044, color:"#388e3c", order:11 }
-    ];
-}
-else if (year === 2045) {
-    return [
-        { month:"ᱟᱸᱜᱷᱟᱬ", startDate:new Date(2044,11,20),endDate:new Date(2045,0,18,23,59), year:5044, color:"#388e3c", order:11 },
-        { month:"ᱯᱩᱥ",    startDate:new Date(2045,0,19), endDate:new Date(2045,1,17,23,59), year:5045, color:"#e53935", order:12 },
-        { month:"ᱢᱟᱜᱽ",   startDate:new Date(2045,1,18), endDate:new Date(2045,2,18,23,59), year:5045, color:"#388e3c", order:1  },
-        { month:"ᱯᱷᱟᱹᱜᱩᱱ",startDate:new Date(2045,2,19), endDate:new Date(2045,3,17,23,59), year:5045, color:"#e53935", order:2  },
-        { month:"ᱪᱟᱹᱛ",   startDate:new Date(2045,3,18), endDate:new Date(2045,4,16,23,59), year:5045, color:"#388e3c", order:3  },
-        { month:"ᱵᱟᱹᱭᱥᱟᱹᱠ",startDate:new Date(2045,4,17), endDate:new Date(2045,5,15,23,59), year:5045, color:"#e53935", order:4  },
-        { month:"ᱡᱷᱮᱸᱴ",  startDate:new Date(2045,5,16), endDate:new Date(2045,6,14,23,59), year:5045, color:"#388e3c", order:5  },
-        { month:"ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ",startDate:new Date(2045,6,15), endDate:new Date(2045,7,12,23,59), year:5045, color:"#e53935", order:6  },
-        { month:"ᱟᱥᱟᱲ",   startDate:new Date(2045,7,13), endDate:new Date(2045,8,11,23,59), year:5045, color:"#388e3c", order:7  },
-        { month:"ᱥᱟᱱ",    startDate:new Date(2045,8,12), endDate:new Date(2045,9,10,23,59), year:5045, color:"#e53935", order:8  },
-        { month:"ᱵᱷᱟᱫᱚᱨ",  startDate:new Date(2045,9,11), endDate:new Date(2045,10,9,23,59), year:5045, color:"#388e3c", order:9  },
-        { month:"ᱫᱟᱸᱥᱟᱸᱭ", startDate:new Date(2045,10,10),endDate:new Date(2045,11,8,23,59), year:5045, color:"#e53935", order:10 },
-        { month:"ᱥᱚᱦᱨᱟᱭ",  startDate:new Date(2045,11,9), endDate:new Date(2046,0,7,23,59),  year:5045, color:"#388e3c", order:11 }
-    ];
-}
-else if (year === 2046) {
-    return [
-        { month:"ᱟᱸᱜᱷᱟᱬ", startDate:new Date(2045,11,9), endDate:new Date(2046,0,7,23,59),  year:5045, color:"#388e3c", order:11 },
-        { month:"ᱯᱩᱥ",    startDate:new Date(2046,0,8),  endDate:new Date(2046,1,6,23,59),  year:5046, color:"#e53935", order:12 },
-        { month:"ᱢᱟᱜᱽ",   startDate:new Date(2046,1,7),  endDate:new Date(2046,2,7,23,59),  year:5046, color:"#388e3c", order:1  },
-        { month:"ᱯᱷᱟᱹᱜᱩᱱ",startDate:new Date(2046,2,8),  endDate:new Date(2046,3,6,23,59),  year:5046, color:"#e53935", order:2  },
-        { month:"ᱪᱟᱹᱛ",   startDate:new Date(2046,3,7),  endDate:new Date(2046,4,6,23,59),  year:5046, color:"#388e3c", order:3  },
-        { month:"ᱵᱟᱹᱭᱥᱟᱹᱠ",startDate:new Date(2046,4,7),  endDate:new Date(2046,5,4,23,59),  year:5046, color:"#e53935", order:4  },
-        { month:"ᱡᱷᱮᱸᱴ",  startDate:new Date(2046,5,5),  endDate:new Date(2046,6,4,23,59),  year:5046, color:"#388e3c", order:5  },
-        { month:"ᱟᱥᱟᱲ",   startDate:new Date(2046,6,5),  endDate:new Date(2046,7,2,23,59),  year:5046, color:"#e53935", order:6  },
-        { month:"ᱥᱟᱱ",    startDate:new Date(2046,7,3),  endDate:new Date(2046,7,31,23,59), year:5046, color:"#388e3c", order:7  },
-        { month:"ᱵᱷᱟᱫᱚᱨ",  startDate:new Date(2046,8,1),  endDate:new Date(2046,8,30,23,59), year:5046, color:"#e53935", order:8  },
-        { month:"ᱫᱟᱸᱥᱟᱸᱭ", startDate:new Date(2046,9,1),  endDate:new Date(2046,9,29,23,59), year:5046, color:"#388e3c", order:9  },
-        { month:"ᱥᱚᱦᱨᱟᱭ",  startDate:new Date(2046,9,30), endDate:new Date(2046,10,28,23,59),year:5046, color:"#e53935", order:10 },
-        { month:"ᱟᱸᱜᱷᱟᱬ",  startDate:new Date(2046,10,29),endDate:new Date(2046,11,27,23,59),year:5046, color:"#388e3c", order:11 }
-    ];
-}
-else if (year === 2047) {
-    return [
-        { month:"ᱟᱸᱜᱷᱟᱬ", startDate:new Date(2046,11,29),endDate:new Date(2047,0,26,23,59), year:5046, color:"#388e3c", order:11 },
-        { month:"ᱯᱩᱥ",    startDate:new Date(2047,0,27), endDate:new Date(2047,1,24,23,59), year:5047, color:"#e53935", order:12 },
-        { month:"ᱢᱟᱜᱽ",   startDate:new Date(2047,1,25), endDate:new Date(2047,2,26,23,59), year:5047, color:"#388e3c", order:1  },
-        { month:"ᱯᱷᱟᱹᱜᱩᱱ",startDate:new Date(2047,2,27), endDate:new Date(2047,3,25,23,59), year:5047, color:"#e53935", order:2  },
-        { month:"ᱪᱟᱹᱛ",   startDate:new Date(2047,3,26), endDate:new Date(2047,4,25,23,59), year:5047, color:"#388e3c", order:3  },
-        { month:"ᱵᱟᱹᱭᱥᱟᱹᱠ",startDate:new Date(2047,4,26), endDate:new Date(2047,5,23,23,59), year:5047, color:"#e53935", order:4  },
-        { month:"ᱡᱷᱮᱸᱴ",  startDate:new Date(2047,5,24), endDate:new Date(2047,6,23,23,59), year:5047, color:"#388e3c", order:5  },
-        { month:"ᱟᱥᱟᱲ",   startDate:new Date(2047,6,24), endDate:new Date(2047,7,21,23,59), year:5047, color:"#e53935", order:6  },
-        { month:"ᱥᱟᱱ",    startDate:new Date(2047,7,22), endDate:new Date(2047,8,20,23,59), year:5047, color:"#388e3c", order:7  },
-        { month:"ᱵᱷᱟᱫᱚᱨ",  startDate:new Date(2047,8,21), endDate:new Date(2047,9,19,23,59), year:5047, color:"#e53935", order:8  },
-        { month:"ᱫᱟᱸᱥᱟᱸᱭ", startDate:new Date(2047,9,20), endDate:new Date(2047,10,17,23,59),year:5047, color:"#388e3c", order:9  },
-        { month:"ᱥᱚᱦᱨᱟᱭ",  startDate:new Date(2047,10,18),endDate:new Date(2047,11,17,23,59),year:5047, color:"#e53935", order:10 }
-    ];
-}
-else if (year === 2048) {
-    return [
-        { month:"ᱟᱸᱜᱷᱟᱬ", startDate:new Date(2047,11,18),endDate:new Date(2048,0,15,23,59), year:5047, color:"#388e3c", order:11 },
-        { month:"ᱯᱩᱥ",    startDate:new Date(2048,0,16), endDate:new Date(2048,1,14,23,59), year:5048, color:"#e53935", order:12 },
-        { month:"ᱢᱟᱜᱽ",   startDate:new Date(2048,1,15), endDate:new Date(2048,2,14,23,59), year:5048, color:"#388e3c", order:1  },
-        { month:"ᱯᱷᱟᱹᱜᱩᱱ",startDate:new Date(2048,2,15), endDate:new Date(2048,3,13,23,59), year:5048, color:"#e53935", order:2  },
-        { month:"ᱪᱟᱹᱛ",   startDate:new Date(2048,3,14), endDate:new Date(2048,4,13,23,59), year:5048, color:"#388e3c", order:3  },
-        { month:"ᱵᱟᱹᱭᱥᱟᱹᱠ",startDate:new Date(2048,4,14), endDate:new Date(2048,5,11,23,59), year:5048, color:"#e53935", order:4  },
-        { month:"ᱡᱷᱮᱸᱴ",  startDate:new Date(2048,5,12), endDate:new Date(2048,6,11,23,59), year:5048, color:"#388e3c", order:5  },
-        { month:"ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ",startDate:new Date(2048,6,12), endDate:new Date(2048,7,9,23,59),  year:5048, color:"#e53935", order:6  },
-        { month:"ᱟᱥᱟᱲ",   startDate:new Date(2048,7,10), endDate:new Date(2048,8,8,23,59),  year:5048, color:"#388e3c", order:7  },
-        { month:"ᱥᱟᱱ",    startDate:new Date(2048,8,9),  endDate:new Date(2048,9,7,23,59),  year:5048, color:"#e53935", order:8  },
-        { month:"ᱵᱷᱟᱫᱚᱨ",  startDate:new Date(2048,9,8),  endDate:new Date(2048,10,6,23,59), year:5048, color:"#388e3c", order:9  },
-        { month:"ᱫᱟᱸᱥᱟᱸᱭ", startDate:new Date(2048,10,7), endDate:new Date(2048,11,5,23,59), year:5048, color:"#e53935", order:10 },
-        { month:"ᱥᱚᱦᱨᱟᱭ",  startDate:new Date(2048,11,6), endDate:new Date(2049,0,4,23,59),  year:5048, color:"#388e3c", order:11 }
-    ];
-}
-else if (year === 2049) {
-    return [
-        { month:"ᱟᱸᱜᱷᱟᱬ", startDate:new Date(2048,11,6), endDate:new Date(2049,0,4,23,59),  year:5048, color:"#388e3c", order:11 },
-        { month:"ᱯᱩᱥ",    startDate:new Date(2049,0,5),  endDate:new Date(2049,1,2,23,59),  year:5049, color:"#e53935", order:12 },
-        { month:"ᱢᱟᱜᱽ",   startDate:new Date(2049,1,3),  endDate:new Date(2049,2,4,23,59),  year:5049, color:"#388e3c", order:1  },
-        { month:"ᱯᱷᱟᱹᱜᱩᱱ",startDate:new Date(2049,2,5),  endDate:new Date(2049,3,2,23,59),  year:5049, color:"#e53935", order:2  },
-        { month:"ᱪᱟᱹᱛ",   startDate:new Date(2049,3,3),  endDate:new Date(2049,4,2,23,59),  year:5049, color:"#388e3c", order:3  },
-        { month:"ᱵᱟᱹᱭᱥᱟᱹᱠ",startDate:new Date(2049,4,3),  endDate:new Date(2049,4,31,23,59), year:5049, color:"#e53935", order:4  },
-        { month:"ᱡᱷᱮᱸᱴ",  startDate:new Date(2049,5,1),  endDate:new Date(2049,5,30,23,59), year:5049, color:"#388e3c", order:5  },
-        { month:"ᱟᱥᱟᱲ",   startDate:new Date(2049,6,1),  endDate:new Date(2049,6,30,23,59), year:5049, color:"#e53935", order:6  },
-        { month:"ᱥᱟᱱ",    startDate:new Date(2049,6,31), endDate:new Date(2049,7,28,23,59), year:5049, color:"#388e3c", order:7  },
-        { month:"ᱵᱷᱟᱫᱚᱨ",  startDate:new Date(2049,7,29), endDate:new Date(2049,8,27,23,59), year:5049, color:"#e53935", order:8  },
-        { month:"ᱫᱟᱸᱥᱟᱸᱭ", startDate:new Date(2049,8,28), endDate:new Date(2049,9,26,23,59), year:5049, color:"#388e3c", order:9  },
-        { month:"ᱥᱚᱦᱨᱟᱭ",  startDate:new Date(2049,9,27), endDate:new Date(2049,10,25,23,59),year:5049, color:"#e53935", order:10 },
-        { month:"ᱟᱸᱜᱷᱟᱬ",  startDate:new Date(2049,10,26),endDate:new Date(2049,11,24,23,59),year:5049, color:"#388e3c", order:11 }
-    ];
-}
-else if (year === 2050) {
-    return [
-        { month:"ᱟᱸᱜᱷᱟᱬ", startDate:new Date(2049,11,26),endDate:new Date(2050,0,23,23,59), year:5049, color:"#388e3c", order:11 },
-        { month:"ᱯᱩᱥ",    startDate:new Date(2050,0,24), endDate:new Date(2050,1,21,23,59), year:5050, color:"#e53935", order:12 },
-        { month:"ᱢᱟᱜᱽ",   startDate:new Date(2050,1,22), endDate:new Date(2050,2,23,23,59), year:5050, color:"#388e3c", order:1  },
-        { month:"ᱯᱷᱟᱹᱜᱩᱱ",startDate:new Date(2050,2,24), endDate:new Date(2050,3,21,23,59), year:5050, color:"#e53935", order:2  },
-        { month:"ᱪᱟᱹᱛ",   startDate:new Date(2050,3,22), endDate:new Date(2050,4,21,23,59), year:5050, color:"#388e3c", order:3  },
-        { month:"ᱵᱟᱹᱭᱥᱟᱹᱠ",startDate:new Date(2050,4,22), endDate:new Date(2050,5,19,23,59), year:5050, color:"#e53935", order:4  },
-        { month:"ᱡᱷᱮᱸᱴ",  startDate:new Date(2050,5,20), endDate:new Date(2050,6,19,23,59), year:5050, color:"#388e3c", order:5  },
-        { month:"ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ",startDate:new Date(2050,6,20), endDate:new Date(2050,7,17,23,59), year:5050, color:"#e53935", order:6  },
-        { month:"ᱟᱥᱟᱲ",   startDate:new Date(2050,7,18), endDate:new Date(2050,8,16,23,59), year:5050, color:"#388e3c", order:7  },
-        { month:"ᱥᱟᱱ",    startDate:new Date(2050,8,17), endDate:new Date(2050,9,16,23,59), year:5050, color:"#e53935", order:8  },
-        { month:"ᱵᱷᱟᱫᱚᱨ",  startDate:new Date(2050,9,17), endDate:new Date(2050,10,14,23,59),year:5050, color:"#388e3c", order:9  },
-        { month:"ᱫᱟᱸᱥᱟᱸᱭ", startDate:new Date(2050,10,15),endDate:new Date(2050,11,14,23,59),year:5050, color:"#e53935", order:10 }
-    ];
+            return [
+                { month: "ᱯᱩᱥ", startDate: new Date(year - 1, 11, 28), endDate: new Date(year, 0, 26, 23,59), year: year + 3000-1, color: "#388e3c" },
+                { month: "ᱢᱟᱜᱽ", startDate: new Date(year, 0, 27), endDate: new Date(year, 1, 25, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱯᱷᱟᱹᱜᱩᱱ", startDate: new Date(year, 1, 26), endDate: new Date(year, 2, 26, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱪᱟᱹᱛ", startDate: new Date(year, 2, 27), endDate: new Date(year, 3, 24, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(year, 3, 25), endDate: new Date(year, 4, 24, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(year, 4, 25), endDate: new Date(year, 5, 22, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱟᱥᱟᱲ", startDate: new Date(year, 5, 23), endDate: new Date(year, 6, 22, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱥᱟᱱ", startDate: new Date(year, 6, 23), endDate: new Date(year, 7, 20, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(year, 7, 21), endDate: new Date(year, 8, 18, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱫᱟᱸᱥᱟᱸᱭ", startDate: new Date(year, 8, 19), endDate: new Date(year, 9, 18, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱥᱚᱨᱦᱟᱭ", startDate: new Date(year, 9, 19), endDate: new Date(year, 10, 16, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱟᱸᱜᱷᱟᱲ", startDate: new Date(year, 10, 17), endDate: new Date(year, 11, 16, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱯᱩᱥ", startDate: new Date(year, 11, 17), endDate: new Date(year + 1, 0, 14, 23,59), year: year + 3000, color: "#388e3c" }
+            ];
+        } else if (year === 2029) {
+            return [
+                { month: "ᱯᱩᱥ", startDate: new Date(year - 1, 11, 17), endDate: new Date(year, 0, 14, 23,59), year: year + 3000-1, color: "#388e3c" },
+                { month: "ᱢᱟᱜᱽ", startDate: new Date(year, 0, 15), endDate: new Date(year, 1, 13, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱯᱷᱟᱹᱜᱩᱱ", startDate: new Date(year, 1, 14), endDate: new Date(year, 2, 15, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱪᱟᱹᱛ", startDate: new Date(year, 2, 16), endDate: new Date(year, 3, 13, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(year, 3, 14), endDate: new Date(year, 4, 13, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(year, 4, 14), endDate: new Date(year, 5, 12, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(year, 5, 13), endDate: new Date(year, 6, 11, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱟᱥᱟᱲ", startDate: new Date(year, 6, 12), endDate: new Date(year, 7, 10, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱥᱟᱱ", startDate: new Date(year, 7, 11), endDate: new Date(year, 8, 8, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(year, 8, 9), endDate: new Date(year, 9, 8, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱫᱟᱸᱥᱟᱸᱭ", startDate: new Date(year, 9, 9), endDate: new Date(year, 10, 6, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱥᱚᱨᱦᱟᱭ", startDate: new Date(year, 10, 7), endDate: new Date(year, 11, 5, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱟᱸᱜᱷᱟᱲ", startDate: new Date(year, 11, 6), endDate: new Date(year + 1, 0, 4, 23,59), year: year + 3000, color: "#e53935" }
+                
+            ];
+        } else if (year === 2030) {
+            return [
+                { month: "ᱟᱸᱜᱷᱟᱲ", startDate: new Date(year - 1, 11, 6), endDate: new Date(year, 0, 4, 23,59), year: year + 3000-1, color: "#388e3c" },
+                { month: "ᱯᱩᱥ", startDate: new Date(year, 0, 5), endDate: new Date(year, 1, 2, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱢᱟᱜᱽ", startDate: new Date(year, 1, 3), endDate: new Date(year, 2, 4, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱯᱷᱟᱹᱜᱩᱱ", startDate: new Date(year, 2, 5), endDate: new Date(year, 3, 3, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱪᱟᱹᱛ", startDate: new Date(year, 3, 4), endDate: new Date(year, 4, 2, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(year, 4, 3), endDate: new Date(year, 5, 1, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(year, 5, 2), endDate: new Date(year, 6, 1, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱟᱥᱟᱲ", startDate: new Date(year, 6, 2), endDate: new Date(year, 6, 30, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱥᱟᱱ", startDate: new Date(year, 6, 31), endDate: new Date(year, 7, 29, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(year, 7, 30), endDate: new Date(year, 8, 27, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱫᱟᱸᱥᱟᱸᱭ", startDate: new Date(year, 8, 28), endDate: new Date(year, 9, 27, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱥᱚᱨᱦᱟᱭ", startDate: new Date(year, 9, 28), endDate: new Date(year, 10, 25, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱟᱸᱜᱷᱟᱲ", startDate: new Date(year, 10, 26), endDate: new Date(year, 11, 24, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱯᱩᱥ", startDate: new Date(year, 11, 25), endDate: new Date(year + 1, 0, 23, 23,59), year: year + 3000, color: "#e53935" }
+            ];    
+        } else if (year === 2031) {
+            return [
+                { month: "ᱯᱩᱥ", startDate: new Date(year - 1, 11, 25), endDate: new Date(year, 0, 23, 23,59), year: year + 3000-1, color: "#e53935" },
+                { month: "ᱢᱟᱜᱽ", startDate: new Date(year, 0, 24), endDate: new Date(year, 1, 21, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱯᱷᱟᱹᱜᱩᱱ", startDate: new Date(year, 1, 22), endDate: new Date(year, 2, 23, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱪᱟᱹᱛ", startDate: new Date(year, 2, 24), endDate: new Date(year, 3, 21, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(year, 3, 22), endDate: new Date(year, 4, 21, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(year, 4, 22), endDate: new Date(year, 5, 20, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(year, 5, 21), endDate: new Date(year, 6, 19, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱟᱥᱟᱲ", startDate: new Date(year, 6, 20), endDate: new Date(year, 7, 18, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱥᱟᱱ", startDate: new Date(year, 7, 19), endDate: new Date(year, 8, 17, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(year, 8, 18), endDate: new Date(year, 9, 16, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱫᱟᱸᱥᱟᱸᱭ", startDate: new Date(year, 9, 17), endDate: new Date(year, 10, 15, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱥᱚᱨᱦᱟᱭ", startDate: new Date(year, 10, 16), endDate: new Date(year, 11, 14, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱟᱸᱜᱷᱟᱲ", startDate: new Date(year, 11, 15), endDate: new Date(year + 1, 0, 13, 23,59), year: year + 3000, color: "#e53935" }
+            ];
+         } else if (year === 2032) {
+            return [
+                { month: "ᱟᱸᱜᱷᱟᱲ", startDate: new Date(year - 1, 11, 15), endDate: new Date(year, 0, 13, 23,59), year: year + 3000-1, color: "#e53935" },
+                { month: "ᱯᱩᱥ", startDate: new Date(year, 0, 14), endDate: new Date(year, 1, 11, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱢᱟᱜᱽ", startDate: new Date(year, 1, 12), endDate: new Date(year, 2, 11, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱯᱷᱟᱹᱜᱩᱱ", startDate: new Date(year, 2, 12), endDate: new Date(year, 3, 10, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱪᱟᱹᱛ", startDate: new Date(year, 3, 11), endDate: new Date(year, 4, 9, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(year, 4, 10), endDate: new Date(year, 5, 8, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(year, 5, 9), endDate: new Date(year, 6, 7, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱟᱥᱟᱲ", startDate: new Date(year, 6, 8), endDate: new Date(year, 7, 6, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱥᱟᱱ", startDate: new Date(year, 7, 7), endDate: new Date(year, 8, 5, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(year, 8, 6), endDate: new Date(year, 9, 4, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱫᱟᱸᱥᱟᱸᱭ", startDate: new Date(year, 9, 5), endDate: new Date(year, 10, 3, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱥᱚᱨᱦᱟᱭ", startDate: new Date(year, 10, 4), endDate: new Date(year, 11, 3, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱟᱸᱜᱷᱟᱲ", startDate: new Date(year, 11, 4), endDate: new Date(year + 1, 0, 1, 23,59), year: year + 3000, color: "#e53935" }
+                ]; 
+        } else if (year === 2033) {
+            return [
+                { month: "ᱟᱸᱜᱷᱟᱲ", startDate: new Date(year - 1, 11, 4), endDate: new Date(year, 0, 1, 23,59), year: year + 3000-1, color: "#e53935" },
+                { month: "ᱯᱩᱥ", startDate: new Date(year, 0, 2), endDate: new Date(year, 0, 31, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱢᱟᱜᱽ", startDate: new Date(year, 1, 1), endDate: new Date(year, 2, 1, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱯᱷᱟᱹᱜᱩᱱ", startDate: new Date(year, 2, 2), endDate: new Date(year, 2, 30, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱪᱟᱹᱛ", startDate: new Date(year, 2, 31), endDate: new Date(year, 3, 29, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(year, 3, 30), endDate: new Date(year, 4, 28, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(year, 4, 29), endDate: new Date(year, 5, 27, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱟᱥᱟᱲ", startDate: new Date(year, 5, 28), endDate: new Date(year, 6, 26, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱥᱟᱱ", startDate: new Date(year, 6, 27), endDate: new Date(year, 7, 25, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(year, 7, 26), endDate: new Date(year, 8, 23, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱫᱟᱸᱥᱟᱸᱭ", startDate: new Date(year, 8, 24), endDate: new Date(year, 9, 23, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱥᱚᱨᱦᱟᱭ", startDate: new Date(year, 9, 24), endDate: new Date(year, 10, 22, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱟᱸᱜᱷᱟᱲ", startDate: new Date(year, 10, 23), endDate: new Date(year, 11, 22, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱯᱩᱥ", startDate: new Date(year, 11, 23), endDate: new Date(year + 1, 0, 20, 23,59), year: year + 3000, color: "#388e3c" }
+            ]; 
+        } else if (year === 2034) {
+            return [
+                { month: "ᱯᱩᱥ", startDate: new Date(year - 1, 11, 23), endDate: new Date(year, 0, 20, 23,59), year: year + 3000-1, color: "#388e3c" },
+                { month: "ᱢᱟᱜᱽ", startDate: new Date(year, 0, 21), endDate: new Date(year, 1, 19, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱯᱷᱟᱹᱜᱩᱱ", startDate: new Date(year, 1, 20), endDate: new Date(year, 2, 20, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱪᱟᱹᱛ", startDate: new Date(year, 2, 21), endDate: new Date(year, 3, 19, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(year, 3, 20), endDate: new Date(year, 4, 18, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(year, 4, 19), endDate: new Date(year, 5, 16, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(year, 5, 17), endDate: new Date(year, 6, 15, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱟᱥᱟᱲ", startDate: new Date(year, 6, 16), endDate: new Date(year, 7, 14, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱥᱟᱱ", startDate: new Date(year, 7, 15), endDate: new Date(year, 8, 12, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(year, 8, 13), endDate: new Date(year, 9, 12, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱫᱟᱸᱥᱟᱸᱭ", startDate: new Date(year, 9, 13), endDate: new Date(year, 10, 11, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱥᱚᱨᱦᱟᱭ", startDate: new Date(year, 10, 12), endDate: new Date(year, 11, 11, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱟᱸᱜᱷᱟᱲ", startDate: new Date(year, 11, 12), endDate: new Date(year + 1, 0, 9, 23,59), year: year + 3000, color: "#388e3c" }
+            ];
+        } else if (year === 2035) {
+            return [
+                { month: "ᱟᱸᱜᱷᱟᱲ", startDate: new Date(year - 1, 11, 12), endDate: new Date(year, 0, 9, 23,59), year: year + 3000-1, color: "#388e3c" },
+                { month: "ᱯᱩᱥ", startDate: new Date(year, 0, 10), endDate: new Date(year, 1, 8, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱢᱟᱜᱽ", startDate: new Date(year, 1, 9), endDate: new Date(year, 2, 10, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱯᱷᱟᱹᱜᱩᱱ", startDate: new Date(year, 2, 11), endDate: new Date(year, 3, 8, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱪᱟᱹᱛ", startDate: new Date(year, 3, 9), endDate: new Date(year, 4, 8, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(year, 4, 9), endDate: new Date(year, 5, 6, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(year, 5, 7), endDate: new Date(year, 6, 5, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱟᱥᱟᱲ", startDate: new Date(year, 6, 6), endDate: new Date(year, 7, 3, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱥᱟᱱ", startDate: new Date(year, 7, 4), endDate: new Date(year, 8, 2, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(year, 8, 3), endDate: new Date(year, 9, 1, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱫᱟᱸᱥᱟᱸᱭ", startDate: new Date(year, 9, 2), endDate: new Date(year, 10, 30, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱥᱚᱨᱦᱟᱭ", startDate: new Date(year, 11, 1), endDate: new Date(year, 11, 29, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱟᱸᱜᱷᱟᱲ", startDate: new Date(year, 11, 30), endDate: new Date(year + 1, 0, 28, 23,59), year: year + 3000, color: "#388e3c" }
+                
+            ]; 
+        } else if (year === 2036) {
+            return [
+                { month: "ᱟᱸᱜᱷᱟᱲ", startDate: new Date(year - 1, 11, 30), endDate: new Date(year, 0, 28, 23,59), year: year + 3000-1, color: "#388e3c" },
+                { month: "ᱯᱩᱥ", startDate: new Date(year, 0, 29), endDate: new Date(year, 1, 27, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱢᱟᱜᱽ", startDate: new Date(year, 1, 28), endDate: new Date(year, 2, 28, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱯᱷᱟᱹᱜᱩᱱ", startDate: new Date(year, 2, 29), endDate: new Date(year, 3, 26, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱪᱟᱹᱛ", startDate: new Date(year, 3, 27), endDate: new Date(year, 4, 26, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(year, 4, 27), endDate: new Date(year, 5, 24, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(year, 5, 25), endDate: new Date(year, 6, 23, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱟᱥᱟᱲ", startDate: new Date(year, 6, 24), endDate: new Date(year, 7, 21, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱥᱟᱱ", startDate: new Date(year, 7, 22), endDate: new Date(year, 8, 20, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(year, 8, 21), endDate: new Date(year, 9, 19, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱫᱟᱸᱥᱟᱸᱭ", startDate: new Date(year, 9, 20), endDate: new Date(year, 10, 18, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱥᱚᱨᱦᱟᱭ", startDate: new Date(year, 10, 19), endDate: new Date(year, 11, 17, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱟᱸᱜᱷᱟᱲ", startDate: new Date(year, 11, 18), endDate: new Date(year + 1, 0, 16, 23,59), year: year + 3000, color: "#388e3c" }
+            ];
+        } else if (year === 2037) {
+            return [
+                { month: "ᱟᱸᱜᱷᱟᱲ", startDate: new Date(year - 1, 11, 18), endDate: new Date(year, 0, 16, 23,59), year: year + 3000-1, color: "#388e3c" },
+                { month: "ᱯᱩᱥ", startDate: new Date(year, 0, 17), endDate: new Date(year, 1, 15, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱢᱟᱜᱽ", startDate: new Date(year, 1, 16), endDate: new Date(year, 2, 17, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱯᱷᱟᱹᱜᱩᱱ", startDate: new Date(year, 2, 18), endDate: new Date(year, 3, 15, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱪᱟᱹᱛ", startDate: new Date(year, 3, 16), endDate: new Date(year, 4, 15, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(year, 4, 16), endDate: new Date(year, 5, 13, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(year, 5, 14), endDate: new Date(year, 6, 13, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱟᱥᱟᱲ", startDate: new Date(year, 6, 14), endDate: new Date(year, 7, 11, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱥᱟᱱ", startDate: new Date(year, 7, 12), endDate: new Date(year, 8, 9, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(year, 8, 10), endDate: new Date(year, 9, 9, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱫᱟᱸᱥᱟᱸᱭ", startDate: new Date(year, 9, 10), endDate: new Date(year, 10, 7, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱥᱚᱨᱦᱟᱭ", startDate: new Date(year, 10, 8), endDate: new Date(year, 11, 7, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱟᱸᱜᱷᱟᱲ", startDate: new Date(year, 11, 8), endDate: new Date(year + 1, 0, 5, 23,59), year: year + 3000, color: "#388e3c" }
+            ];
+        } else if (year === 2038) {
+            return [
+                { month: "ᱟᱸᱜᱷᱟᱲ", startDate: new Date(year - 1, 11, 8), endDate: new Date(year, 0, 5, 23,59), year: year + 3000-1, color: "#388e3c" },      
+                { month: "ᱯᱩᱥ", startDate: new Date(year, 0, 6), endDate: new Date(year, 1, 4, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱢᱟᱜᱽ", startDate: new Date(year, 1, 5), endDate: new Date(year, 2, 6, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱯᱷᱟᱹᱜᱩᱱ", startDate: new Date(year, 2, 7), endDate: new Date(year, 3, 4, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱪᱟᱹᱛ", startDate: new Date(year, 3, 5), endDate: new Date(year, 4, 5, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(year, 4, 6), endDate: new Date(year, 5, 3, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(year, 5, 4), endDate: new Date(year, 6, 2, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱟᱥᱟᱲ", startDate: new Date(year, 6, 3), endDate: new Date(year, 7, 1, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱥᱟᱱ", startDate: new Date(year, 7, 2), endDate: new Date(year, 7, 30, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(year, 7, 31), endDate: new Date(year, 8, 29, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱫᱟᱸᱥᱟᱸᱭ", startDate: new Date(year, 8, 30), endDate: new Date(year, 9, 28, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱥᱚᱨᱦᱟᱭ", startDate: new Date(year, 9, 29), endDate: new Date(year, 10, 26, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱟᱸᱜᱷᱟᱲ", startDate: new Date(year, 10, 27), endDate: new Date(year, 11, 26, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱯᱩᱥ", startDate: new Date(year, 11, 27), endDate: new Date(year + 1, 0, 24, 23,59), year: year + 3000, color: "#e53935" }
+            ]; 
+        } else if (year === 2039) {
+            return [
+                { month: "ᱯᱩᱥ", startDate: new Date(year - 1, 11, 27), endDate: new Date(year, 0, 24, 23,59), year: year + 3000-1, color: "#e53935" },
+                { month: "ᱢᱟᱜᱽ", startDate: new Date(year, 0, 25), endDate: new Date(year, 1, 23, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱯᱷᱟᱹᱜᱩᱱ", startDate: new Date(year, 1, 24), endDate: new Date(year, 2, 24, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱪᱟᱹᱛ", startDate: new Date(year, 2, 25), endDate: new Date(year, 3, 23, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(year, 3, 24), endDate: new Date(year, 4, 23, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(year, 4, 24), endDate: new Date(year, 5, 21, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(year, 5, 22), endDate: new Date(year, 6, 21, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱟᱥᱟᱲ", startDate: new Date(year, 6, 22), endDate: new Date(year, 7, 20, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱥᱟᱱ", startDate: new Date(year, 7, 21), endDate: new Date(year, 8, 18, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(year, 8, 19), endDate: new Date(year, 9, 18, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱫᱟᱸᱥᱟᱸᱭ", startDate: new Date(year, 9, 19), endDate: new Date(year, 10, 16, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱥᱚᱨᱦᱟᱭ", startDate: new Date(year, 10, 17), endDate: new Date(year, 11, 15, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱟᱸᱜᱷᱟᱲ", startDate: new Date(year, 11, 16), endDate: new Date(year + 1, 0, 13, 23,59), year: year + 3000, color: "#e53935" }
+            ];
+        } else if (year === 2040) {
+            return [
+                { month: "ᱟᱸᱜᱷᱟᱲ", startDate: new Date(year - 1, 11, 16), endDate: new Date(year, 0, 13, 23,59), year: year + 3000-1, color: "#e53935" },
+                { month: "ᱯᱩᱥ", startDate: new Date(year, 0, 14), endDate: new Date(year, 1, 12, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱢᱟᱜᱽ", startDate: new Date(year, 1, 13), endDate: new Date(year, 2, 13, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱯᱷᱟᱹᱜᱩᱱ", startDate: new Date(year, 2, 14), endDate: new Date(year, 3, 11, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱪᱟᱹᱛ", startDate: new Date(year, 3, 12), endDate: new Date(year, 4, 11, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(year, 4, 12), endDate: new Date(year, 5, 9, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(year, 5, 10), endDate: new Date(year, 6, 9, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱟᱥᱟᱲ", startDate: new Date(year, 6, 10), endDate: new Date(year, 7, 8, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱥᱟᱱ", startDate: new Date(year, 7, 9), endDate: new Date(year, 8, 6, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(year, 8, 7), endDate: new Date(year, 9, 6, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱫᱟᱸᱥᱟᱸᱭ", startDate: new Date(year, 9, 7), endDate: new Date(year, 10, 5, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱥᱚᱨᱦᱟᱭ", startDate: new Date(year, 10, 6), endDate: new Date(year, 11, 4, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱟᱸᱜᱷᱟᱲ", startDate: new Date(year, 11, 5), endDate: new Date(year + 1, 0, 3, 23,59), year: year + 3000, color: "#e53935" }
+            ];
+        } else if (year === 2041) {
+            return [
+                { month: "ᱟᱸᱜᱷᱟᱲ", startDate: new Date(year - 1, 11, 5), endDate: new Date(year, 0, 3, 23,59), year: year + 3000-1, color: "#e53935" },
+                { month: "ᱯᱩᱥ", startDate: new Date(year, 0, 4), endDate: new Date(year, 1, 1, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱢᱟᱜᱽ", startDate: new Date(year, 1, 1), endDate: new Date(year, 2, 2, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱯᱷᱟᱹᱜᱩᱱ", startDate: new Date(year, 2, 3), endDate: new Date(year, 3, 1, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱪᱟᱹᱛ", startDate: new Date(year, 3, 2), endDate: new Date(year, 3, 30, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(year, 4, 1), endDate: new Date(year, 4, 30, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(year, 4, 31), endDate: new Date(year, 5, 28, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱟᱥᱟᱲ", startDate: new Date(year, 5, 29), endDate: new Date(year, 6, 28, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱥᱟᱱ", startDate: new Date(year, 6, 29), endDate: new Date(year, 7, 26, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(year, 7, 27), endDate: new Date(year, 8, 25, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱫᱟᱸᱥᱟᱸᱭ", startDate: new Date(year, 8, 26), endDate: new Date(year, 9, 25, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱥᱚᱨᱦᱟᱭ", startDate: new Date(year, 9, 26), endDate: new Date(year, 10, 23, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱟᱸᱜᱷᱟᱲ", startDate: new Date(year, 10, 24), endDate: new Date(year, 11, 23, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱯᱩᱥ", startDate: new Date(year, 11, 24), endDate: new Date(year + 1, 0, 22, 23,59), year: year + 3000, color: "#388e3c" }
+            ]; 
+        } else if (year === 2042) {
+            return [
+                { month: "ᱯᱩᱥ", startDate: new Date(year - 1, 11, 24), endDate: new Date(year, 0, 22, 23,59), year: year + 3000-1, color: "#388e3c" },
+                { month: "ᱢᱟᱜᱽ", startDate: new Date(year, 0, 23), endDate: new Date(year, 1, 20, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱯᱷᱟᱹᱜᱩᱱ", startDate: new Date(year, 1, 21), endDate: new Date(year, 2, 21, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱪᱟᱹᱛ", startDate: new Date(year, 2, 22), endDate: new Date(year, 3, 20, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(year, 3, 21), endDate: new Date(year, 4, 19, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(year, 4, 20), endDate: new Date(year, 5, 18, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(year, 5, 19), endDate: new Date(year, 6, 17, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱟᱥᱟᱲ", startDate: new Date(year, 6, 18), endDate: new Date(year, 7, 15, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱥᱟᱱ", startDate: new Date(year, 7, 16), endDate: new Date(year, 8, 14, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(year, 8, 15), endDate: new Date(year, 9, 14, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱫᱟᱸᱥᱟᱸᱭ", startDate: new Date(year, 9, 15), endDate: new Date(year, 10, 13, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱥᱚᱨᱦᱟᱭ", startDate: new Date(year, 10, 14), endDate: new Date(year, 11, 12, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱟᱸᱜᱷᱟᱲ", startDate: new Date(year, 11, 13), endDate: new Date(year + 1, 0, 11, 23,59), year: year + 3000, color: "#388e3c" } 
+           ];        
+        } else if (year === 2043) {
+            return [
+                { month: "ᱟᱸᱜᱷᱟᱲ", startDate: new Date(year - 1, 11, 13), endDate: new Date(year, 0, 11, 23,59), year: year + 3000-1, color: "#388e3c" },
+                { month: "ᱯᱩᱥ", startDate: new Date(year, 0, 12), endDate: new Date(year, 1, 10, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱢᱟᱜᱽ", startDate: new Date(year, 1, 11), endDate: new Date(year, 2, 11, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱯᱷᱟᱹᱜᱩᱱ", startDate: new Date(year, 2, 12), endDate: new Date(year, 3, 10, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱪᱟᱹᱛ", startDate: new Date(year, 3, 11), endDate: new Date(year, 4, 9, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(year, 4, 10), endDate: new Date(year, 5, 7, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(year, 5, 8), endDate: new Date(year, 6, 6, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱟᱥᱟᱲ", startDate: new Date(year, 6, 7), endDate: new Date(year, 7, 5, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱥᱟᱱ", startDate: new Date(year, 7, 6), endDate: new Date(year, 8, 3, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(year, 8, 4), endDate: new Date(year, 9, 3, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱫᱟᱸᱥᱟᱸᱭ", startDate: new Date(year, 9, 4), endDate: new Date(year, 10, 2, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱥᱚᱨᱦᱟᱭ", startDate: new Date(year, 10, 3), endDate: new Date(year, 11, 1, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱟᱸᱜᱷᱟᱲ", startDate: new Date(year, 11, 2), endDate: new Date(year, 11, 31, 23,59), year: year + 3000, color: "#388e3c" } 
+            ]; 
+        } else if (year === 2044) {
+            return [
+                { month: "ᱯᱩᱥ", startDate: new Date(year, 0, 1), endDate: new Date(year, 0, 30, 23,59), year: year + 3000-1, color: "#388e3c" },
+                { month: "ᱢᱟᱜᱽ", startDate: new Date(year, 0, 31), endDate: new Date(year, 1, 29, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱯᱷᱟᱹᱜᱩᱱ", startDate: new Date(year, 2, 1), endDate: new Date(year, 2, 29, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱪᱟᱹᱛ", startDate: new Date(year, 2, 30), endDate: new Date(year, 3, 28, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(year, 3, 29), endDate: new Date(year, 4, 27, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(year, 4, 28), endDate: new Date(year, 5, 25, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱟᱥᱟᱲ", startDate: new Date(year, 5, 26), endDate: new Date(year, 6, 14, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱥᱟᱱ", startDate: new Date(year, 6, 25), endDate: new Date(year, 7, 23, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(year, 7, 24), endDate: new Date(year, 8, 21, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱫᱟᱸᱥᱟᱸᱭ", startDate: new Date(year, 8, 22), endDate: new Date(year, 9, 21, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱥᱚᱨᱦᱟᱭ", startDate: new Date(year, 9, 22), endDate: new Date(year, 10, 19, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱟᱸᱜᱷᱟᱲ", startDate: new Date(year, 10, 20), endDate: new Date(year, 11, 19, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱯᱩᱥ", startDate: new Date(year, 11, 20), endDate: new Date(year + 1, 0, 18, 23,59), year: year + 3000, color: "#388e3c" } 
+            ];
+        } else if (year === 2045) {
+            return [
+                { month: "ᱯᱩᱥ", startDate: new Date(year - 1, 11, 20), endDate: new Date(year, 0, 18, 23,59), year: year + 3000-1, color: "#388e3c" },
+                { month: "ᱢᱟᱜᱽ", startDate: new Date(year, 0, 19), endDate: new Date(year, 1, 17, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱯᱷᱟᱹᱜᱩᱱ", startDate: new Date(year, 1, 18), endDate: new Date(year, 2, 18, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱪᱟᱹᱛ", startDate: new Date(year, 2, 19), endDate: new Date(year, 3, 17, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(year, 3, 18), endDate: new Date(year, 4, 16, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(year, 4, 17), endDate: new Date(year, 5, 15, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(year, 5, 16), endDate: new Date(year, 6, 14, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱟᱥᱟᱲ", startDate: new Date(year, 6, 15), endDate: new Date(year, 7, 12, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱥᱟᱱ", startDate: new Date(year, 7, 13), endDate: new Date(year, 8, 11, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(year, 8, 12), endDate: new Date(year, 9, 10, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱫᱟᱸᱥᱟᱸᱭ", startDate: new Date(year, 9, 11), endDate: new Date(year, 10, 9, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱥᱚᱨᱦᱟᱭ", startDate: new Date(year, 10, 10), endDate: new Date(year, 11, 8, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱟᱸᱜᱷᱟᱲ", startDate: new Date(year, 11, 9), endDate: new Date(year + 1, 0, 7, 23,59), year: year + 3000, color: "#388e3c" } 
+            ]; 
+        } else if (year === 2046) {
+            return [
+                { month: "ᱟᱸᱜᱷᱟᱲ", startDate: new Date(year - 1, 11, 9), endDate: new Date(year, 0, 7, 23,59), year: year + 3000-1, color: "#388e3c" },
+                { month: "ᱯᱩᱥ", startDate: new Date(year, 0, 8), endDate: new Date(year, 1, 6, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱢᱟᱜᱽ", startDate: new Date(year, 1, 7), endDate: new Date(year, 2, 7, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱯᱷᱟᱹᱜᱩᱱ", startDate: new Date(year, 2, 8), endDate: new Date(year, 3, 6, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱪᱟᱹᱛ", startDate: new Date(year, 3, 7), endDate: new Date(year, 4, 6, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(year, 4, 7), endDate: new Date(year, 5, 4, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(year, 5, 5), endDate: new Date(year, 6, 4, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱟᱥᱟᱲ", startDate: new Date(year, 6, 5), endDate: new Date(year, 7, 2, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱥᱟᱱ", startDate: new Date(year, 7, 3), endDate: new Date(year, 7, 31, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(year, 8, 1), endDate: new Date(year, 8, 30, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱫᱟᱸᱥᱟᱸᱭ", startDate: new Date(year, 9, 1), endDate: new Date(year, 9, 29, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱥᱚᱨᱦᱟᱭ", startDate: new Date(year, 9, 30), endDate: new Date(year, 10, 28, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱟᱸᱜᱷᱟᱲ", startDate: new Date(year, 10, 29), endDate: new Date(year, 11, 27, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱯᱩᱥ", startDate: new Date(year, 11, 28), endDate: new Date(year + 1, 0, 26, 23,59), year: year + 3000, color: "#388e3c" } 
+            ]; 
+        } else if (year === 2047) {
+            return [
+                { month: "ᱯᱩᱥ", startDate: new Date(year - 1, 11, 28), endDate: new Date(year, 0, 26, 23,59), year: year + 3000-1, color: "#388e3c" }, 
+                { month: "ᱢᱟᱜᱽ", startDate: new Date(year, 0, 27), endDate: new Date(year, 1, 24, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱯᱷᱟᱹᱜᱩᱱ", startDate: new Date(year, 1, 25), endDate: new Date(year, 2, 26, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱪᱟᱹᱛ", startDate: new Date(year, 2, 27), endDate: new Date(year, 3, 25, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(year, 3, 26), endDate: new Date(year, 4, 25, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(year, 4, 26), endDate: new Date(year, 5, 23, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱟᱥᱟᱲ", startDate: new Date(year, 5, 24), endDate: new Date(year, 6, 23, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱥᱟᱱ", startDate: new Date(year, 6, 24), endDate: new Date(year, 7, 21, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(year, 7, 22), endDate: new Date(year, 8, 20, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱫᱟᱸᱥᱟᱸᱭ", startDate: new Date(year, 8, 21), endDate: new Date(year, 9, 19, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱥᱚᱨᱦᱟᱭ", startDate: new Date(year, 9, 20), endDate: new Date(year, 10, 17, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱟᱸᱜᱷᱟᱲ", startDate: new Date(year, 10, 18), endDate: new Date(year, 11, 17, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱯᱩᱥ", startDate: new Date(year, 11, 18), endDate: new Date(year + 1, 0, 15, 23,59), year: year + 3000, color: "#388e3c" } 
+            ];
+        } else if (year === 2048) {
+            return [
+                { month: "ᱯᱩᱥ", startDate: new Date(year - 1, 11, 18), endDate: new Date(year, 0, 15, 23,59), year: year + 3000-1, color: "#388e3c" }, 
+                { month: "ᱢᱟᱜᱽ", startDate: new Date(year, 0, 16), endDate: new Date(year, 1, 14, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱯᱷᱟᱹᱜᱩᱱ", startDate: new Date(year, 1, 15), endDate: new Date(year, 2, 14, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱪᱟᱹᱛ", startDate: new Date(year, 2, 15), endDate: new Date(year, 3, 13, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(year, 3, 14), endDate: new Date(year, 4, 13, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(year, 4, 14), endDate: new Date(year, 5, 11, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(year, 5, 12), endDate: new Date(year, 6, 11, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱟᱥᱟᱲ", sartDate: new Date(year, 6, 12), endDate: new Date(year, 7, 9, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱥᱟᱱ", startDate: new Date(year, 7, 10), endDate: new Date(year, 8, 8, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(year, 8, 9), endDate: new Date(year, 9, 7, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱫᱟᱸᱥᱟᱸᱭ", startDate: new Date(year, 9, 8), endDate: new Date(year, 10, 6, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱥᱚᱨᱦᱟᱭ", startDate: new Date(year, 10, 7), endDate: new Date(year, 11, 5, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱟᱸᱜᱷᱟᱲ", startDate: new Date(year, 11, 6), endDate: new Date(year + 1, 0, 4, 23,59), year: year + 3000, color: "#e53935" }
+            ]; 
+        } else if (year === 2049) {
+            return [
+                { month: "ᱟᱸᱜᱷᱟᱲ", startDate: new Date(year - 1, 11, 6), endDate: new Date(year, 0, 4, 23,59), year: year + 3000-1, color: "#e53935" },
+                { month: "ᱯᱩᱥ", startDate: new Date(year, 0, 5), endDate: new Date(year, 1, 2, 23,59), year: year + 3000, color: "#388e3c" }, 
+                { month: "ᱢᱟᱜᱽ", startDate: new Date(year, 1, 3), endDate: new Date(year, 2, 4, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱯᱷᱟᱹᱜᱩᱱ", startDate: new Date(year, 2, 5), endDate: new Date(year, 2, 2, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱪᱟᱹᱛ", startDate: new Date(year, 3, 3), endDate: new Date(year, 4, 2, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(year, 4, 3), endDate: new Date(year, 4, 31, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(year, 5, 1), endDate: new Date(year, 5, 30, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱟᱥᱟᱲ", startDate: new Date(year, 6, 1), endDate: new Date(year, 6, 30, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱥᱟᱱ", startDate: new Date(year, 6, 31), endDate: new Date(year, 7, 28, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(year, 7, 29), endDate: new Date(year, 8, 27, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱫᱟᱸᱥᱟᱸᱭ", startDate: new Date(year, 8, 28), endDate: new Date(year, 9, 26, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱥᱚᱨᱦᱟᱭ", startDate: new Date(year, 9, 27), endDate: new Date(year, 10, 25, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱟᱸᱜᱷᱟᱲ", startDate: new Date(year, 10, 26), endDate: new Date(year, 11, 24, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱯᱩᱥ", startDate: new Date(year, 11, 25), endDate: new Date(year + 1, 0, 23, 23,59), year: year + 3000, color: "#388e3c" } 
+            ]; 
+        } else if (year === 2050) {
+            return [
+                { month: "ᱯᱩᱥ", startDate: new Date(year - 1, 11, 25), endDate: new Date(year, 0, 23, 23,59), year: year + 3000-1, color: "#388e3c" }, 
+                { month: "ᱢᱟᱜᱽ", startDate: new Date(year, 0, 24), endDate: new Date(year, 1, 21, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱯᱷᱟᱹᱜᱩᱱ", startDate: new Date(year, 1, 22), endDate: new Date(year, 2, 23, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱪᱟᱹᱛ", startDate: new Date(year, 2, 24), endDate: new Date(year, 3, 21, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱵᱟᱹᱭᱥᱟᱹᱠ", startDate: new Date(year, 3, 22), endDate: new Date(year, 4, 21, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱡᱷᱮᱸᱴ", startDate: new Date(year, 4, 22), endDate: new Date(year, 5, 19, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ", startDate: new Date(year, 5, 20), endDate: new Date(year, 6, 19, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱟᱥᱟᱲ", startDate: new Date(year, 6, 20), endDate: new Date(year, 7, 17, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱥᱟᱱ", startDate: new Date(year, 7, 18), endDate: new Date(year, 8, 16, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱵᱷᱟᱫᱚᱨ", startDate: new Date(year, 8, 17), endDate: new Date(year, 9, 16, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱫᱟᱸᱥᱟᱸᱭ", startDate: new Date(year, 9, 17), endDate: new Date(year, 10, 14, 23,59), year: year + 3000, color: "#e53935" },
+                { month: "ᱥᱚᱨᱦᱟᱭ", startDate: new Date(year, 10, 15), endDate: new Date(year, 11, 14, 23,59), year: year + 3000, color: "#388e3c" },
+                { month: "ᱟᱸᱜᱷᱟᱲ", startDate: new Date(year, 11, 15), endDate: new Date(year + 1, 0, 14, 23,59), year: year + 3000, color: "#e53935" }
+             ];
         }
     // No automatic/approximate fallback. Years outside the supplied manual mapping remain unmapped.
     return [];
@@ -6788,9 +6118,9 @@ function updateEventList(month, year) {
             const moonType = moonPhases[dateStr];
             monthEvents.push({
                 date: dateStr,
-                title: moonType === 'fullmoon' ? 'ᱠᱩᱱᱟᱹᱢᱤ' : 'ᱟᱢᱟᱵᱟᱹᱥᱤᱭᱟᱹ',
+                title: moonType === 'fullmoon' ? 'ᱯᱩᱱᱱᱤᱢᱟ' : 'ᱟᱢᱟᱣᱥᱮ',
                 description: moonType === 'fullmoon' ? 'Full Moon' : 'New Moon',
-                santaliTitle: moonType === 'fullmoon' ? 'ᱠᱩᱱᱟᱹᱢᱤ' : 'ᱟᱢᱟᱵᱟᱹᱥᱤᱭᱟᱹ',
+                santaliTitle: moonType === 'fullmoon' ? 'ᱯᱩᱱᱱᱤᱢᱟ' : 'ᱟᱢᱟᱣᱥᱮ',
                 bengaliTitle: moonType === 'fullmoon' ? 'পূর্ণিমা' : 'অমাবস্যা',
                 image: moonType === 'fullmoon' ? '/static/images/fullmoon.png' : '/static/images/newmoon.png',
                 eventLabel: ''
@@ -6907,7 +6237,7 @@ function updateEventList(month, year) {
     activeEventImages = {};
 
     // দিনের হেডার তৈরি করুন
-    const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const days = ["রবি", "সোম", "মঙ্গল", "বুধ", "বৃহ", "শুক্র", "শনি"];
     days.forEach((day, index) => {
         const dayElement = document.createElement("div");
         dayElement.classList.add("day-header");
@@ -7631,7 +6961,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
     <aside class="biz-side" aria-label="Left advertising">
       <div class="biz-ad" data-ad-slot="left_top"><span class="ad-label">ADVERTISEMENT</span>আপনার বিজ্ঞাপন<br>এখানে</div>
       <div class="biz-card">
-        <h3> Featured</h3>
+        <h3>⭐ Featured</h3>
         <p>সাঁওতালি পণ্য, প্রতিষ্ঠান বা অনুষ্ঠানের প্রচার করুন।</p>
         <div class="biz-cta"><button class="biz-btn gold" onclick="openAdvertise()">বিজ্ঞাপন দিন</button></div>
       </div>
@@ -7639,7 +6969,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
 
     <div>
       <div class="biz-card biz-sponsored" id="featuredBusiness" data-ad-slot="featured">
-    <h3> Kherwar Featured</h3>
+    <h3>🌿 Kherwar Featured</h3>
     <p id="featuredBusinessText">সাঁওতালি সংস্কৃতি, অনুষ্ঠান ও স্থানীয় ব্যবসার তথ্য এখানে প্রদর্শিত হবে।</p>
   </div>
 </div>
@@ -7664,34 +6994,6 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
       <div class="biz-ad" data-ad-slot="right_bottom"><span class="ad-label">ADVERTISEMENT</span>Sponsored Event</div>
     </aside>
   </div>
-
-  <!-- =========================================================
-     ADDITIONAL ADVERTISEMENT BOXES
-     ========================================================= -->
-
-<div class="additional-ads">
-
-    <div class="additional-ad-box"
-         id="additionalAd1">
-        <span class="additional-ad-label">
-            ADVERTISEMENT
-        </span>
-        <span>
-            আপনার বিজ্ঞাপন এখানে
-        </span>
-    </div>
-
-    <div class="additional-ad-box"
-         id="additionalAd2">
-        <span class="additional-ad-label">
-            ADVERTISEMENT
-        </span>
-        <span>
-            আপনার বিজ্ঞাপন এখানে
-        </span>
-    </div>
-
-</div>
 
   <div class="biz-bottom">
     <div class="biz-card">
@@ -7840,57 +7142,6 @@ function renderAds() {
         const business = a.business_name || "Advertisement";
         const image = a.image || "";
         const target = a.target_url || "";
-
-        // ===== ADDITIONAL AD BOX 1 =====
-if (slot === 'additional_1') {
-    const el = document.getElementById('additionalAd1');
-
-    if (el) {
-        let content = image
-            ? '<img src="' + image + '" alt="' + business + '" style="width:100%;height:100%;min-height:150px;object-fit:cover;display:block;">'
-            : '<div style="padding:25px;font-weight:700;text-align:center;color:#666;">' + business + '</div>';
-
-        if (target) {
-            content =
-                '<a href="' + target + '" target="_blank" rel="noopener noreferrer" style="display:block;width:100%;height:100%;">' +
-                content +
-                '</a>';
-        }
-
-        el.innerHTML = content;
-        el.style.padding = "0";
-        el.style.overflow = "hidden";
-        el.style.borderRadius = "12px";
-    }
-
-    return;
-}
-
-
-// ===== ADDITIONAL AD BOX 2 =====
-if (slot === 'additional_2') {
-    const el = document.getElementById('additionalAd2');
-
-    if (el) {
-        let content = image
-            ? '<img src="' + image + '" alt="' + business + '" style="width:100%;height:100%;min-height:150px;object-fit:cover;display:block;">'
-            : '<div style="padding:25px;font-weight:700;text-align:center;color:#666;">' + business + '</div>';
-
-        if (target) {
-            content =
-                '<a href="' + target + '" target="_blank" rel="noopener noreferrer" style="display:block;width:100%;height:100%;">' +
-                content +
-                '</a>';
-        }
-
-        el.innerHTML = content;
-        el.style.padding = "0";
-        el.style.overflow = "hidden";
-        el.style.borderRadius = "12px";
-    }
-
-    return;
-}
 
         // ===== FEATURED SLOT =====
         if (slot === 'featured') {
@@ -8074,64 +7325,6 @@ if ('BroadcastChannel' in window) {
 .lunar-year-note{font-size:.72rem;color:#687970;margin-top:2px}
 .kherwar-calendar-focus{outline:3px solid #d7a52a!important;box-shadow:0 0 0 5px rgba(215,165,42,.22)!important;animation:kherwarFocus 1.8s ease}
 @keyframes kherwarFocus{0%,100%{transform:scale(1)}35%{transform:scale(1.035)}}
-/* ============================================================
-   চন্দ্রমাসের বিশেষ দিন কার্ড — BOUNDED SCROLL
-   ৫টি event দেখাবে, বাকিগুলো scroll করে দেখা যাবে
-   ============================================================ */
-
-/* Card-এর ভিতরের list-কে scrollable করি */
-.lunar-card .lunar-list,
-.side-card.lunar-card .lunar-list,
-#lunarList {
-    max-height: 1010px;          /* প্রায় ৫টি event দেখাবে */
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding-right: 4px;         /* scrollbar-এর জন্য জায়গা */
-    -webkit-overflow-scrolling: touch;  /* iOS-এ smooth scroll */
-    scrollbar-width: thin;      /* Firefox-এ চিকন scrollbar */
-    scrollbar-color: #b8d5d0 #f0f8f6;
-}
-
-/* Webkit (Chrome/Safari/Edge) — চিকন ও সুন্দর scrollbar */
-.lunar-card .lunar-list::-webkit-scrollbar,
-#lunarList::-webkit-scrollbar {
-    width: 6px;
-}
-.lunar-card .lunar-list::-webkit-scrollbar-track,
-#lunarList::-webkit-scrollbar-track {
-    background: #f0f8f6;
-    border-radius: 3px;
-}
-.lunar-card .lunar-list::-webkit-scrollbar-thumb,
-#lunarList::-webkit-scrollbar-thumb {
-    background: #b8d5d0;
-    border-radius: 3px;
-}
-.lunar-card .lunar-list::-webkit-scrollbar-thumb:hover,
-#lunarList::-webkit-scrollbar-thumb:hover {
-    background: #8bb8b0;
-}
-
-/* Card-এ scroll hint (gradient fade নিচে) */
-.lunar-card {
-    position: relative;
-}
-
-/* Mobile — ছোট স্ক্রিনে আরও কম height */
-@media (max-width: 700px) {
-    .lunar-card .lunar-list,
-    #lunarList {
-        max-height: 300px;
-    }
-}
-
-/* Small mobile */
-@media (max-width: 380px) {
-    .lunar-card .lunar-list,
-    #lunarList {
-        max-height: 260px;
-    }
-}
 </style>
 <script id="kherwar-final-calendar-fix-v3">
 (function(){
@@ -8165,15 +7358,15 @@ function monthOrderByName(name){
   const found=(DB().months||[]).find(x=>String(x.olchiki_name||'').trim()===n || String(x.english_name||'').trim().toUpperCase()===n.toUpperCase());
   if(found)return Number(found.order);
   const fallback={
-    'ᱢᱟᱜᱽ':1,'ᱢᱟᱜᱽ':1,
-    'ᱯᱷᱟᱹᱜᱩᱱ':2,'ᱯᱷᱟᱹᱜᱩᱱ':2,
+    'ᱢᱟᱜᱽ':1,'ᱢᱟᱜ᷂':1,
+    'ᱯᱷᱟᱹᱜᱩᱱ':2,'ᱯ᷂ᱷᱟᱹᱜᱩᱱ':2,
     'ᱪᱟᱹᱛ':3,'ᱵᱟᱹᱭᱥᱟᱹᱠ':4,
-    'ᱡᱷᱮᱸᱴ':5,'ᱡᱷᱮᱸᱴ':5,
-    'ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ':6,'ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ':6,
-    'ᱟᱥᱟᱲ':7,'ᱟᱥᱟᱲ':7,
-    'ᱥᱟᱱ':8,'ᱵᱷᱟᱫᱚᱨ':9,'ᱵᱷᱟᱫᱚᱨ':9,
-    'ᱫᱟᱸᱥᱟᱸᱭ':10,'ᱥᱚᱦᱨᱟᱭ':11,
-    'ᱟᱸᱜᱷᱟᱲ':12,'ᱟᱸᱜᱷᱟᱲ':12,'ᱯᱩᱥ':13
+    'ᱡᱷᱮᱸᱴ':5,'ᱡ᷂ᱮᱸᱴ':5,
+    'ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ':6,'ᱵᱟᱺᱰᱭᱟᱹ ᱡ᷂ᱮᱴ':6,
+    'ᱟᱥᱟᱲ':7,'ᱟᱥᱟᲹᱲ':7,
+    'ᱥᱟᱱ':8,'ᱵᱷᱟᱫᱚᱨ':9,'ᱵ᷂ᱷᱟᱫᱚᱨ':9,
+    'ᱫᱟᱸᱥᱟᱸᱭ':10,'ᱥᱚᱨᱦᱟᱭ':11,
+    'ᱟᱸᱜᱷᱟᱲ':12,'ᱟᱸᱜ᷂ᱷᱟᲽ':12,'ᱯᱩᱥ':13
   };
   return fallback[n]||null;
 }
@@ -8210,6 +7403,7 @@ function manualSantaliForDate(date){
   return row ? {
     day:hit.day,
     month:hit.month,
+    monthOrder:Number(row.order)||null,
     year:Number(row.year)||null,
     color:row.color,
     source:'manual'
@@ -8221,38 +7415,27 @@ function lunarFromDB(date){ return manualSantaliForDate(date); }
 function lunarForDate(date){ return manualSantaliForDate(date); }
 function LunarFromDBSafe(date){ return manualSantaliForDate(date); }
 
-/* Resolve a fixed Santali month/day — ONLY by month name */
-function resolveLunarEvent(monthName, day, gregorianYear){
-  day = Number(day);
-  gregorianYear = Number(gregorianYear);
-  if(!monthName || !day || !gregorianYear) return null;
+/* Resolve a fixed Santali month/day using ONLY the manual map. */
+function resolveLunarEvent(order,day,gregorianYear){
+  order=Number(order); day=Number(day); gregorianYear=Number(gregorianYear);
+  if(!order || !day || !gregorianYear) return null;
 
-  const map = getSantaliMonthMap(gregorianYear);
-  if(!map || !map.length) return null;
-
-  // ✅ শুধু নাম দিয়ে খুঁজি — order fallback নেই
-  const candidates = map.filter(m =>
-    String(m.month).trim() === String(monthName).trim()
-  );
-  if(!candidates.length) return null;
+  const map=getSantaliMonthMap(gregorianYear);
+  const candidates=map.filter(m=>Number(m.order)===order);
 
   for(const m of candidates){
-    const start = new Date(m.startDate); start.setHours(12,0,0,0);
-    const end   = new Date(m.endDate);   end.setHours(12,0,0,0);
-    const totalDays = Math.round((end - start) / 86400000) + 1;
+    const target=new Date(m.startDate);
+    target.setHours(12,0,0,0);
+    target.setDate(target.getDate()+day-1);
 
-    const useDay = Math.min(day, totalDays);
-
-    const target = new Date(start);
-    target.setDate(target.getDate() + useDay - 1);
-
-    if(target >= start && target <= end){
+    if(target>=m.startDate && target<=m.endDate){
       return {
-        date: dateKey(target),
-        day: useDay,
-        month: m.month,
-        year: m.year,
-        source: 'name-only'
+        date:dateKey(target),
+        day:day,
+        month:m.month,
+        monthOrder:m.order,
+        year:m.year,
+        source:'manual'
       };
     }
   }
@@ -8308,13 +7491,10 @@ function focusGregorianDate(ds){
 window.kherwarFocusGregorianDate=focusGregorianDate;
 
 function lunarEventsForCurrentYear(){
-  const y = YM().y;
-  return (DB().events||[]).filter(e => {
-    // ✅ শুধু যেসব event-এ month_name আছে সেগুলো নিই
-    return e.month_name && String(e.month_name).trim() !== '';
-  }).map(e => {
-    const r = resolveLunarEvent(e.month_name, e.day, y);
-    return {...e, resolved: r};
+  const y=YM().y;
+  return (DB().events||[]).map(e=>{
+    const r=resolveLunarEvent(e.month,e.day,y);
+    return {...e,resolved:r};
   });
 }
 
@@ -8345,223 +7525,36 @@ function renderSolarYearCard(){
 }
 
 /* ============================================================
-   Helper: moonPhases dictionary থেকে নির্দিষ্ট lunar মাসের
-   fullmoon বা newmoon এর Gregorian তারিখ খুঁজে বের করে
-   ============================================================ */
-/* Helper: moonPhases dictionary থেকে নির্দিষ্ট lunar মাসের
-   fullmoon বা newmoon এর Gregorian তারিখ খুঁজে বের করে */
-function findMoonPhaseDateForLunarMonth(phase, lunarMonthName, gregorianYear){
-  if(typeof moonPhases === 'undefined' || !moonPhases) return null;
-  if(!lunarMonthName) return null;
-
-  const santaliMap = getSantaliMonthMap(gregorianYear);
-  if(!santaliMap || !santaliMap.length) return null;
-
-  // ✅ শুধু নাম দিয়ে lunar মাসের row খুঁজি
-  const monthRow = santaliMap.find(m =>
-    String(m.month).trim() === String(lunarMonthName).trim()
-  );
-  if(!monthRow) return null;
-
-  const start = new Date(monthRow.startDate); start.setHours(0,0,0,0);
-  const end   = new Date(monthRow.endDate);   end.setHours(23,59,59,999);
-
-  const matches = [];
-  for(const dateStr in moonPhases){
-    if(moonPhases[dateStr] !== phase) continue;
-    const d = new Date(dateStr + 'T12:00:00');
-    if(d >= start && d <= end){
-      matches.push(dateStr);
-    }
-  }
-
-  if(!matches.length) return null;
-  matches.sort();
-  return phase === 'newmoon' ? matches[matches.length - 1] : matches[0];
-}
-
-/* ============================================================
    RIGHT CARD: ALL fixed lunar events for the selected Gregorian year.
-   FIXED: variable declaration order, undefined variable, duplicate fallback.
+   The event itself never changes; only its resolved Gregorian date changes.
    ============================================================ */
 function renderLunarYearCard(){
-  const box = document.getElementById('lunarList');
-  if(!box) return;
-  const y = YM().y;
-  const santaliMap = getSantaliMonthMap(y) || [];
-
-    // ✅ Santali মাসের traditional order (13 মাস পর্যন্ত handle করে)
-  const SANTALI_MONTH_ORDER = {
-    'ᱢᱟᱜᱽ': 1,
-    'ᱯᱷᱟᱹᱜᱩᱱ': 2,
-    'ᱪᱟᱹᱛ': 3,
-    'ᱵᱟᱹᱭᱥᱟᱹᱠ': 4,
-    'ᱡᱷᱮᱸᱴ': 5,
-    'ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ': 6,
-    'ᱟᱥᱟᱲ': 7,
-    'ᱥᱟᱱ': 8,
-    'ᱵᱷᱟᱫᱚᱨ': 9,
-    'ᱫᱟᱸᱥᱟᱸᱭ': 10,
-    'ᱥᱚᱦᱨᱟᱭ': 11,
-    'ᱟᱸᱜᱷᱟᱲ': 12,
-    'ᱯᱩᱥ': 13
-  };
-
-  // ✅ Filter + map + sort — month_name দিয়ে traditional order
-  const rows = (DB().events || [])
-    .filter(e => e && e.month_name && String(e.month_name).trim() !== '')
-    .map(e => {
-      const resolved = resolveLunarEvent(e.month_name, e.day, y);
-      // month_name থেকে order বের করি
-      const orderFromName = SANTALI_MONTH_ORDER[String(e.month_name).trim()] || 99;
-      // admin panel থেকে month order দেওয়া থাকলে সেটাই প্রাধান্য পাবে
-      const orderFromField = Number(e.month) || 0;
-      const finalOrder = orderFromField > 0 ? orderFromField : orderFromName;
-      return { ...e, resolved, _sortOrder: finalOrder };
-    })
-    .sort((a, b) => {
-      // প্রথমে month order দিয়ে sort
-      if(a._sortOrder !== b._sortOrder) return a._sortOrder - b._sortOrder;
-      // একই মাসে হলে day দিয়ে sort
-      return (Number(a.day) || 0) - (Number(b.day) || 0);
-    });
-
+  const box=document.getElementById('lunarList');if(!box)return;
+  const y=YM().y;
+  const rows=lunarEventsForCurrentYear().sort((a,b)=>{
+    const ao=Number(a.month)||99,bo=Number(b.month)||99;
+    return ao-bo || Number(a.day)-Number(b.day);
+  });
   if(!rows.length){
-    box.innerHTML = '<div class="lunar-item"><b>🌙 চন্দ্রমাসের বিশেষ দিন</b><span>Admin Panel-এ কোনো fixed lunar event যোগ করা হয়নি।</span></div>';
+    box.innerHTML='<div class="lunar-item"><b>🌙 চন্দ্রমাসের বিশেষ দিন</b><span>Admin Panel-এ কোনো fixed lunar event যোগ করা হয়নি।</span></div>';
     return;
   }
-
-  box.innerHTML = rows.map((x) => {
-    const eventType = x.event_type || 'lunar_day';
-    let effectiveDay = Number(x.day) || 0;
-    let resolvedDateFromMoonPhases = null;
-    let resolvedMonthRow = null;
-
-    // 🌕 Full Moon
-    if(eventType === 'full_moon'){
-      const found = findMoonPhaseDateForLunarMonth('fullmoon', x.month_name, y);
-      if(found){
-        resolvedDateFromMoonPhases = found;
-      } else {
-        effectiveDay = effectiveDay > 0 ? effectiveDay : 15;
-      }
-    }
-    // 🌑 New Moon
-    else if(eventType === 'new_moon'){
-      const found = findMoonPhaseDateForLunarMonth('newmoon', x.month_name, y);
-      if(found){
-        resolvedDateFromMoonPhases = found;
-      } else {
-        effectiveDay = effectiveDay > 0 ? effectiveDay : 30;
-      }
-    }
-
-    // 🎯 resolved lunar date
-    let r = null;
-
-    // Step 1: moonPhases থেকে পাওয়া তারিখ
-    if(resolvedDateFromMoonPhases){
-      const dObj = parseDate(resolvedDateFromMoonPhases);
-      if(!isNaN(dObj)){
-        const ld = (typeof lunarForDate === 'function') ? lunarForDate(dObj) : null;
-        r = {
-          date: resolvedDateFromMoonPhases,
-          day: ld ? ld.day : effectiveDay,
-          month: ld ? ld.month : x.month_name,
-          year: ld ? ld.year : null,
-          source: 'moonPhases'
-        };
-        if(ld && ld.day) effectiveDay = ld.day;
-      }
-    }
-
-    // Step 2: resolveLunarEvent (নাম দিয়ে)
-    if(!r){
-      r = resolveLunarEvent(x.month_name, effectiveDay, y);
-    }
-
-    // Step 3: সরাসরি month row থেকে calculate
-    if(!r){
-      const cands = santaliMap.filter(m => String(m.month).trim() === String(x.month_name).trim());
-      if(cands.length){
-        const m = cands[0];
-        const start = new Date(m.startDate); start.setHours(12,0,0,0);
-        const end   = new Date(m.endDate);   end.setHours(12,0,0,0);
-        const totalDays = Math.round((end - start) / 86400000) + 1;
-        const useDay = Math.min(effectiveDay || 1, totalDays);
-        const target = new Date(start);
-        target.setDate(target.getDate() + useDay - 1);
-        if(target >= start && target <= end){
-          r = {
-            date: dateKey(target),
-            day: useDay,
-            month: m.month,
-            year: m.year,
-            source: 'fallback-direct'
-          };
-          resolvedMonthRow = m;
-        }
-      }
-    } else {
-      // resolved month row বের করি r থেকে
-      resolvedMonthRow = santaliMap.find(m =>
-        String(m.month).trim() === String(r.month).trim() &&
-        r.date >= dateKey(m.startDate) && r.date <= dateKey(m.endDate)
-      ) || null;
-    }
-
-    // ===== English / Bengali / Lunar year =====
-    let englishShort = '—';
-    let bengaliDate = '';
-    let lunarYear = '';
-    let lunarDisplay = '';
-
-    if(r && r.date){
-      const dObj = parseDate(r.date);
-      if(!isNaN(dObj)){
-        englishShort = dObj.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
-      }
-      const b = bengaliForDate(r.date);
-      bengaliDate = formatBengali(b);
-
-      if(resolvedMonthRow){
-        lunarYear = String(resolvedMonthRow.year || '');
-      } else if(r.year){
-        lunarYear = String(r.year);
-      } else {
-        const m = santaliMap.find(mm => String(mm.month).trim() === String(x.month_name).trim());
-        if(m) lunarYear = String(m.year || '');
-      }
-      lunarDisplay = (r.month || x.month_name || '') + ' ' + olChikiNumber(effectiveDay);
-    } else {
-      const m = santaliMap.find(mm => String(mm.month).trim() === String(x.month_name).trim());
-      if(m) lunarYear = String(m.year || '');
-      lunarDisplay = (x.month_name || '') + ' ' + olChikiNumber(effectiveDay);
-    }
-
-    // Badge
-    let typeBadge = '';
-    if(eventType === 'full_moon') typeBadge = ' 🌕';
-    else if(eventType === 'new_moon') typeBadge = ' 🌑';
-
-    return '<div class="lunar-item" ' + (r && r.date ? 'data-goto="'+E(r.date)+'"' : '') +
-      ' title="' + (r && r.date ? 'ক্যালেন্ডারে এই তারিখ দেখুন' : 'তারিখ নির্ধারণ করা যায়নি') + '">' +
-      '<b>' + E(lunarDisplay) + typeBadge + '</b>' +
-      '<span class="lunar-event-title">' + E(x.title || '') + '</span>' +
-      (x.label ? '<small>' + E(x.label) + '</small>' : '') +
-      (x.description ? '<small>' + E(x.description) + '</small>' : '') +
-      '<span class="fixed-date">' +
-        '<span class="date-line"><b>Eng:</b> ' + E(englishShort) + '</span>' +
-        (bengaliDate ? '<span class="date-line"><b>বাং:</b> ' + E(bengaliDate) + '</span>' : '') +
-        (lunarYear ? '<span class="date-line"><b>ᱥᱮᱨᱢᱟ:</b> ' + E(olChikiNumber(lunarYear)) + ' (' + E(lunarYear) + ')</span>' : '') +
-      '</span>' +
-      (x.image ? '<img src="' + E(x.image) + '" alt="' + E(x.title) + '" loading="lazy">' : '') +
-    '</div>';
+  box.innerHTML=rows.map((x,i)=>{
+    const r=x.resolved;
+    const b=r?bengaliForDate(r.date):null;
+    const dateText=r ? r.date : 'এই বছরের New Moon data প্রয়োজন';
+    const bengaliText=formatBengali(b);
+    return `<div class="lunar-item" ${r?`data-goto="${E(r.date)}"`:''} title="${r?'ক্যালেন্ডারে এই তারিখ দেখুন':'New Moon database অসম্পূর্ণ'}">
+      <b>${E(monthName(x.month))} ${E(olChikiNumber(x.day))}</b>
+      <span>${E(x.title||'')}</span>
+      ${x.label?`<small>${E(x.label)}</small>`:''}
+      ${x.description?`<small>${E(x.description)}</small>`:''}
+      <span class="fixed-date">English: ${E(dateText)}${bengaliText?`<br><small>বাংলা: ${E(bengaliText)}</small>`:''}</span>
+      ${r?.year?`<div class="lunar-year-note">Lunar year: ${E(r.year)}</div>`:''}
+      ${x.image?`<img src="${E(x.image)}" alt="${E(x.title)}" loading="lazy">`:''}
+    </div>`;
   }).join('');
-
-  box.querySelectorAll('[data-goto]').forEach(el =>
-    el.addEventListener('click', () => focusGregorianDate(el.dataset.goto))
-  );
+  box.querySelectorAll('[data-goto]').forEach(el=>el.addEventListener('click',()=>focusGregorianDate(el.dataset.goto)));
 }
 
 window.renderFixedSpecialCards=function(){
@@ -8569,18 +7562,11 @@ window.renderFixedSpecialCards=function(){
   renderLunarYearCard();
 };
 
-/* Calendar date-cell event source — শুধু month_name দিয়ে match */
+/* Calendar date-cell event source: New Moon DB -> fixed lunar events + solar events. */
 function lunarEventsForDate(ds){
-  const ld = lunarForDate(parseDate(ds));
-  if(!ld || !ld.month) return [];
-
-  return (DB().events||[]).filter(e => {
-    // ✅ শুধু নাম দিয়ে match — order ব্যবহার হবে না
-    if(!e.month_name) return false;
-    if(String(e.month_name).trim() !== String(ld.month).trim()) return false;
-    if(Number(e.day) !== Number(ld.day)) return false;
-    return true;
-  });
+  const ld=lunarForDate(parseDate(ds));
+  if(!ld||!ld.monthOrder)return [];
+  return (DB().events||[]).filter(e=>Number(e.month)===Number(ld.monthOrder)&&Number(e.day)===Number(ld.day));
 }
 
 const oldGet=window.getEventsForDate;
@@ -8782,7 +7768,7 @@ function cleanEventContainer(){
         // তাই item-এ solar/lunar সনাক্ত করার চেষ্টা
         var text = item.innerText || '';
         var isSolar = text.indexOf('☀') >= 0 || text.indexOf('সূর্য') >= 0 || text.indexOf('বিষুব') >= 0 || text.indexOf('অয়ন') >= 0;
-        var isLunar = text.indexOf('🌙') >= 0 || text.indexOf('ᱢᱟᱜᱽ') >= 0 || text.indexOf('ᱠᱩᱱᱟᱹᱢᱤ') >= 0 || text.indexOf('ᱟᱢᱟᱵᱟᱹᱥᱤᱭᱟᱹ') >= 0;
+        var isLunar = text.indexOf('🌙') >= 0 || text.indexOf('ᱢᱟᱜᱽ') >= 0 || text.indexOf('ᱯᱩᱱᱱᱤᱢᱟ') >= 0 || text.indexOf('ᱟᱢᱟᱣᱥᱮ') >= 0;
         if(!isSolar && !isLunar){
           hasNonSpecial = true;
         }
@@ -8822,122 +7808,5 @@ if(document.readyState === 'loading'){
 console.log('✅ Events container filter loaded');
 })();
 </script>
-
-<script>
-/* =========================================================
-   ADDITIONAL ADS — DATABASE CONNECTED
-   ========================================================= */
-
-<script>
-(function(){
-
-    function renderAdditionalAds(){
-
-        const ads =
-            window.KHERWAR_DB &&
-            Array.isArray(window.KHERWAR_DB.ads)
-                ? window.KHERWAR_DB.ads
-                : [];
-
-        const box1 = document.getElementById('additionalAd1');
-        const box2 = document.getElementById('additionalAd2');
-
-        if(!box1 || !box2) return;
-
-        const ad1 = ads
-            .filter(ad => String(ad.slot || '').trim() === 'additional_1')
-            .sort((a,b) =>
-                Number(b.priority || 0) - Number(a.priority || 0)
-            )[0];
-
-        const ad2 = ads
-            .filter(ad => String(ad.slot || '').trim() === 'additional_2')
-            .sort((a,b) =>
-                Number(b.priority || 0) - Number(a.priority || 0)
-            )[0];
-
-        renderOne(box1, ad1);
-        renderOne(box2, ad2);
-    }
-
-
-    function renderOne(box, ad){
-
-        if(!ad){
-
-            box.innerHTML = `
-                <span class="additional-ad-label">
-                    ADVERTISEMENT
-                </span>
-                <span>আপনার বিজ্ঞাপন এখানে</span>
-            `;
-
-            return;
-        }
-
-        const business = ad.business_name || 'Advertisement';
-        const image = ad.image || '';
-        const target = ad.target_url || '';
-
-        let content = image
-            ? `<img src="${escapeHTML(image)}"
-                    alt="${escapeHTML(business)}">`
-            : `<span>${escapeHTML(business)}</span>`;
-
-        if(target){
-
-            box.innerHTML = `
-                <a href="${escapeHTML(target)}"
-                   target="_blank"
-                   rel="noopener noreferrer">
-
-                    ${content}
-
-                    <span class="additional-ad-label">
-                        ADVERTISEMENT
-                    </span>
-
-                </a>
-            `;
-
-        }else{
-
-            box.innerHTML = `
-                ${content}
-
-                <span class="additional-ad-label">
-                    ADVERTISEMENT
-                </span>
-            `;
-        }
-    }
-
-
-    function escapeHTML(value){
-
-        return String(value || '').replace(/[&<>"']/g, c => ({
-            '&':'&amp;',
-            '<':'&lt;',
-            '>':'&gt;',
-            '"':'&quot;',
-            "'":'&#39;'
-        }[c]));
-
-    }
-
-
-    document.addEventListener('DOMContentLoaded', () => {
-
-        setTimeout(renderAdditionalAds, 700);
-
-    });
-
-
-    setInterval(renderAdditionalAds, 30000);
-
-})();
-</script>
-</script>
-
 </body>
 </html>

@@ -1,8 +1,12 @@
-venv/
 __pycache__/
-*.pyc
+*.py[cod]
+*.sqlite3
 db.sqlite3
 .env
-media/
-.git/
+venv/
+env/
+.venv/
 staticfiles/
+media/
+.DS_Store
+*.log

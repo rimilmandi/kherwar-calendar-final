@@ -4,46 +4,43 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Kherwar Calendar Admin</title>
-<style>:root{--p:#087f5b;--p2:#0b9b70;--pd:#056247;--gold:#d7a52a;--bg:#f4f7f6;--card:#fff;--text:#17352b;--muted:#6b7b74;--line:#d9e5e0;--line2:#c7d8d1;--danger:#c62828;--shadow:0 6px 20px rgba(20,55,45,.07)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,"Noto Sans Bengali","Noto Sans",sans-serif;font-size:13px}
-.top{background:linear-gradient(135deg,var(--pd),var(--p2));color:#fff;padding:13px 16px;box-shadow:0 3px 14px rgba(0,0,0,.1)}
-.topin{max-width:1250px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:12px}
-.top h1{margin:0;font-size:18px;font-weight:800}.top p{margin:3px 0 0;font-size:11px;opacity:.82}
-.wrap{max-width:1250px;margin:auto;padding:14px 16px 28px}
-.tabs{display:flex;gap:6px;overflow:auto;padding:2px 1px 10px;scrollbar-width:thin}
-.tab{flex:none;border:1px solid var(--line);background:#fff;color:var(--text);border-radius:9px;padding:8px 11px;font-size:12px;font-weight:750;white-space:nowrap;cursor:pointer;transition:.18s}
-.tab:hover{border-color:#a9c9bc;transform:translateY(-1px)}.tab.active{background:var(--p);border-color:var(--p);color:#fff;box-shadow:0 4px 12px rgba(8,127,91,.18)}
+<style>
+:root{--p:#087f5b;--p2:#0b9b70;--gold:#d7a52a;--bg:#f3f7f5;--card:#fff;--text:#17352b;--muted:#687970;--line:#dce8e3;--danger:#c62828}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,"Noto Sans Bengali",sans-serif}
+.top{background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;padding:15px}
+.topin{max-width:1250px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.top h1{margin:0;font-size:19px}.top p{margin:3px 0 0;font-size:12px;opacity:.85}
+.wrap{max-width:1250px;margin:auto;padding:16px}
+.tabs{display:flex;gap:7px;overflow:auto;padding-bottom:12px}
+.tab{flex:none;border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 14px;font-weight:800;white-space:nowrap;cursor:pointer}
+.tab.active{background:var(--p);color:#fff}
 .panel{display:none}.panel.active{display:block}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px;margin-bottom:13px;box-shadow:var(--shadow)}
-.card h2{font-size:17px;margin:0 0 13px}.card h3{font-size:14px;margin:15px 0 9px}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
-label{display:block;font-size:11px;line-height:1.2;font-weight:750;color:var(--muted);margin:7px 0 4px}
-input,select,textarea{width:100%;padding:7px 9px;min-height:35px;border:1px solid var(--line2);background:#fff;color:var(--text);border-radius:8px;outline:none;font:inherit;font-size:12px;transition:.16s}
-input:hover,select:hover,textarea:hover{border-color:#a9c9bc}input:focus,select:focus,textarea:focus{border-color:var(--p2);box-shadow:0 0 0 3px rgba(11,155,112,.1)}
-input[type=color]{padding:3px;height:35px;min-height:35px;cursor:pointer}input[type=checkbox]{width:auto;min-height:auto;accent-color:var(--p);transform:scale(.95)}
-textarea{min-height:76px;resize:vertical;line-height:1.45}
-.actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
-.btn{border:1px solid transparent;border-radius:8px;padding:8px 11px;min-height:34px;font-size:12px;font-weight:750;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;transition:.16s}
-.btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(20,55,45,.09)}
-.primary{background:var(--p);color:#fff}.primary:hover{background:var(--pd)}.secondary{background:#edf6f2;color:var(--p);border-color:#d5e9e1}.gold{background:#fff5d8;color:#725400;border-color:#f1dfad}.danger{background:#fff0f0;color:var(--danger);border-color:#f2d1d1}
-.table{overflow:auto;border:1px solid var(--line);border-radius:9px;margin-top:11px;background:#fff;max-height:460px}
-.table table{border-collapse:collapse;width:100%;min-width:700px}.table th,.table td{padding:7px 8px;border-bottom:1px solid var(--line);font-size:11px;text-align:left;vertical-align:middle}
-.table th{position:sticky;top:0;z-index:1;background:#f5f9f7;color:var(--muted);font-weight:800}.table tr:last-child td{border-bottom:0}.table tr:hover td{background:#fbfdfc}
-.kpi{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.k{background:#f8fbfa;border:1px solid var(--line);border-radius:11px;padding:10px}.k b{font-size:18px}.k span{display:block;font-size:10px;color:var(--muted);margin-top:2px}
-.status{display:none;background:#e8f7f1;color:#086d51;padding:8px 10px;border:1px solid #cde9df;border-radius:8px;margin-bottom:10px;font-size:11px;font-weight:750}
-.preview{width:100%;height:680px;border:1px solid var(--line);border-radius:10px;background:#fff}.img-preview{display:inline-block;margin-left:7px;vertical-align:middle}.img-preview img{width:44px;height:44px;object-fit:cover;border-radius:7px;border:1px solid var(--line);background:#f5f5f5}.row-actions{display:flex;gap:4px;flex-wrap:wrap}
-#events .table{max-height:340px;overflow-y:auto;overflow-x:auto}#events .table table{min-width:650px}
-.ad-boxes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}.ad-box{border:1px solid var(--line);background:linear-gradient(180deg,#fbfdfc,#f5faf8);border-radius:11px;padding:10px}
-.ad-box-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:7px}.ad-box-title{font-weight:800;font-size:12px}.ad-box-slot{font-size:10px;color:var(--muted);padding:3px 6px;border-radius:999px;background:#eaf4ef}
-.ad-preview{min-height:84px;border:1px dashed #bfd5cc;border-radius:8px;overflow:hidden;background:#fff;position:relative}.ad-preview a{display:block;color:inherit;text-decoration:none}.ad-preview img{width:100%;height:82px;object-fit:cover;display:block}
-.ad-preview-empty{min-height:84px;display:flex;align-items:center;justify-content:center;text-align:center;padding:12px;color:var(--muted);font-size:10px}.ad-preview-caption{position:absolute;left:6px;right:6px;bottom:6px;background:rgba(0,0,0,.62);color:#fff;border-radius:5px;padding:4px 6px;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-@media(max-width:850px){.grid,.grid3{grid-template-columns:1fr}.kpi{grid-template-columns:repeat(2,1fr)}.top h1{font-size:16px}.wrap{padding:11px 10px 22px}.card{padding:12px}.ad-boxes{grid-template-columns:1fr}#events .table{max-height:260px}}
-@media(max-width:480px){.top{padding:11px 10px}.top h1{font-size:14px}.top p{font-size:10px}.card{border-radius:11px;padding:10px}.card h2{font-size:15px;margin-bottom:10px}.tab{padding:7px 9px;font-size:11px}input,select,textarea{min-height:33px;padding:6px 8px;font-size:11px}textarea{min-height:68px}.btn{min-height:32px;padding:7px 9px;font-size:11px}.table{max-height:330px}#events .table{height:260px;max-height:260px;overflow:auto;-webkit-overflow-scrolling:touch}}
-@media(max-width:380px){.kpi{gap:6px}.k{padding:8px}.k b{font-size:16px}.k span{font-size:9px}#events .table{height:235px;max-height:235px}}
-.lunar-event-row{display:grid;grid-template-columns:1.25fr 1fr .7fr 1.6fr;gap:9px;align-items:end}
-@media(max-width:850px){.lunar-event-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:480px){.lunar-event-row{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--line);border-radius:17px;padding:17px;margin-bottom:14px;box-shadow:0 7px 24px #1231}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+label{display:block;font-size:12px;font-weight:800;color:var(--muted);margin:9px 0 5px}
+input,select,textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:10px;font:inherit}
+textarea{min-height:90px}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.btn{border:0;border-radius:10px;padding:10px 13px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-block}
+.primary{background:var(--p);color:#fff}
+.secondary{background:#e8f3ee;color:var(--p)}
+.gold{background:#fff1c9;color:#725400}
+.danger{background:#fdeaea;color:var(--danger)}
+.table{overflow:auto;border:1px solid var(--line);border-radius:11px;margin-top:12px}
+.table table{border-collapse:collapse;width:100%;min-width:760px}
+.table th,.table td{padding:8px;border-bottom:1px solid var(--line);font-size:12px;text-align:left;vertical-align:top}
+.table th{background:#f7faf9;color:var(--muted)}
+.kpi{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}
+.k{background:#f8fbfa;border:1px solid var(--line);border-radius:13px;padding:12px}
+.k b{font-size:20px}.k span{display:block;font-size:11px;color:var(--muted)}
+.status{display:none;background:#e8f7f1;color:#086d51;padding:10px;border-radius:10px;margin-bottom:12px;font-size:12px;font-weight:800}
+.preview{width:100%;height:680px;border:1px solid var(--line);border-radius:12px}
+.img-preview{display:inline-block;margin-left:10px;vertical-align:middle}
+.img-preview img{width:52px;height:52px;object-fit:cover;border-radius:8px;border:1px solid var(--line);background:#f5f5f5}
+.row-actions{display:flex;gap:5px;flex-wrap:wrap}
+@media(max-width:850px){.grid,.grid3{grid-template-columns:1fr}.kpi{grid-template-columns:repeat(2,1fr)}.top h1{font-size:16px}}
 </style>
 </head>
 <body>
@@ -158,35 +155,29 @@ textarea{min-height:76px;resize:vertical;line-height:1.45}
   <section id="events" class="panel">
     <div class="card">
       <h2>🎉 Lunar Event</h2>
-
-      <div class="lunar-event-row">
-        <div>
-          <label>Month (সাঁওতালি মাস)</label>
-          <select id="em"></select>
-        </div>
-        <div>
-          <label>Event type</label>
-          <select id="ed_type">
-            <option value="lunar_day">Lunar Day</option>
-            <option value="full_moon">Full Moon</option>
-            <option value="new_moon">New Moon</option>
-          </select>
-        </div>
-        <div>
-          <label>Lunar day</label>
-          <input id="ed" type="number" min="1" max="35" placeholder="যেমন: 10">
-        </div>
-        <div>
-          <label>Title *</label>
-          <input id="et" placeholder="Event title">
-        </div>
-      </div>
-
+      <div class="grid3">
+  <div>
+    <label>Month (সাঁওতালি মাস)</label>
+    <select id="em"></select>
+  </div>
+  <div>
+    <label>Event type</label>
+    <select id="ed_type" onchange="toggleDayInput()">
+      <option value="lunar_day">Lunar Day (সাধারণ দিন)</option>
+      <option value="full_moon">🌕 Full Moon (পূর্ণিমা)</option>
+      <option value="new_moon">🌑 New Moon (অমাবস্যা)</option>
+    </select>
+  </div>
+  <div id="ed_day_wrap">
+    <label>Lunar day</label>
+    <input id="ed" type="number" min="1" max="35">
+  </div>
+</div>
+<div class="grid3">
+  <div><label>Title *</label><input id="et"></div>
+</div>
       <div class="grid">
-        <div>
-          <label>Details</label>
-          <textarea id="edesc" placeholder="Event details..."></textarea>
-        </div>
+        <div><label>Details</label><textarea id="edesc"></textarea></div>
         <div>
           <label>Image URL</label>
           <input id="eimg" placeholder="/media/... বা https://..." oninput="previewImg('eimg','eimgPreview')">
@@ -195,26 +186,22 @@ textarea{min-height:76px;resize:vertical;line-height:1.45}
           <span id="eimgPreview" class="img-preview" style="display:none">
             <img id="eimgPreviewImg" src="" alt="preview">
           </span>
-          <label>Label</label>
-          <input id="elabel" placeholder="Optional label">
+          <label>Label</label><input id="elabel">
         </div>
       </div>
-
       <div class="actions">
         <button id="eventSaveBtn" class="btn primary" onclick="saveEvent()">Save Event</button>
         <button id="eventUpdateBtn" class="btn gold" style="display:none" onclick="updateEvent()">Update Event</button>
         <button id="eventCancelBtn" class="btn secondary" style="display:none" onclick="cancelEventEdit()">Cancel Edit</button>
       </div>
-
       <div class="actions">
         <button class="btn secondary" onclick="exportCSV('event')">Export Events CSV</button>
         <button class="btn secondary" onclick="document.getElementById('eventCSV').click()">Import Events CSV</button>
         <input id="eventCSV" type="file" accept=".csv" hidden>
       </div>
-
       <div class="table">
         <table>
-          <thead><tr><th>Month</th><th>Type</th><th>Lunar Day</th><th>Title</th><th>Image</th><th>Action</th></tr></thead>
+          <thead><tr><th>Month</th><th>Day</th><th>Title</th><th>Image</th><th>Action</th></tr></thead>
           <tbody id="eventRows"></tbody>
         </table>
       </div>
@@ -267,8 +254,6 @@ textarea{min-height:76px;resize:vertical;line-height:1.45}
             <option value="right_top">Right Top</option>
             <option value="right_bottom">Right Bottom</option>
             <option value="featured">Featured</option>
-            <option value="additional_1">Additional Ad Box 1</option>
-            <option value="additional_2">Additional Ad Box 2</option>
           </select>
         </div>
         <div><label>Business</label><input id="ab"></div>
@@ -291,11 +276,12 @@ textarea{min-height:76px;resize:vertical;line-height:1.45}
         <button id="adUpdateBtn" class="btn gold" style="display:none" onclick="updateAd()">Update Advertisement</button>
         <button id="adCancelBtn" class="btn secondary" style="display:none" onclick="cancelAdEdit()">Cancel Edit</button>
       </div>
-      <div class="ad-boxes">
-        <div class="ad-box"><div class="ad-box-head"><span class="ad-box-title">Ad Preview Box 5</span><span class="ad-box-slot">Featured</span></div><div id="adPreview5" class="ad-preview"><div class="ad-preview-empty">Featured advertisement preview</div></div></div>
-        <div class="ad-box"><div class="ad-box-head"><span class="ad-box-title">Ad Preview Box 6</span><span class="ad-box-slot">Right Bottom</span></div><div id="adPreview6" class="ad-preview"><div class="ad-preview-empty">Right Bottom advertisement preview</div></div></div>
+      <div class="table">
+        <table>
+          <thead><tr><th>Slot</th><th>Business</th><th>Period</th><th>Image</th><th>Action</th></tr></thead>
+          <tbody id="adRows"></tbody>
+        </table>
       </div>
-      <div class="table"><table><thead><tr><th>Slot</th><th>Business</th><th>Period</th><th>Image</th><th>Action</th></tr></thead><tbody id="adRows"></tbody></table></div>
     </div>
   </section>
 
@@ -397,7 +383,7 @@ function render(){
   $('ks').textContent=D.solarEvents.length;
   $('ka').textContent=D.ads.length;
 
-  // ✅ Month dropdown পপুলেট করি (সাঁওতালি নাম সহ)
+    // ✅ Month dropdown পপুলেট করি (value = সাঁওতালি নাম, data-order = order)
   const ms = $('em');
   if(ms){
     ms.innerHTML = D.months
@@ -405,8 +391,7 @@ function render(){
       .map(m => `<option value="${esc(m.olchiki_name)}" data-order="${m.order}">${m.order}. ${esc(m.olchiki_name)} — ${esc(m.english_name)}</option>`)
       .join('');
   }
-  
-}
+  toggleDayInput();
 
 /* ---------- Months ---------- */
 function renderMonths(){
@@ -490,92 +475,37 @@ function renderHistory(){
 /* ============================================================
    LUNAR EVENT — Save / Update / Edit / Cancel
    ============================================================ */
-let editingEventId=null;
-
-function eventTypeLabel(type){
-  return type==='full_moon'?'🌕 Full Moon':type==='new_moon'?'🌑 New Moon':'📅 Lunar Day';
-}
+let editingEventId = null;
 function toggleDayInput(){
   const type = $('ed_type') ? $('ed_type').value : 'lunar_day';
   const wrap = $('ed_day_wrap');
-  const edInput = $('ed');
   if(!wrap) return;
-
   if(type === 'full_moon'){
-    // 🌕 Full Moon — day input সম্পূর্ণ লুকাই
     wrap.style.display = 'none';
-    if(edInput) edInput.value = '';   // ✅ খালি করে দিই
-    // dropdown-এর নিচে info দেখাই
-    showMoonInfo('full_moon');
+    $('ed').value = 15;
   } else if(type === 'new_moon'){
-    // 🌑 New Moon — day input সম্পূর্ণ লুকাই
     wrap.style.display = 'none';
-    if(edInput) edInput.value = '';   // ✅ খালি করে দিই
-    showMoonInfo('new_moon');
+    $('ed').value = 30;
   } else {
-    // সাধারণ Lunar Day — day input দেখাই
     wrap.style.display = 'block';
-    const lbl = wrap.querySelector('label');
-    if(lbl) lbl.textContent = 'Lunar day';
-    if(edInput){
-      edInput.placeholder = '';
-      if(!edInput.value) edInput.value = '';
-    }
-    hideMoonInfo();
   }
 }
 
-/* moonInfo box তৈরি বা update করে */
-function showMoonInfo(type){
-  let info = document.getElementById('moonInfoBox');
-  if(!info){
-    info = document.createElement('div');
-    info.id = 'moonInfoBox';
-    info.style.cssText = 'grid-column:1/-1;background:#e8f7f1;color:#086d51;padding:9px 11px;border-radius:9px;font-size:12px;font-weight:700;line-height:1.55;margin-top:4px;';
-    const grid = document.querySelector('#events .grid3');
-    if(grid) grid.parentNode.insertBefore(info, grid.nextSibling);
-  }
-  info.style.display = 'block';
-  if(type === 'full_moon'){
-    info.innerHTML = '🌕 <b>Full Moon (পূর্ণিমা)</b> — দিন স্বয়ংক্রিয়ভাবে <b>index.html</b>-এর moonPhases ডেটাবেস থেকে নেওয়া হবে। আলাদা করে day দিতে হবে না।';
-  } else if(type === 'new_moon'){
-    info.innerHTML = '🌑 <b>New Moon (অমাবস্যা)</b> — দিন স্বয়ংক্রিয়ভাবে <b>index.html</b>-এর moonPhases ডেটাবেস থেকে নেওয়া হবে। আলাদা করে day দিতে হবে না।';
-  }
-}
-
-function hideMoonInfo(){
-  const info = document.getElementById('moonInfoBox');
-  if(info) info.style.display = 'none';
-}
 
 async function saveEvent(){
   try{
     const sel = $('em').selectedOptions[0];
     const month_name = sel ? sel.value : '';
-    if(!month_name){
-      toast('⚠️ মাস নির্বাচন করুন');
-      return;
-    }
-
-    const eventType = $('ed_type').value;
-    // 🌕🌑 Full Moon/New Moon হলে day = 0 পাঠাই (calendar নিজেই moonPhases থেকে নেবে)
-    let dayValue = 0;
-    if(eventType === 'lunar_day'){
-      dayValue = Number($('ed').value) || 0;
-      if(dayValue <= 0){
-        toast('⚠️ Lunar day লিখুন');
-        return;
-      }
-    }
-
+    const month_order = sel ? Number(sel.dataset.order) : null;
     await req('event','POST',{
+      month: month_order,
       month_name: month_name,
-      day: dayValue,                    // ✅ full_moon/new_moon এ 0
-      title: $('et').value,
-      description: $('edesc').value,
-      image: $('eimg').value,
-      label: $('elabel').value,
-      event_type: eventType
+      day:Number($('ed').value),
+      title:$('et').value,
+      description:$('edesc').value,
+      image:$('eimg').value,
+      label:$('elabel').value,
+      event_type:$('ed_type').value
     });
     await loadDB();
     toast('✅ Event saved');
@@ -586,35 +516,26 @@ function editEvent(id){
   const x = D.events.find(v=>Number(v.id)===Number(id));
   if(!x) return;
   editingEventId = x.id;
-
+  
+  // ✅ সাঁওতালি নাম দিয়ে dropdown সিলেক্ট করি
   const sel = $('em');
   if(x.month_name){
+    // month_name আছে → সেটা দিয়ে select
     sel.value = x.month_name;
+  } else if(x.month){
+    // পুরনো ডেটা → order দিয়ে find করে select
+    const opt = Array.from(sel.options).find(o => Number(o.dataset.order) === Number(x.month));
+    if(opt) sel.value = opt.value;
   }
-
-  const eventType = x.event_type || 'lunar_day';
-  if($('ed_type')) $('ed_type').value = eventType;
-
-  // ✅ event type অনুযায়ী day input দেখাই/লুকাই
-  if(eventType === 'full_moon' || eventType === 'new_moon'){
-    $('ed').value = '';              // 🌕🌑 day খালি
-  } else {
-    $('ed').value = x.day || '';     // সাধারণ lunar day
-  }
-
+  
+  $('ed').value = x.day;
   $('et').value = x.title || '';
   $('edesc').value = x.description || '';
   $('eimg').value = x.image || '';
   $('elabel').value = x.label || '';
-
-  toggleDayInput();                  // ✅ এটি এখন day field দেখাবে/লুকাবে
+  if($('ed_type')) $('ed_type').value = x.event_type || 'lunar_day';
+  toggleDayInput();
   if(typeof previewImg === 'function') previewImg('eimg','eimgPreview');
-
-  $('eventSaveBtn').style.display = 'none';
-  $('eventUpdateBtn').style.display = 'inline-block';
-  $('eventCancelBtn').style.display = 'inline-block';
-
-  document.querySelector('#events .card').scrollIntoView({behavior:'smooth'});
   toast('✏️ এডিট মোডে — Update চাপুন');
 }
 
@@ -623,30 +544,17 @@ async function updateEvent(){
   try{
     const sel = $('em').selectedOptions[0];
     const month_name = sel ? sel.value : '';
-    if(!month_name){
-      toast('⚠️ মাস নির্বাচন করুন');
-      return;
-    }
-
-    const eventType = $('ed_type').value;
-    let dayValue = 0;
-    if(eventType === 'lunar_day'){
-      dayValue = Number($('ed').value) || 0;
-      if(dayValue <= 0){
-        toast('⚠️ Lunar day লিখুন');
-        return;
-      }
-    }
-
+    const month_order = sel ? Number(sel.dataset.order) : null;
     await req('event','PUT',{
       id: editingEventId,
+      month: month_order,
       month_name: month_name,
-      day: dayValue,                    // ✅ full_moon/new_moon এ 0
-      title: $('et').value,
-      description: $('edesc').value,
-      image: $('eimg').value,
-      label: $('elabel').value,
-      event_type: eventType
+      day:Number($('ed').value),
+      title:$('et').value,
+      description:$('edesc').value,
+      image:$('eimg').value,
+      label:$('elabel').value,
+      event_type:$('ed_type').value
     });
     editingEventId = null;
     resetEventForm();
@@ -656,43 +564,29 @@ async function updateEvent(){
 }
 
 function resetEventForm(){
-  $('ed_type').value='lunar_day';
-  $('ed').value='';
-  $('et').value='';
-  $('edesc').value='';
-  $('eimg').value='';
-  $('elabel').value='';
-  toggleDayInput();
-  const box=$('eimgPreview');
-  if(box)box.style.display='none';
-  $('eventSaveBtn').style.display='inline-flex';
-  $('eventUpdateBtn').style.display='none';
-  $('eventCancelBtn').style.display='none';
+  ['em','ed','et','edesc','eimg','elabel'].forEach(id=>{ if($(id)) $(id).value=''; });
+  const box = $('eimgPreview'); if(box) box.style.display = 'none';
+  $('eventSaveBtn').style.display = 'inline-block';
+  $('eventUpdateBtn').style.display = 'none';
+  $('eventCancelBtn').style.display = 'none';
 }
-function cancelEventEdit(){editingEventId=null;resetEventForm();toast('Edit cancelled')}
+function cancelEventEdit(){
+  editingEventId = null;
+  resetEventForm();
+  toast('Edit cancelled');
+}
 
 function renderEvents(){
-  $('eventRows').innerHTML = D.events.map(x=>{
-    const eventType = x.event_type || 'lunar_day';
-    let dayDisplay = '';
-    if(eventType === 'full_moon'){
-      dayDisplay = '— 🌕';
-    } else if(eventType === 'new_moon'){
-      dayDisplay = '— 🌑';
-    } else {
-      dayDisplay = (x.day || '—');
-    }
-    return `<tr>
-      <td>${esc(x.month_name || '—')}</td>
-      <td>${dayDisplay}</td>
-      <td>${esc(x.title)}</td>
-      <td>${x.image ? '<img src="'+esc(x.image)+'" style="width:50px;height:40px;object-fit:cover;border-radius:6px">' : '—'}</td>
-      <td class="row-actions">
-        <button class="btn secondary" onclick="editEvent(${x.id})">Edit</button>
-        <button class="btn danger" onclick="del('event',${x.id})">Delete</button>
-      </td>
-    </tr>`;
-  }).join('');
+  $('eventRows').innerHTML = D.events.map(x=>`<tr>
+    <td>${esc(x.month_name || '')} ${x.month ? '<small style="color:#888">('+x.month+')</small>' : ''}</td>
+    <td>${x.day} ${x.event_type === 'full_moon' ? '🌕' : x.event_type === 'new_moon' ? '🌑' : ''}</td>
+    <td>${esc(x.title)}</td>
+    <td>${x.image ? '<img src="'+esc(x.image)+'" style="width:50px;height:40px;object-fit:cover;border-radius:6px">' : '—'}</td>
+    <td class="row-actions">
+      <button class="btn secondary" onclick="editEvent(${x.id})">Edit</button>
+      <button class="btn danger" onclick="del('event',${x.id})">Delete</button>
+    </td>
+  </tr>`).join('');
 }
 
 /* ============================================================
@@ -849,15 +743,16 @@ function cancelAdEdit(){
 }
 
 function renderAds(){
-  $('adRows').innerHTML=D.ads.map(x=>`<tr><td>${esc(x.slot)}</td><td>${esc(x.business_name)}</td><td>${x.start_date||''} → ${x.end_date||''}</td><td>${x.image?'<img src="'+esc(x.image)+'" style="width:44px;height:36px;object-fit:cover;border-radius:6px">':'—'}</td><td class="row-actions"><button class="btn secondary" onclick="editAd(${x.id})">Edit</button><button class="btn danger" onclick="del('ad',${x.id})">Delete</button></td></tr>`).join('');
-  renderAdPreviewBox('adPreview5','featured');renderAdPreviewBox('adPreview6','right_bottom');
-}
-function renderAdPreviewBox(id,slot){
-  const box=$(id);if(!box)return;
-  const x=D.ads.filter(v=>v.slot===slot).sort((a,b)=>(Number(b.priority)||0)-(Number(a.priority)||0))[0];
-  if(!x){box.innerHTML='<div class="ad-preview-empty">এই slot-এর বিজ্ঞাপন এখনও নেই</div>';return}
-  const image=x.image?'<img src="'+esc(x.image)+'" alt="'+esc(x.business_name||'Advertisement')+'">':'<div class="ad-preview-empty">Image নেই</div>';
-  box.innerHTML=x.target_url?'<a href="'+esc(x.target_url)+'" target="_blank" rel="noopener noreferrer">'+image+'<div class="ad-preview-caption">↗ '+esc(x.business_name||'Advertisement')+'</div></a>':image+'<div class="ad-preview-caption">'+esc(x.business_name||'Advertisement')+'</div>';
+  $('adRows').innerHTML = D.ads.map(x=>`<tr>
+    <td>${x.slot}</td>
+    <td>${esc(x.business_name)}</td>
+    <td>${x.start_date||''} → ${x.end_date||''}</td>
+    <td>${x.image ? '<img src="'+esc(x.image)+'" style="width:50px;height:40px;object-fit:cover;border-radius:6px">' : '—'}</td>
+    <td class="row-actions">
+      <button class="btn secondary" onclick="editAd(${x.id})">Edit</button>
+      <button class="btn danger" onclick="del('ad',${x.id})">Delete</button>
+    </td>
+  </tr>`).join('');
 }
 
 /* ============================================================
@@ -917,8 +812,6 @@ async function uploadImage(inputId,targetId){
 $('eimgFile').onchange = () => uploadImage('eimgFile','eimg');
 $('siFile').onchange   = () => uploadImage('siFile','si');
 $('aiFile').onchange   = () => uploadImage('aiFile','ai');
-$('ed_type').onchange = toggleDayInput;
-toggleDayInput();
 
 /* ============================================================
    CSV Export / Import

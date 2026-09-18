@@ -31,15 +31,31 @@ class HistoricalDate(models.Model):
     def __str__(self): return str(self.gregorian)
 
 class LunarEvent(models.Model):
-    month_order = models.PositiveSmallIntegerField()
+    EVENT_TYPE_CHOICES = [
+        ('lunar_day', 'Lunar Day'),
+        ('full_moon', 'Full Moon'),
+        ('new_moon',  'New Moon'),
+    ]
+    
+    month_order = models.PositiveSmallIntegerField(null=True, blank=True)
+    month_name = models.CharField(max_length=80, blank=True)
     day = models.PositiveSmallIntegerField()
     title = models.CharField(max_length=200)
     description = models.TextField(blank=True)
-    image = models.URLField(blank=True)
+    image = models.CharField(max_length=500, blank=True)
     label = models.CharField(max_length=80, blank=True)
     active = models.BooleanField(default=True)
-    class Meta: ordering = ['month_order', 'day', 'title']
-    def __str__(self): return self.title
+    event_type = models.CharField(
+        max_length=20,
+        choices=EVENT_TYPE_CHOICES,
+        default='lunar_day',
+    )
+
+    class Meta:
+        ordering = ['month_order', 'day', 'title']
+
+    def __str__(self):
+        return self.title
 
 class SolarEvent(models.Model):
     date = models.DateField()
