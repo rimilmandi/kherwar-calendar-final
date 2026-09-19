@@ -2412,6 +2412,312 @@ body{background:#eef3ef!important;padding:0!important}
     font-weight: 700 !important;
 }
 </style>
+<style id="kherwar-mobile-topbar-fix">
+/* ============================================================
+   MOBILE TOP BAR FIX (≤700px)
+   - মাস, বছর, সময় এক লাইনে
+   - সময়ের ব্যাকগ্রাউন্ড বাদ
+   - আজ/আগের/পরের বাটন লুকানো
+   - উপরের ইভেন্টের সাথে নিচের কার্ডের গ্যাপ কমানো
+   ============================================================ */
+@media (max-width: 700px) {
+
+  /* ===== CONTROL PANEL — সব এক লাইনে ===== */
+  .control-panel {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 6px !important;
+    padding: 8px 8px !important;
+  }
+
+  .date-controls {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 4px !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+  }
+
+  .date-display {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 4px !important;
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+  }
+
+  .date-display select {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    width: auto !important;
+    max-width: none !important;
+    height: 34px !important;
+    padding: 6px 6px !important;
+    font-size: .72rem !important;
+    border-radius: 14px !important;
+  }
+
+  #month-selector { flex: 1.3 1 0 !important; }
+  #year-selector  { flex: 1   1 0 !important; }
+
+  /* ===== সময় — ব্যাকগ্রাউন্ড বাদ, এক লাইনে ===== */
+  .time-display {
+    flex: 0 0 auto !important;
+    min-width: auto !important;
+    width: auto !important;
+    height: 34px !important;
+    padding: 0 6px !important;
+    background: transparent !important;
+    color: #0b6b3a !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    font-size: .72rem !important;
+    font-weight: 800 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    white-space: nowrap !important;
+  }
+
+  /* reload বাটন ছোট ও এক লাইনে */
+  .reload-btn {
+    flex: 0 0 auto !important;
+    width: 34px !important;
+    height: 34px !important;
+    border-radius: 50% !important;
+    font-size: .85rem !important;
+  }
+
+  /* nav-btn (আগের/পরের) মোবাইলে লুকানো */
+  .date-controls .nav-btn {
+    display: none !important;
+  }
+
+  /* ===== MOBILE APP TOOLS (আজ/আগের/পরের) — লুকানো ===== */
+  .mobile-app-tools {
+    display: none !important;
+  }
+
+  /* ===== উপরের ইভেন্টের সাথে নিচের কার্ডের গ্যাপ কমানো ===== */
+  .desktop-calendar-layout {
+    margin-top: 0 !important;
+    padding-top: 2px !important;
+  }
+
+  .calendar-container {
+    padding-bottom: 6px !important;
+  }
+
+  .events-container {
+    margin-bottom: 4px !important;
+  }
+
+  .calendar-side {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  .solar-card,
+  .lunar-card {
+    margin-top: 0 !important;
+  }
+}
+
+/* ছোট মোবাইলে আরও কমপ্যাক্ট */
+@media (max-width: 380px) {
+  .control-panel {
+    padding: 6px 5px !important;
+    gap: 4px !important;
+  }
+
+  .date-display select {
+    height: 30px !important;
+    font-size: .66rem !important;
+    padding: 4px 4px !important;
+  }
+
+  .time-display {
+    height: 30px !important;
+    font-size: .66rem !important;
+    padding: 0 4px !important;
+  }
+
+  .reload-btn {
+    width: 30px !important;
+    height: 30px !important;
+    font-size: .78rem !important;
+  }
+
+  .desktop-calendar-layout {
+    gap: 6px !important;
+    padding: 4px 5px 10px !important;
+  }
+
+  .events-container {
+    margin-top: 6px !important;
+  }
+}
+</style>
+<style id="kherwar-solar-scroll-fix">
+/* ============================================================
+   SOLAR LIST — চন্দ্র মাসের মতো স্ক্রলযোগ্য
+   ============================================================ */
+.solar-card .solar-list,
+.side-card.solar-card .solar-list,
+#solarList {
+    max-height: 1010px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #ead9a4 #fffaf0;
+}
+
+.solar-card .solar-list::-webkit-scrollbar,
+#solarList::-webkit-scrollbar {
+    width: 6px;
+}
+
+.solar-card .solar-list::-webkit-scrollbar-track,
+#solarList::-webkit-scrollbar-track {
+    background: #fffaf0;
+    border-radius: 3px;
+}
+
+.solar-card .solar-list::-webkit-scrollbar-thumb,
+#solarList::-webkit-scrollbar-thumb {
+    background: #ead9a4;
+    border-radius: 3px;
+}
+
+.solar-card .solar-list::-webkit-scrollbar-thumb:hover,
+#solarList::-webkit-scrollbar-thumb:hover {
+    background: #d4b96a;
+}
+
+@media (max-width: 700px) {
+    .solar-card .solar-list,
+    #solarList {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 380px) {
+    .solar-card .solar-list,
+    #solarList {
+        max-height: 260px;
+    }
+}
+</style>
+<style id="kherwar-tiny-date-cell-fix">
+/* ============================================================
+   TINY MOBILE (≤380px) — DATE CELL FIX
+   ইংরেজি → সাঁওতালি → বাংলা строго উপর থেকে নিচে,
+   কোনো ওভারল্যাপ নেই
+   ============================================================ */
+@media (max-width: 380px) {
+
+  .calendar {
+    gap: 2px !important;
+  }
+
+  .date {
+    min-height: 68px !important;
+    padding: 3px 1px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+  }
+
+  .date .date-content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    gap: 1px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    position: static !important;
+  }
+
+  .date .english-date,
+  .date .santali-date,
+  .date .bengali-date {
+    display: block !important;
+    position: static !important;
+    float: none !important;
+    width: 100% !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: clip !important;
+    line-height: 1.1 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .date .english-date {
+    font-size: 0.72rem !important;
+    font-weight: 700 !important;
+  }
+
+  .date .santali-date {
+    font-size: 0.82rem !important;
+    font-weight: 700 !important;
+  }
+
+  .date .bengali-date {
+    font-size: 0.58rem !important;
+    font-weight: 700 !important;
+  }
+
+  .date .santali-month-name,
+  .date .bengali-month-name {
+    font-size: 0.42rem !important;
+    padding: 1px 2px !important;
+  }
+
+  .date .moon-image,
+  .date .event-image {
+    width: 14px !important;
+    height: 14px !important;
+    margin-top: 1px !important;
+  }
+
+  .date .event-label {
+    font-size: 0.48rem !important;
+  }
+}
+
+/* আরও ছোট (≤320px) */
+@media (max-width: 320px) {
+  .date {
+    min-height: 58px !important;
+  }
+
+  .date .english-date { font-size: 0.64rem !important; }
+  .date .santali-date { font-size: 0.74rem !important; }
+  .date .bengali-date { font-size: 0.52rem !important; }
+
+  .calendar {
+    gap: 1px !important;
+  }
+}
+</style>
 </head>
 <body>
     <div class="container">
@@ -8131,6 +8437,150 @@ if ('BroadcastChannel' in window) {
     #lunarList {
         max-height: 260px;
     }
+}
+</style>
+<style id="kherwar-mobile-navbtn-show">
+/* ============================================================
+   MOBILE — nav-btn (আগের/পরের) আবার দৃশ্যমান
+   একই লাইনে মাস, nav-btn, বছর, nav-btn, সময়
+   ============================================================ */
+@media (max-width: 700px) {
+
+  /* nav-btn আবার দেখাও */
+  .date-controls .nav-btn {
+    display: flex !important;
+    visibility: visible !important;
+    flex: 0 0 auto !important;
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    border-radius: 50% !important;
+    font-size: .78rem !important;
+    padding: 0 !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* date-controls এর gap আরেকটু কমাই যাতে সব ফিট করে */
+  .date-controls {
+    gap: 3px !important;
+  }
+
+  .date-display {
+    gap: 3px !important;
+  }
+
+  /* select গুলো আরেকটু চিকন করি যাতে nav-btn সহ ফিট হয় */
+  .date-display select {
+    height: 32px !important;
+    padding: 4px 4px !important;
+    font-size: .68rem !important;
+    border-radius: 12px !important;
+  }
+
+  #month-selector { flex: 1.2 1 0 !important; }
+  #year-selector  { flex: 1   1 0 !important; }
+
+  /* সময় আরেকটু ছোট করি জায়গা বাঁচাতে */
+  .time-display {
+    font-size: .68rem !important;
+    height: 32px !important;
+    padding: 0 4px !important;
+  }
+
+  .reload-btn {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: .78rem !important;
+  }
+
+  /* control-panel এ gap কমাই */
+  .control-panel {
+    gap: 4px !important;
+    padding: 7px 6px !important;
+  }
+}
+
+/* ৩৮০px এর নিচে আরও কমপ্যাক্ট */
+@media (max-width: 380px) {
+
+  .date-controls .nav-btn {
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px !important;
+    font-size: .7rem !important;
+  }
+
+  .date-display select {
+    height: 28px !important;
+    font-size: .62rem !important;
+    padding: 3px 3px !important;
+  }
+
+  .time-display {
+    height: 28px !important;
+    font-size: .62rem !important;
+    padding: 0 3px !important;
+  }
+
+  .reload-btn {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: .7rem !important;
+  }
+
+  .control-panel {
+    gap: 3px !important;
+    padding: 6px 5px !important;
+  }
+
+  .date-controls {
+    gap: 2px !important;
+  }
+
+  .date-display {
+    gap: 2px !important;
+  }
+}
+</style>
+<style id="kherwar-mobile-footer-compact">
+/* ============================================================
+   MOBILE FOOTER — হাইট কমানো
+   ============================================================ */
+@media (max-width: 700px) {
+
+  footer {
+    padding: 6px 8px 6px !important;
+    margin-top: 0 !important;
+    font-size: .62rem !important;
+    line-height: 1.25 !important;
+    text-align: center !important;
+  }
+
+  footer p {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.25 !important;
+  }
+
+  /* app bottom nav এর জন্য নিচে জায়গা ছাড়ি */
+  body {
+    padding-bottom: 68px !important;
+  }
+}
+
+/* ৩৮০px এর নিচে আরও কমপ্যাক্ট */
+@media (max-width: 380px) {
+
+  footer {
+    padding: 5px 6px 5px !important;
+    font-size: .56rem !important;
+    line-height: 1.2 !important;
+  }
+
+  footer p {
+    line-height: 1.2 !important;
+  }
 }
 </style>
 <script id="kherwar-final-calendar-fix-v3">
