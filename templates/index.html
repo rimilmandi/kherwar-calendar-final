@@ -7745,22 +7745,22 @@ function scrollToEvents(button){
 
 </script>
 
-<button class="app-fab" type="button" onclick="resetToCurrentDate()" aria-label="আজকের তারিখে ফিরে যান" title="আজ">
+<button class="app-fab" type="button" onclick="resetToCurrentDate()" aria-label="আজকের তারিখে ফিরে যান" title="Today">
   <i class="fas fa-calendar-day"></i>
 </button>
 
 <nav class="app-bottom-nav" aria-label="অ্যাপ নেভিগেশন">
   <button class="active" type="button" onclick="scrollToCalendar(this)">
-    <i class="fas fa-calendar-alt"></i><span>ক্যালেন্ডার</span>
+    <i class="fas fa-calendar-alt"></i><span>Calendar</span>
   </button>
   <button type="button" onclick="scrollToEvents(this)">
-    <i class="fas fa-star"></i><span>ইভেন্ট</span>
+    <i class="fas fa-star"></i><span>Events</span>
   </button>
   <button type="button" onclick="resetToCurrentDate(); setActiveNav(this)">
-    <i class="fas fa-crosshairs"></i><span>আজ</span>
+    <i class="fas fa-crosshairs"></i><span>Today</span>
   </button>
   <button type="button" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'}); setActiveNav(this)">
-    <i class="fas fa-info-circle"></i><span>তথ্য</span>
+    <i class="fas fa-info-circle"></i><span>Info</span>
   </button>
 </nav>
 
@@ -7935,18 +7935,18 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
 <section class="business-shell" id="businessHub" aria-label="Business and events">
   <div class="business-grid">
     <aside class="biz-side" aria-label="Left advertising">
-      <div class="biz-ad" data-ad-slot="left_top"><span class="ad-label">ADVERTISEMENT</span>আপনার বিজ্ঞাপন<br>এখানে</div>
+      <div class="biz-ad" data-ad-slot="left_top"><span class="ad-label">ADVERTISEMENT</span>Your Ad<br>Here</div>
       <div class="biz-card">
         <h3> Featured</h3>
-        <p>সাঁওতালি পণ্য, প্রতিষ্ঠান বা অনুষ্ঠানের প্রচার করুন।</p>
-        <div class="biz-cta"><button class="biz-btn gold" onclick="openAdvertise()">বিজ্ঞাপন দিন</button></div>
+        <p>Promote your products, institutions, or events.</p>
+        <div class="biz-cta"><button class="biz-btn gold" onclick="openAdvertise()">Place Advertisement</button></div>
       </div>
     </aside>
 
     <div>
       <div class="biz-card biz-sponsored" id="featuredBusiness" data-ad-slot="featured">
     <h3> Kherwar Featured</h3>
-    <p id="featuredBusinessText">সাঁওতালি সংস্কৃতি, অনুষ্ঠান ও স্থানীয় ব্যবসার তথ্য এখানে প্রদর্শিত হবে।</p>
+    <p id="featuredBusinessText">Information on Santali culture, events, and local businesses will be displayed here.</p>
   </div>
 </div>
         <div class="biz-cta">
@@ -7957,7 +7957,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
 
       <div class="biz-section">
         <div class="biz-card">
-          <h3>📅 এই মাসের অনুষ্ঠান</h3>
+          <h3>📅 This month's event</h3>
           <div class="biz-events" id="businessEventList">
             <div class="biz-event"><div class="biz-event-date">—</div><div><div class="biz-event-title">Event database থেকে অনুষ্ঠান এখানে আসবে</div><div class="biz-event-meta">Admin Panel থেকে lunar event যোগ করুন</div></div></div>
           </div>
@@ -7966,7 +7966,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
     </div>
 
     <aside class="biz-side" aria-label="Right advertising">
-      <div class="biz-ad" data-ad-slot="right_top"><span class="ad-label">ADVERTISEMENT</span>আপনার বিজ্ঞাপন<br>এখানে</div>
+      <div class="biz-ad" data-ad-slot="right_top"><span class="ad-label">ADVERTISEMENT</span>Your Ad<br>Here</div>
       <div class="biz-ad" data-ad-slot="right_bottom"><span class="ad-label">ADVERTISEMENT</span>Sponsored Event</div>
     </aside>
   </div>
@@ -7983,7 +7983,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
             ADVERTISEMENT
         </span>
         <span>
-            আপনার বিজ্ঞাপন এখানে
+            Your ad is here
         </span>
     </div>
 
@@ -7993,7 +7993,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
             ADVERTISEMENT
         </span>
         <span>
-            আপনার বিজ্ঞাপন এখানে
+            Your ad is here
         </span>
     </div>
 
@@ -8001,8 +8001,8 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
 
   <div class="biz-bottom">
     <div class="biz-card">
-      <h3>📣 আপনার অনুষ্ঠান / ব্যবসা প্রচার করুন</h3>
-      <p>Event, দোকান, প্রতিষ্ঠান বা সাংস্কৃতিক অনুষ্ঠানের প্রচারের জন্য তথ্য পাঠাতে পারেন।</p>
+      <h3>📣 Promote your event/business</h3>
+      <p>You can send information to promote events, shops, organizations, or cultural programs.</p>
       <div class="biz-cta">
         <button class="biz-btn" onclick="openAdvertise()">Promote Now</button>
         <button class="biz-btn alt" onclick="shareCalendar()">Share Calendar</button>
@@ -8010,12 +8010,12 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
     </div>
     <div class="biz-card">
       <h3>🔔 Calendar Updates</h3>
-      <p>নতুন অনুষ্ঠান ও গুরুত্বপূর্ণ Calendar update পেতে যোগাযোগ রাখুন।</p>
+      <p>Subscribe to receive updates about new events and important calendar changes.</p>
       <form class="biz-form" onsubmit="subscribeCalendar(event)">
         <input class="full" id="bizEmail" type="email" placeholder="Email address" required>
         <button class="biz-btn" type="submit">Subscribe</button>
       </form>
-      <div class="biz-note">বর্তমানে demo mode — পরে backend/API-এর সঙ্গে যুক্ত করা যাবে।</div>
+      <div class="biz-note">Currently in demo mode — will be connected to backend/API later.</div>
     </div>
   </div>
 </section>
@@ -8079,7 +8079,7 @@ window.shareCalendar=function(){
 };
 
 window.openAdvertise=function(){
-  const msg="বিজ্ঞাপন / Business Promotion-এর জন্য যোগাযোগ করুন।";
+  const msg="Contact us for advertising or business promotion.";
   alert(msg);
 };
 
@@ -8088,7 +8088,7 @@ window.subscribeCalendar=function(e){
   const email=document.getElementById("bizEmail").value.trim();
   if(email){
     localStorage.setItem("kherwarNewsletterEmail",email);
-    alert("ধন্যবাদ! Subscription request সংরক্ষণ করা হয়েছে।");
+    alert("Thank you! Your subscription request has been saved.");
     e.target.reset();
   }
 };
@@ -8206,10 +8206,10 @@ if (slot === 'additional_2') {
                 if (image) {
                     content += '<img src="' + image + '" alt="' + business + '" style="width:100%;max-height:180px;object-fit:cover;border-radius:10px;margin:10px 0;">';
                 } else {
-                    content += '<p style="color:#666;font-size:14px;">সাঁওতালি সংস্কৃতি, অনুষ্ঠান ও স্থানীয় ব্যবসার তথ্য এখানে প্রদর্শিত হবে।</p>';
+                    content += '<p style="color:#666;font-size:14px;">Information about Santali culture, events, and local businesses will be displayed here.</p>';
                 }
                 if (target) {
-                    content += '<p><a href="' + target + '" target="_blank" rel="noopener noreferrer" style="color:#087f5b;font-weight:bold;text-decoration:none;background:#e8f5e9;padding:8px 16px;border-radius:8px;display:inline-block;">🔗 বিস্তারিত দেখুন</a></p>';
+                    content += '<p><a href="' + target + '" target="_blank" rel="noopener noreferrer" style="color:#087f5b;font-weight:bold;text-decoration:none;background:#e8f5e9;padding:8px 16px;border-radius:8px;display:inline-block;">🔗 View Details</a></p>';
                 }
                 featuredEl.innerHTML = content;
                 featuredEl.style.border = '2px solid #d7a52a';
@@ -8540,6 +8540,52 @@ if ('BroadcastChannel' in window) {
 
   .date-display {
     gap: 2px !important;
+  }
+}
+</style>
+
+<style id="kherwar-biz-side-mobile-stack">
+/* ============================================================
+   MOBILE — Right Top & Right Bottom উপরে-নিচে সাজানো
+   বাকি সব layout অপরিবর্তিত
+   ============================================================ */
+@media (max-width: 760px) {
+
+  /* ডান পাশের sidebar — দুইটা ad উপরে-নিচে */
+  .business-grid > .biz-side:last-of-type {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: none !important;
+    gap: 10px !important;
+  }
+
+  /* প্রতিটি ডান দিকের ad পুরো প্রস্থ নেবে */
+  .business-grid > .biz-side:last-of-type .biz-ad {
+    width: 100% !important;
+    min-height: 110px !important;
+  }
+
+  /* বাম পাশের sidebar আগের মতোই পাশাপাশি (যদি একাধিক ad থাকে) */
+  .business-grid > .biz-side:first-of-type {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+
+  /* বাম পাশের featured কার্ডও পাশাপাশি থাকবে */
+  .business-grid > .biz-side:first-of-type .biz-card {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ছোট মোবাইলে আরও কমপ্যাক্ট */
+@media (max-width: 380px) {
+  .business-grid > .biz-side:last-of-type .biz-ad {
+    min-height: 90px !important;
+  }
+
+  .business-grid > .biz-side:last-of-type {
+    gap: 8px !important;
   }
 }
 </style>
