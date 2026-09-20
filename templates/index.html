@@ -8645,222 +8645,277 @@ let syncIntervalId = null;
 // ১. বিজ্ঞাপন রেন্ডার করার ফাংশন (আগের মতোই, তবে উন্নত)
 // ============================================================
 function renderAds() {
-    console.log('Rendering ads...', window.KHERWAR_DB.ads);
-    
-    if (!window.KHERWAR_DB.ads || window.KHERWAR_DB.ads.length === 0) {
-        console.log('No ads to render');
-        return;
-    }
-    
-    window.KHERWAR_DB.ads.forEach(function(a) {
-        const slot = String(a.slot || "").trim();
-        const business = a.business_name || "Advertisement";
-        const image = a.image || "";
-        const target = a.target_url || "";
+    console.log("Rendering main business ads...", window.KHERWAR_DB.ads);
 
-        // ===== ADDITIONAL AD BOX 1 =====
-if (slot === 'additional_1') {
-    const el = document.getElementById('additionalAd1');
+    const ads = Array.isArray(window.KHERWAR_DB.ads)
+        ? window.KHERWAR_DB.ads
+        : [];
 
-    if (el) {
-        let content = image
-            ? '<img src="' + image + '" alt="' + business + '" style="width:100%;height:100%;min-height:150px;object-fit:cover;display:block;">'
-            : '<div style="padding:25px;font-weight:700;text-align:center;color:#666;">' + business + '</div>';
+    // =========================================================
+    // MAIN 4 AD SLOTS
+    // =========================================================
+    const mainSlots = [
+        "left_top",
+        "featured",
+        "right_top",
+        "right_bottom"
+    ];
 
-        if (target) {
-            content =
-                '<a href="' + target + '" target="_blank" rel="noopener noreferrer" style="display:block;width:100%;height:100%;">' +
-                content +
-                '</a>';
+    // ---------------------------------------------------------
+    // Helper: image URL ঠিক করা
+    // ---------------------------------------------------------
+    function getImageUrl(image) {
+        if (!image) return "";
+
+        image = String(image).trim();
+
+        if (!image) return "";
+
+        // Already full URL
+        if (
+            image.startsWith("http://") ||
+            image.startsWith("https://")
+        ) {
+            return image;
         }
 
-        el.innerHTML = content;
-        el.style.padding = "0";
-        el.style.overflow = "hidden";
-        el.style.borderRadius = "12px";
-    }
-
-    return;
-}
-
-
-// ===== ADDITIONAL AD BOX 2 =====
-if (slot === 'additional_2') {
-    const el = document.getElementById('additionalAd2');
-
-    if (el) {
-        let content = image
-            ? '<img src="' + image + '" alt="' + business + '" style="width:100%;height:100%;min-height:150px;object-fit:cover;display:block;">'
-            : '<div style="padding:25px;font-weight:700;text-align:center;color:#666;">' + business + '</div>';
-
-        if (target) {
-            content =
-                '<a href="' + target + '" target="_blank" rel="noopener noreferrer" style="display:block;width:100%;height:100%;">' +
-                content +
-                '</a>';
+        // Django media path
+        if (image.startsWith("/")) {
+            return image;
         }
 
-        el.innerHTML = content;
-        el.style.padding = "0";
-        el.style.overflow = "hidden";
-        el.style.borderRadius = "12px";
+        // Relative media filename/path
+        return "/media/" + image.replace(/^\/+/, "");
     }
 
-    return;
-}
+    // ---------------------------------------------------------
+    // Helper: HTML escape
+    // ---------------------------------------------------------
+    function escapeHtml(value) {
+        return String(value || "").replace(/[&<>"']/g, function(c) {
+            return {
+                "&": "&amp;",
+                "<": "&lt;",
+                ">": "&gt;",
+                '"': "&quot;",
+                "'": "&#39;"
+            }[c];
+        });
+    }
 
-        // ===== FEATURED SLOT =====
-if (slot === 'featured') {
+    // ---------------------------------------------------------
+    // প্রতিটি main slot render
+    // ---------------------------------------------------------
+    mainSlots.forEach(function(slot) {
 
-    const featuredContent =
-        document.getElementById('featuredBusinessContent');
+        const el = document.querySelector(
+            '[data-ad-slot="' + slot + '"]'
+        );
 
-    if (!featuredContent) return;
+        if (!el) {
+            console.warn("Ad slot not found:", slot);
+            return;
+        }
 
+        // এই slot-এর active ad খুঁজুন
+        const slotAds = ads
+            .filter(function(ad) {
+                return String(ad.slot || "").trim() === slot;
+            })
+            .sort(function(a, b) {
+                return Number(b.priority || 0) -
+                       Number(a.priority || 0);
+            });
 
-    const businessName =
-        business || 'Advertisement';
+        const ad = slotAds.length ? slotAds[0] : null;
 
+        // -----------------------------------------------------
+        // No ad
+        // -----------------------------------------------------
+        if (!ad) {
 
-    let content = '';
+            if (slot === "featured") {
+                el.innerHTML = `
+                    <h3>🌿 Kherwar Featured</h3>
+                    <p id="featuredBusinessText">
+                        Information on Santali culture, events,
+                        and local businesses will be displayed here.
+                    </p>
+                `;
 
+                el.style.padding = "15px";
+                el.style.overflow = "hidden";
+                return;
+            }
 
-    /* ================= IMAGE ================= */
-
-    if (image) {
-
-        const imageHTML = `
-            <img
-                src="${image}"
-                alt="${businessName}"
-                class="featured-ad-image"
-                loading="lazy"
-                onerror="
-                    this.style.display='none';
-                    this.closest('.featured-ad-image-link')
-                        ?.classList.add('image-error');
-                "
-            >
-        `;
-
-
-        if (target) {
-
-            content += `
-                <a
-                    href="${target}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="featured-ad-image-link">
-
-                    ${imageHTML}
-
-                </a>
+            el.innerHTML = `
+                <span class="ad-label">ADVERTISEMENT</span>
+                Your Ad<br>Here
             `;
 
+            el.style.padding = "12px";
+            el.style.overflow = "hidden";
+
+            return;
+        }
+
+        // -----------------------------------------------------
+        // Ad data
+        // -----------------------------------------------------
+        const business =
+            ad.business_name || "Advertisement";
+
+        const image =
+            getImageUrl(ad.image || "");
+
+        const target =
+            ad.target_url || "";
+
+        const safeBusiness =
+            escapeHtml(business);
+
+        // -----------------------------------------------------
+        // FEATURED
+        // -----------------------------------------------------
+        if (slot === "featured") {
+
+            let content = `
+                <h3>🌿 ${safeBusiness}</h3>
+            `;
+
+            if (image) {
+
+                content += `
+                    <img
+                        src="${image}"
+                        alt="${safeBusiness}"
+                        style="
+                            width:100%;
+                            max-height:220px;
+                            object-fit:cover;
+                            display:block;
+                            border-radius:12px;
+                            margin:10px 0;
+                        "
+                        onerror="
+                            console.error(
+                                'Featured image failed:',
+                                this.src
+                            );
+                        "
+                    >
+                `;
+            }
+
+            if (target) {
+
+                content += `
+                    <p>
+                        <a
+                            href="${escapeHtml(target)}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style="
+                                color:#087f5b;
+                                font-weight:bold;
+                                text-decoration:none;
+                                background:#e8f5e9;
+                                padding:8px 16px;
+                                border-radius:8px;
+                                display:inline-block;
+                            "
+                        >
+                            🔗 View Details
+                        </a>
+                    </p>
+                `;
+            }
+
+            el.innerHTML = content;
+
+            el.style.padding = "15px";
+            el.style.overflow = "hidden";
+            el.style.borderRadius = "16px";
+
+            return;
+        }
+
+        // -----------------------------------------------------
+        // LEFT / RIGHT AD BOXES
+        // -----------------------------------------------------
+        let content = "";
+
+        if (image) {
+
+            content = `
+                <img
+                    src="${image}"
+                    alt="${safeBusiness}"
+                    style="
+                        width:100%;
+                        height:100%;
+                        min-height:150px;
+                        object-fit:cover;
+                        display:block;
+                        border-radius:12px;
+                    "
+                    onerror="
+                        console.error(
+                            'Ad image failed:',
+                            this.src
+                        );
+                    "
+                `;
+
+            // close img tag
+            content += `>`;
         } else {
 
-            content += `
-                <div class="featured-ad-image-link">
-
-                    ${imageHTML}
-
+            content = `
+                <div
+                    style="
+                        padding:25px;
+                        font-weight:700;
+                        text-align:center;
+                        color:#666;
+                    "
+                >
+                    ${safeBusiness}
                 </div>
             `;
-
         }
 
-    }
-
-
-    /* ================= NO IMAGE ================= */
-
-    else {
-
-        content += `
-            <div
-                style="
-                    min-height:180px;
-                    display:flex;
-                    align-items:center;
-                    justify-content:center;
-                    text-align:center;
-                    color:#65766f;
-                    background:#f5faf7;
-                    border-radius:14px;
-                    padding:20px;
-                    box-sizing:border-box;
-                ">
-
-                <strong>
-                    ${businessName}
-                </strong>
-
-            </div>
-        `;
-
-    }
-
-
-    /* ================= DESCRIPTION ================= */
-
-    if (ad.description) {
-
-        content += `
-            <div class="featured-ad-description">
-                ${ad.description}
-            </div>
-        `;
-
-    }
-
-
-    /* ================= DETAILS BUTTON ================= */
-
-    if (target) {
-
-        content += `
-            <a
-                href="${target}"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="featured-ad-details">
-
-                🔗 View Details
-
-            </a>
-        `;
-
-    }
-
-
-    /* ================= RENDER ONLY CONTENT ================= */
-
-    featuredContent.innerHTML = content;
-
-    return;
-}
-
-        // ===== OTHER SLOTS =====
-        const el = document.querySelector('[data-ad-slot="' + slot + '"]');
-        if (!el) return;
-
-        let content = "";
-        if (image) {
-            content = '<img src="' + image + '" alt="' + business + '" style="width:100%;height:100%;min-height:150px;object-fit:cover;display:block;border-radius:12px;">';
-        } else {
-            content = '<div style="padding:25px;font-weight:700;text-align:center;color:#666;">' + business + '</div>';
-        }
+        // -----------------------------------------------------
+        // Target URL
+        // -----------------------------------------------------
         if (target) {
-            content = '<a href="' + target + '" target="_blank" rel="noopener noreferrer" style="display:block;width:100%;height:100%;">' + content + '</a>';
+
+            content = `
+                <a
+                    href="${escapeHtml(target)}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style="
+                        display:block;
+                        width:100%;
+                        height:100%;
+                        text-decoration:none;
+                    "
+                >
+                    ${content}
+                </a>
+            `;
         }
+
         el.innerHTML = content;
+
         el.style.padding = "0";
         el.style.overflow = "hidden";
         el.style.borderRadius = "12px";
     });
-}
 
+    console.log("✅ Main 4 ads rendered");
+}
 // ============================================================
 // ২. ক্যালেন্ডার ইভেন্ট আপডেট করার ফাংশন
 // ============================================================
