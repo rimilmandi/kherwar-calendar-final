@@ -9261,49 +9261,326 @@ if ('BroadcastChannel' in window) {
 </style>
 
 <style id="kherwar-biz-side-mobile-stack">
+
 /* ============================================================
-   MOBILE — Right Top & Right Bottom উপরে-নিচে সাজানো
-   বাকি সব layout অপরিবর্তিত
+   BUSINESS MOBILE LAYOUT — FINAL
+   Left Top = 100% width
+   Featured = 100% width
+   Right Top = 100% width
+   Right Bottom = 100% width
    ============================================================ */
+
 @media (max-width: 760px) {
 
-  /* ডান পাশের sidebar — দুইটা ad উপরে-নিচে */
-  .business-grid > .biz-side:last-of-type {
-    display: flex !important;
-    flex-direction: column !important;
-    grid-template-columns: none !important;
-    gap: 10px !important;
-  }
+    /* পুরো Business area */
+    .business-shell {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 18px 0 !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        box-sizing: border-box !important;
+    }
 
-  /* প্রতিটি ডান দিকের ad পুরো প্রস্থ নেবে */
-  .business-grid > .biz-side:last-of-type .biz-ad {
-    width: 100% !important;
-    min-height: 110px !important;
-  }
+    /* এক কলাম */
+    .business-grid {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        gap: 12px !important;
+        box-sizing: border-box !important;
+    }
 
-  /* বাম পাশের sidebar আগের মতোই পাশাপাশি (যদি একাধিক ad থাকে) */
-  .business-grid > .biz-side:first-of-type {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 10px !important;
-  }
+    /* ========================================================
+       LEFT TOP
+       ======================================================== */
 
-  /* বাম পাশের featured কার্ডও পাশাপাশি থাকবে */
-  .business-grid > .biz-side:first-of-type .biz-card {
-    grid-column: 1 / -1;
-  }
+    .business-grid > .biz-side:first-of-type {
+        display: block !important;
+
+        /* পুরনো 1fr 1fr সম্পূর্ণ বাতিল */
+        grid-template-columns: none !important;
+
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        box-sizing: border-box !important;
+    }
+
+    /* Left Top advertisement */
+    .business-grid > .biz-side:first-of-type > .biz-ad {
+        display: flex !important;
+
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+
+        margin: 0 !important;
+
+        box-sizing: border-box !important;
+
+        min-height: 180px !important;
+        height: auto !important;
+    }
+
+    /* পুরনো Featured card — Left Top sidebar-এর দ্বিতীয় card */
+    .business-grid > .biz-side:first-of-type > .biz-card {
+        display: none !important;
+    }
+
+
+    /* ========================================================
+       FEATURED
+       ======================================================== */
+
+    .featured-column {
+        display: block !important;
+
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+
+        grid-column: 1 !important;
+        grid-row: 2 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        box-sizing: border-box !important;
+    }
+
+    .featured-box {
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+
+        box-sizing: border-box !important;
+
+        overflow: hidden !important;
+    }
+
+
+    /* ========================================================
+       RIGHT TOP + RIGHT BOTTOM
+       ======================================================== */
+
+    .business-grid > .biz-side:last-of-type {
+        display: flex !important;
+        flex-direction: column !important;
+
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+
+        grid-column: 1 !important;
+        grid-row: 3 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        gap: 12px !important;
+
+        box-sizing: border-box !important;
+    }
+
+    .business-grid > .biz-side:last-of-type > .biz-ad {
+        display: flex !important;
+
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+
+        margin: 0 !important;
+
+        box-sizing: border-box !important;
+
+        flex: 0 0 auto !important;
+    }
 }
 
-/* ছোট মোবাইলে আরও কমপ্যাক্ট */
+
+/* ============================================================
+   480px এবং তার নিচে
+   ============================================================ */
+
+@media (max-width: 480px) {
+
+    .business-shell {
+        width: 100% !important;
+        max-width: none !important;
+
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
+        box-sizing: border-box !important;
+    }
+
+    .business-grid {
+        width: 100% !important;
+        max-width: none !important;
+
+        grid-template-columns: minmax(0, 1fr) !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        box-sizing: border-box !important;
+    }
+
+    /* LEFT TOP — force full width */
+    .business-grid > .biz-side:first-of-type {
+        display: block !important;
+
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+
+        grid-column: 1 !important;
+
+        box-sizing: border-box !important;
+    }
+
+    .business-grid > .biz-side:first-of-type > .biz-ad {
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+
+        box-sizing: border-box !important;
+
+        min-height: 170px !important;
+    }
+
+    /* FEATURED */
+    .featured-column {
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+
+        grid-column: 1 !important;
+
+        box-sizing: border-box !important;
+    }
+
+    .featured-box {
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+
+        box-sizing: border-box !important;
+    }
+
+    /* RIGHT ADS */
+    .business-grid > .biz-side:last-of-type {
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+
+        grid-column: 1 !important;
+
+        box-sizing: border-box !important;
+    }
+
+    .business-grid > .biz-side:last-of-type > .biz-ad {
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+
+        box-sizing: border-box !important;
+    }
+}
+
+
+/* ============================================================
+   380px এবং তার নিচে
+   ============================================================ */
+
 @media (max-width: 380px) {
-  .business-grid > .biz-side:last-of-type .biz-ad {
-    min-height: 90px !important;
-  }
 
-  .business-grid > .biz-side:last-of-type {
-    gap: 8px !important;
-  }
+    .business-shell {
+        width: 100% !important;
+        max-width: none !important;
+
+        padding-left: 6px !important;
+        padding-right: 6px !important;
+
+        box-sizing: border-box !important;
+    }
+
+    .business-grid {
+        width: 100% !important;
+        max-width: none !important;
+
+        grid-template-columns: 1fr !important;
+
+        gap: 10px !important;
+
+        box-sizing: border-box !important;
+    }
+
+    /* LEFT TOP — absolutely full width */
+    .business-grid > .biz-side:first-of-type {
+        display: block !important;
+
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+
+        grid-column: 1 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        box-sizing: border-box !important;
+    }
+
+    .business-grid > .biz-side:first-of-type > .biz-ad {
+        display: flex !important;
+
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+
+        margin: 0 !important;
+
+        min-height: 160px !important;
+
+        box-sizing: border-box !important;
+    }
+
+    /* FEATURED */
+    .featured-column {
+        width: 100% !important;
+        max-width: none !important;
+
+        grid-column: 1 !important;
+
+        box-sizing: border-box !important;
+    }
+
+    /* RIGHT ADS */
+    .business-grid > .biz-side:last-of-type {
+        width: 100% !important;
+        max-width: none !important;
+
+        grid-column: 1 !important;
+
+        box-sizing: border-box !important;
+    }
 }
+
 </style>
 
 <style id="kherwar-mobile-footer-compact">
