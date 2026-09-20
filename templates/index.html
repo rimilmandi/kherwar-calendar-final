@@ -2353,350 +2353,7 @@ body{background:#eef3ef!important;padding:0!important}
 .biz-form .full{grid-column:1/-1}
 .biz-note{font-size:10px;color:#788780;margin-top:8px}
 @media(max-width:1000px){.business-grid{grid-template-columns:150px minmax(0,1fr) 150px}}
-@media(max-width:760px){.business-grid{grid-template-columns:1fr}.biz-side{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-}.biz-ad{min-height:100px}.biz-bottom{grid-template-columns:1fr}.biz-form{grid-template-columns:1fr}.biz-form .full{grid-column:auto}.biz-event{grid-template-columns:64px 1fr}.biz-event-actions{grid-column:2}}
-/* ============================================================
-   KHERWAR BUSINESS / ADVERTISEMENT DESKTOP FIX
-   ============================================================ */
-
-.business-shell{
-    width:100%;
-    max-width:1240px;
-    margin:18px auto 0;
-    padding:0 14px 24px;
-    box-sizing:border-box;
-}
-
-.business-grid{
-    display:grid;
-    grid-template-columns:190px minmax(0,1fr) 190px;
-    gap:16px;
-    align-items:start;
-}
-
-/* Left / Right advertisement columns */
-.biz-side{
-    display:flex;
-    flex-direction:column;
-    gap:14px;
-}
-
-.biz-ad{
-    width:100%;
-    min-height:180px;
-    box-sizing:border-box;
-    border:1px dashed #b8cfc6;
-    border-radius:16px;
-    background:linear-gradient(145deg,#f8fcfa,#edf6f2);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:12px;
-    color:#65766f;
-    font-size:12px;
-    overflow:hidden;
-    position:relative;
-}
-
-.biz-ad img{
-    display:block;
-    width:100%;
-    height:100%;
-    min-height:180px;
-    object-fit:cover;
-    border-radius:14px;
-}
-
-.biz-ad .ad-label{
-    position:absolute;
-    top:7px;
-    right:8px;
-    z-index:3;
-    font-size:9px;
-    background:rgba(255,255,255,.88);
-    border-radius:999px;
-    padding:3px 6px;
-}
-
-/* ============================================================
-   FEATURED ADVERTISEMENT CARD
-   ============================================================ */
-
-.biz-sponsored{
-    width:100%;
-    box-sizing:border-box;
-    background:linear-gradient(135deg,#fffdf0,#fff8dc);
-    border:2px solid #d7a52a;
-    border-radius:18px;
-    padding:14px;
-    box-shadow:0 6px 24px rgba(30,70,50,.08);
-    overflow:hidden;
-}
-
-/* Header inside advertisement */
-.featured-ad-header{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:14px;
-    margin-bottom:12px;
-}
-
-.featured-ad-title{
-    margin:0;
-    font-size:17px;
-    font-weight:900;
-    color:#163d2d;
-    display:flex;
-    align-items:center;
-    gap:7px;
-}
-
-/* Buttons stay INSIDE the advertisement card */
-.featured-ad-actions{
-    display:flex;
-    align-items:center;
-    justify-content:flex-end;
-    gap:8px;
-    flex-wrap:wrap;
-    flex:0 0 auto;
-}
-
-.featured-ad-actions .biz-btn{
-    white-space:nowrap;
-}
-
-/* Image/content area */
-.featured-ad-content{
-    width:100%;
-    min-width:0;
-}
-
-.featured-ad-image-link{
-    display:block;
-    width:100%;
-    margin:0;
-    padding:0;
-    line-height:0;
-    border-radius:14px;
-    overflow:hidden;
-    background:#07162d;
-}
-
-.featured-ad-image{
-    display:block;
-    width:100%;
-    height:auto;
-    min-height:180px;
-    max-height:380px;
-    object-fit:cover;
-    object-position:center;
-    border-radius:14px;
-}
-
-/* Advertisement text */
-.featured-ad-description{
-    margin:10px 2px 0;
-    color:#63736c;
-    font-size:12px;
-    line-height:1.55;
-}
-
-/* Details button */
-.featured-ad-details{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    margin-top:10px;
-    padding:8px 14px;
-    border-radius:9px;
-    background:#e8f5e9;
-    color:#087f5b;
-    font-size:11px;
-    font-weight:800;
-    text-decoration:none;
-}
-
-/* Buttons */
-.biz-cta{
-    display:flex;
-    gap:8px;
-    flex-wrap:wrap;
-    margin-top:10px;
-}
-
-.biz-btn{
-    border:0;
-    border-radius:10px;
-    padding:9px 13px;
-    font-weight:800;
-    font-size:11px;
-    cursor:pointer;
-    background:#087f5b;
-    color:#fff;
-    transition:.18s ease;
-}
-
-.biz-btn:hover{
-    transform:translateY(-1px);
-    box-shadow:0 4px 12px rgba(0,80,55,.15);
-}
-
-.biz-btn.alt{
-    background:#e7f3ee;
-    color:#087f5b;
-}
-
-.biz-btn.gold{
-    background:#fff1c8;
-    color:#765600;
-}
-
-/* ============================================================
-   MONTH EVENT CARD
-   ============================================================ */
-
-.biz-section{
-    width:100%;
-    margin:18px 0 0;
-}
-
-.biz-section .biz-card{
-    width:100%;
-    box-sizing:border-box;
-}
-
-.biz-events{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:10px;
-}
-
-.biz-event{
-    display:grid;
-    grid-template-columns:82px minmax(0,1fr) auto;
-    gap:12px;
-    align-items:center;
-    border:1px solid #dce8e3;
-    border-radius:14px;
-    background:#fff;
-    padding:10px;
-}
-
-.biz-event-actions{
-    display:flex;
-    gap:5px;
-    flex-wrap:wrap;
-}
-
-/* ============================================================
-   DESKTOP
-   ============================================================ */
-
-@media (min-width:1001px){
-
-    .business-grid{
-        grid-template-columns:190px minmax(0,1fr) 190px;
-    }
-
-    .featured-ad-image{
-        max-height:380px;
-    }
-}
-
-/* ============================================================
-   TABLET
-   ============================================================ */
-
-@media (max-width:1000px) and (min-width:761px){
-
-    .business-grid{
-        grid-template-columns:150px minmax(0,1fr) 150px;
-        gap:12px;
-    }
-
-    .featured-ad-header{
-        align-items:flex-start;
-    }
-}
-
-/* ============================================================
-   MOBILE
-   ============================================================ */
-
-@media (max-width:760px){
-
-    .business-shell{
-        padding:0 10px 18px;
-    }
-
-    .business-grid{
-        grid-template-columns:1fr;
-        gap:12px;
-    }
-
-    .biz-side{
-        display:grid;
-        grid-template-columns:1fr 1fr;
-        gap:10px;
-    }
-
-    .biz-ad{
-        min-height:110px;
-    }
-
-    .biz-ad img{
-        min-height:110px;
-    }
-
-    .featured-ad-header{
-        flex-direction:column;
-        align-items:stretch;
-        gap:10px;
-    }
-
-    .featured-ad-actions{
-        justify-content:flex-start;
-    }
-
-    .featured-ad-image{
-        min-height:140px;
-        max-height:260px;
-    }
-
-    .biz-event{
-        grid-template-columns:64px minmax(0,1fr);
-    }
-
-    .biz-event-actions{
-        grid-column:2;
-    }
-}
-
-@media (max-width:480px){
-
-    .biz-side{
-        grid-template-columns:1fr;
-    }
-
-    .featured-ad-actions{
-        width:100%;
-    }
-
-    .featured-ad-actions .biz-btn{
-        flex:1;
-        text-align:center;
-    }
-
-    .featured-ad-image{
-        min-height:120px;
-        max-height:220px;
-    }
-}
+@media(max-width:760px){.business-grid{grid-template-columns:1fr}.biz-side{display:grid;grid-template-columns:1fr 1fr}.biz-ad{min-height:100px}.biz-bottom{grid-template-columns:1fr}.biz-form{grid-template-columns:1fr}.biz-form .full{grid-column:auto}.biz-event{grid-template-columns:64px 1fr}.biz-event-actions{grid-column:2}}
 </style>
 
 <style id="kherwar-fixed-events-final-css">
@@ -8310,209 +7967,72 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
 </script>
 
 <!-- ================= BUSINESS CALENDAR LAYER ================= -->
-
 <section class="business-shell" id="businessHub" aria-label="Business and events">
+  <div class="business-grid">
+    <aside class="biz-side" aria-label="Left advertising">
+      <div class="biz-ad" data-ad-slot="left_top"><span class="ad-label">ADVERTISEMENT</span>Your Ad<br>Here</div>
+      <div class="biz-card">
+        <h3> Featured</h3>
+        <p>Promote your products, institutions, or events.</p>
+        <div class="biz-cta"><button class="biz-btn gold" onclick="openAdvertise()">Place Advertisement</button></div>
+      </div>
+    </aside>
 
-    <div class="business-grid">
+    <div>
+      <div class="biz-card biz-sponsored" id="featuredBusiness" data-ad-slot="featured">
+    <h3> Kherwar Featured</h3>
+    <p id="featuredBusinessText">Information on Santali culture, events, and local businesses will be displayed here.</p>
+  </div>
+</div>
+        <div class="biz-cta">
+          <button class="biz-btn" onclick="shareCalendar()">↗ Share</button>
+          <button class="biz-btn alt" onclick="openAdvertise()">Business Promotion</button>
+        </div>
+      </div>
 
-        <!-- ================= LEFT COLUMN ================= -->
-
-        <aside class="biz-side" aria-label="Left advertising">
-
-            <div class="biz-ad" data-ad-slot="left_top">
-                <span class="ad-label">ADVERTISEMENT</span>
-                Your Ad<br>Here
-            </div>
-
-            <div class="biz-card">
-                <h3>🌿 Featured</h3>
-
-                <p>
-                    Promote your products, institutions, or events.
-                </p>
-
-                <div class="biz-cta">
-                    <button
-                        class="biz-btn gold"
-                        onclick="openAdvertise()">
-                        Place Advertisement
-                    </button>
-                </div>
-            </div>
-
-        </aside>
-
-
-        <!-- ================= CENTER COLUMN ================= -->
-
-        <main class="business-main">
-
-            <!-- FEATURED ADVERTISEMENT -->
-
-            <div
-                class="biz-sponsored"
-                id="featuredBusiness"
-                data-ad-slot="featured">
-
-                <!-- Header -->
-
-                <div class="featured-ad-header">
-
-                    <h3 class="featured-ad-title">
-                        📣 Advertisement
-                    </h3>
-
-                    <div class="featured-ad-actions">
-
-                        <button
-                            type="button"
-                            class="biz-btn"
-                            onclick="shareCalendar()">
-                            ↗ Share
-                        </button>
-
-                        <button
-                            type="button"
-                            class="biz-btn alt"
-                            onclick="openAdvertise()">
-                            🏪 Business Promotion
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Database advertisement content -->
-
-                <div
-                    id="featuredBusinessContent"
-                    class="featured-ad-content">
-
-                    <div class="featured-ad-placeholder">
-                        <p id="featuredBusinessText">
-                            Information on Santali culture,
-                            events, and local businesses
-                            will be displayed here.
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- ================= MONTH EVENTS ================= -->
-
-            <div class="biz-section">
-
-                <div class="biz-card">
-
-                    <h3>📅 This month's event</h3>
-
-                    <div
-                        class="biz-events"
-                        id="businessEventList">
-
-                        <div class="biz-event">
-
-                            <div class="biz-event-date">
-                                —
-                            </div>
-
-                            <div>
-                                <div class="biz-event-title">
-                                    Event database থেকে অনুষ্ঠান এখানে আসবে
-                                </div>
-
-                                <div class="biz-event-meta">
-                                    Admin Panel থেকে lunar event যোগ করুন
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </main>
-
-
-        <!-- ================= RIGHT COLUMN ================= -->
-
-        <aside
-            class="biz-side"
-            aria-label="Right advertising">
-
-            <div
-                class="biz-ad"
-                data-ad-slot="right_top">
-
-                <span class="ad-label">
-                    ADVERTISEMENT
-                </span>
-
-                Your Ad<br>Here
-
-            </div>
-
-
-            <div
-                class="biz-ad"
-                data-ad-slot="right_bottom">
-
-                <span class="ad-label">
-                    ADVERTISEMENT
-                </span>
-
-                Sponsored Event
-
-            </div>
-
-        </aside>
-
+      <div class="biz-section">
+        <div class="biz-card">
+          <h3>📅 This month's event</h3>
+          <div class="biz-events" id="businessEventList">
+            <div class="biz-event"><div class="biz-event-date">—</div><div><div class="biz-event-title">Event database থেকে অনুষ্ঠান এখানে আসবে</div><div class="biz-event-meta">Admin Panel থেকে lunar event যোগ করুন</div></div></div>
+          </div>
+        </div>
+      </div>
     </div>
 
+    <aside class="biz-side" aria-label="Right advertising">
+      <div class="biz-ad" data-ad-slot="right_top"><span class="ad-label">ADVERTISEMENT</span>Your Ad<br>Here</div>
+      <div class="biz-ad" data-ad-slot="right_bottom"><span class="ad-label">ADVERTISEMENT</span>Sponsored Event</div>
+    </aside>
+  </div>
 
-    <!-- ================= ADDITIONAL ADS ================= -->
+  <!-- =========================================================
+     ADDITIONAL ADVERTISEMENT BOXES
+     ========================================================= -->
 
-    <div class="additional-ads">
+<div class="additional-ads">
 
-        <div
-            class="additional-ad-box"
-            id="additionalAd1">
-
-            <span class="additional-ad-label">
-                ADVERTISEMENT
-            </span>
-
-            <span>
-                Your ad is here
-            </span>
-
-        </div>
-
-
-        <div
-            class="additional-ad-box"
-            id="additionalAd2">
-
-            <span class="additional-ad-label">
-                ADVERTISEMENT
-            </span>
-
-            <span>
-                Your ad is here
-            </span>
-
-        </div>
-
+    <div class="additional-ad-box"
+         id="additionalAd1">
+        <span class="additional-ad-label">
+            ADVERTISEMENT
+        </span>
+        <span>
+            Your ad is here
+        </span>
     </div>
 
-</section>
+    <div class="additional-ad-box"
+         id="additionalAd2">
+        <span class="additional-ad-label">
+            ADVERTISEMENT
+        </span>
+        <span>
+            Your ad is here
+        </span>
+    </div>
+
+</div>
 
   <div class="biz-bottom">
     <div class="biz-card">
@@ -8649,277 +8169,112 @@ let syncIntervalId = null;
 // ১. বিজ্ঞাপন রেন্ডার করার ফাংশন (আগের মতোই, তবে উন্নত)
 // ============================================================
 function renderAds() {
-    console.log("Rendering main business ads...", window.KHERWAR_DB.ads);
-
-    const ads = Array.isArray(window.KHERWAR_DB.ads)
-        ? window.KHERWAR_DB.ads
-        : [];
-
-    // =========================================================
-    // MAIN 4 AD SLOTS
-    // =========================================================
-    const mainSlots = [
-        "left_top",
-        "featured",
-        "right_top",
-        "right_bottom"
-    ];
-
-    // ---------------------------------------------------------
-    // Helper: image URL ঠিক করা
-    // ---------------------------------------------------------
-    function getImageUrl(image) {
-        if (!image) return "";
-
-        image = String(image).trim();
-
-        if (!image) return "";
-
-        // Already full URL
-        if (
-            image.startsWith("http://") ||
-            image.startsWith("https://")
-        ) {
-            return image;
-        }
-
-        // Django media path
-        if (image.startsWith("/")) {
-            return image;
-        }
-
-        // Relative media filename/path
-        return "/media/" + image.replace(/^\/+/, "");
+    console.log('Rendering ads...', window.KHERWAR_DB.ads);
+    
+    if (!window.KHERWAR_DB.ads || window.KHERWAR_DB.ads.length === 0) {
+        console.log('No ads to render');
+        return;
     }
+    
+    window.KHERWAR_DB.ads.forEach(function(a) {
+        const slot = String(a.slot || "").trim();
+        const business = a.business_name || "Advertisement";
+        const image = a.image || "";
+        const target = a.target_url || "";
 
-    // ---------------------------------------------------------
-    // Helper: HTML escape
-    // ---------------------------------------------------------
-    function escapeHtml(value) {
-        return String(value || "").replace(/[&<>"']/g, function(c) {
-            return {
-                "&": "&amp;",
-                "<": "&lt;",
-                ">": "&gt;",
-                '"': "&quot;",
-                "'": "&#39;"
-            }[c];
-        });
-    }
+        // ===== ADDITIONAL AD BOX 1 =====
+if (slot === 'additional_1') {
+    const el = document.getElementById('additionalAd1');
 
-    // ---------------------------------------------------------
-    // প্রতিটি main slot render
-    // ---------------------------------------------------------
-    mainSlots.forEach(function(slot) {
+    if (el) {
+        let content = image
+            ? '<img src="' + image + '" alt="' + business + '" style="width:100%;height:100%;min-height:150px;object-fit:cover;display:block;">'
+            : '<div style="padding:25px;font-weight:700;text-align:center;color:#666;">' + business + '</div>';
 
-        const el = document.querySelector(
-            '[data-ad-slot="' + slot + '"]'
-        );
-
-        if (!el) {
-            console.warn("Ad slot not found:", slot);
-            return;
-        }
-
-        // এই slot-এর active ad খুঁজুন
-        const slotAds = ads
-            .filter(function(ad) {
-                return String(ad.slot || "").trim() === slot;
-            })
-            .sort(function(a, b) {
-                return Number(b.priority || 0) -
-                       Number(a.priority || 0);
-            });
-
-        const ad = slotAds.length ? slotAds[0] : null;
-
-        // -----------------------------------------------------
-        // No ad
-        // -----------------------------------------------------
-        if (!ad) {
-
-            if (slot === "featured") {
-                el.innerHTML = `
-                    <h3>🌿 Kherwar Featured</h3>
-                    <p id="featuredBusinessText">
-                        Information on Santali culture, events,
-                        and local businesses will be displayed here.
-                    </p>
-                `;
-
-                el.style.padding = "15px";
-                el.style.overflow = "hidden";
-                return;
-            }
-
-            el.innerHTML = `
-                <span class="ad-label">ADVERTISEMENT</span>
-                Your Ad<br>Here
-            `;
-
-            el.style.padding = "12px";
-            el.style.overflow = "hidden";
-
-            return;
-        }
-
-        // -----------------------------------------------------
-        // Ad data
-        // -----------------------------------------------------
-        const business =
-            ad.business_name || "Advertisement";
-
-        const image =
-            getImageUrl(ad.image || "");
-
-        const target =
-            ad.target_url || "";
-
-        const safeBusiness =
-            escapeHtml(business);
-
-        // -----------------------------------------------------
-        // FEATURED
-        // -----------------------------------------------------
-        if (slot === "featured") {
-
-            let content = `
-                <h3>🌿 ${safeBusiness}</h3>
-            `;
-
-            if (image) {
-
-                content += `
-                    <img
-                        src="${image}"
-                        alt="${safeBusiness}"
-                        style="
-                            width:100%;
-                            max-height:220px;
-                            object-fit:cover;
-                            display:block;
-                            border-radius:12px;
-                            margin:10px 0;
-                        "
-                        onerror="
-                            console.error(
-                                'Featured image failed:',
-                                this.src
-                            );
-                        "
-                    >
-                `;
-            }
-
-            if (target) {
-
-                content += `
-                    <p>
-                        <a
-                            href="${escapeHtml(target)}"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style="
-                                color:#087f5b;
-                                font-weight:bold;
-                                text-decoration:none;
-                                background:#e8f5e9;
-                                padding:8px 16px;
-                                border-radius:8px;
-                                display:inline-block;
-                            "
-                        >
-                            🔗 View Details
-                        </a>
-                    </p>
-                `;
-            }
-
-            el.innerHTML = content;
-
-            el.style.padding = "15px";
-            el.style.overflow = "hidden";
-            el.style.borderRadius = "16px";
-
-            return;
-        }
-
-        // -----------------------------------------------------
-        // LEFT / RIGHT AD BOXES
-        // -----------------------------------------------------
-        let content = "";
-
-        if (image) {
-
-            content = `
-                <img
-                    src="${image}"
-                    alt="${safeBusiness}"
-                    style="
-                        width:100%;
-                        height:100%;
-                        min-height:150px;
-                        object-fit:cover;
-                        display:block;
-                        border-radius:12px;
-                    "
-                    onerror="
-                        console.error(
-                            'Ad image failed:',
-                            this.src
-                        );
-                    "
-                `;
-
-            // close img tag
-            content += `>`;
-        } else {
-
-            content = `
-                <div
-                    style="
-                        padding:25px;
-                        font-weight:700;
-                        text-align:center;
-                        color:#666;
-                    "
-                >
-                    ${safeBusiness}
-                </div>
-            `;
-        }
-
-        // -----------------------------------------------------
-        // Target URL
-        // -----------------------------------------------------
         if (target) {
-
-            content = `
-                <a
-                    href="${escapeHtml(target)}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style="
-                        display:block;
-                        width:100%;
-                        height:100%;
-                        text-decoration:none;
-                    "
-                >
-                    ${content}
-                </a>
-            `;
+            content =
+                '<a href="' + target + '" target="_blank" rel="noopener noreferrer" style="display:block;width:100%;height:100%;">' +
+                content +
+                '</a>';
         }
 
         el.innerHTML = content;
+        el.style.padding = "0";
+        el.style.overflow = "hidden";
+        el.style.borderRadius = "12px";
+    }
 
+    return;
+}
+
+
+// ===== ADDITIONAL AD BOX 2 =====
+if (slot === 'additional_2') {
+    const el = document.getElementById('additionalAd2');
+
+    if (el) {
+        let content = image
+            ? '<img src="' + image + '" alt="' + business + '" style="width:100%;height:100%;min-height:150px;object-fit:cover;display:block;">'
+            : '<div style="padding:25px;font-weight:700;text-align:center;color:#666;">' + business + '</div>';
+
+        if (target) {
+            content =
+                '<a href="' + target + '" target="_blank" rel="noopener noreferrer" style="display:block;width:100%;height:100%;">' +
+                content +
+                '</a>';
+        }
+
+        el.innerHTML = content;
+        el.style.padding = "0";
+        el.style.overflow = "hidden";
+        el.style.borderRadius = "12px";
+    }
+
+    return;
+}
+
+        // ===== FEATURED SLOT =====
+        if (slot === 'featured') {
+            const featuredEl = document.getElementById('featuredBusiness');
+            if (featuredEl) {
+                let content = '<h3>🌿 ' + business + '</h3>';
+                if (image) {
+                    content += '<img src="' + image + '" alt="' + business + '" style="width:100%;max-height:180px;object-fit:cover;border-radius:10px;margin:10px 0;">';
+                } else {
+                    content += '<p style="color:#666;font-size:14px;">Information about Santali culture, events, and local businesses will be displayed here.</p>';
+                }
+                if (target) {
+                    content += '<p><a href="' + target + '" target="_blank" rel="noopener noreferrer" style="color:#087f5b;font-weight:bold;text-decoration:none;background:#e8f5e9;padding:8px 16px;border-radius:8px;display:inline-block;">🔗 View Details</a></p>';
+                }
+                featuredEl.innerHTML = content;
+                featuredEl.style.border = '2px solid #d7a52a';
+                featuredEl.style.background = 'linear-gradient(135deg, #fffdf0, #fff8dc)';
+                featuredEl.style.borderRadius = '16px';
+                featuredEl.style.padding = '15px';
+            }
+            return;
+        }
+
+        // ===== OTHER SLOTS =====
+        const el = document.querySelector('[data-ad-slot="' + slot + '"]');
+        if (!el) return;
+
+        let content = "";
+        if (image) {
+            content = '<img src="' + image + '" alt="' + business + '" style="width:100%;height:100%;min-height:150px;object-fit:cover;display:block;border-radius:12px;">';
+        } else {
+            content = '<div style="padding:25px;font-weight:700;text-align:center;color:#666;">' + business + '</div>';
+        }
+        if (target) {
+            content = '<a href="' + target + '" target="_blank" rel="noopener noreferrer" style="display:block;width:100%;height:100%;">' + content + '</a>';
+        }
+        el.innerHTML = content;
         el.style.padding = "0";
         el.style.overflow = "hidden";
         el.style.borderRadius = "12px";
     });
-
-    console.log("✅ Main 4 ads rendered");
 }
+
 // ============================================================
 // ২. ক্যালেন্ডার ইভেন্ট আপডেট করার ফাংশন
 // ============================================================
@@ -10005,6 +9360,7 @@ console.log('✅ Events container filter loaded');
    ADDITIONAL ADS — DATABASE CONNECTED
    ========================================================= */
 
+<script>
 (function(){
 
     function renderAdditionalAds(){
@@ -10101,6 +9457,15 @@ console.log('✅ Events container filter loaded');
 
     }
 
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+        setTimeout(renderAdditionalAds, 700);
+
+    });
+
+
+    setInterval(renderAdditionalAds, 30000);
 
 })();
 </script>
