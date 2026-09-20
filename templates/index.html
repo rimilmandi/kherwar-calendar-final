@@ -3130,6 +3130,195 @@ body{background:#eef3ef!important;padding:0!important}
 }
 
 </style>
+<style id="kherwar-mobile-left-top-full-width">
+
+/* =========================================================
+   MOBILE BUSINESS LAYOUT — LEFT TOP FULL WIDTH
+   480px / 380px / সব ছোট মোবাইল
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    /* পুরো Business Grid এক কলাম */
+    .business-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        gap: 12px !important;
+        padding: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    /* LEFT TOP */
+    .business-grid > .biz-side:first-of-type {
+        display: flex !important;
+        flex-direction: column !important;
+
+        grid-column: 1 / -1 !important;
+        grid-row: 1 !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+        gap: 10px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Left Top Advertisement box */
+    .business-grid > .biz-side:first-of-type .biz-ad {
+        display: flex !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        margin: 0 !important;
+        box-sizing: border-box !important;
+
+        min-height: 180px !important;
+        flex: 0 0 auto !important;
+    }
+
+    /* Left-এর Featured/Place Advertisement card আপাতত দেখাবে না */
+    .business-grid > .biz-side:first-of-type .biz-card {
+        display: none !important;
+    }
+
+    /* FEATURED */
+    .featured-column {
+        grid-column: 1 / -1 !important;
+        grid-row: 2 !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .featured-box {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+    }
+
+    /* RIGHT TOP + RIGHT BOTTOM */
+    .business-grid > .biz-side:last-of-type {
+        grid-column: 1 / -1 !important;
+        grid-row: 3 !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        gap: 12px !important;
+        box-sizing: border-box !important;
+    }
+
+    .business-grid > .biz-side:last-of-type .biz-ad {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        box-sizing: border-box !important;
+        flex: 0 0 auto !important;
+    }
+}
+
+
+/* =========================================================
+   480px এবং তার নিচে
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .business-shell {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+
+        box-sizing: border-box !important;
+    }
+
+    .business-grid {
+        width: 100% !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    .business-grid > .biz-side:first-of-type,
+    .business-grid > .biz-side:first-of-type .biz-ad,
+    .featured-column,
+    .featured-box,
+    .business-grid > .biz-side:last-of-type,
+    .business-grid > .biz-side:last-of-type .biz-ad {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+}
+
+
+/* =========================================================
+   380px এবং তার নিচে
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .business-shell {
+        width: 100% !important;
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+        box-sizing: border-box !important;
+    }
+
+    .business-grid {
+        width: 100% !important;
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+    }
+
+    .business-grid > .biz-side:first-of-type {
+        width: 100% !important;
+        grid-column: 1 !important;
+    }
+
+    .business-grid > .biz-side:first-of-type .biz-ad {
+        width: 100% !important;
+        min-height: 160px !important;
+    }
+
+    .featured-column {
+        width: 100% !important;
+        grid-column: 1 !important;
+    }
+
+    .business-grid > .biz-side:last-of-type {
+        width: 100% !important;
+        grid-column: 1 !important;
+    }
+}
+
+</style>
+
 </head>
 <body>
     <div class="container">
