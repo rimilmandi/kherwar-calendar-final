@@ -2353,7 +2353,11 @@ body{background:#eef3ef!important;padding:0!important}
 .biz-form .full{grid-column:1/-1}
 .biz-note{font-size:10px;color:#788780;margin-top:8px}
 @media(max-width:1000px){.business-grid{grid-template-columns:150px minmax(0,1fr) 150px}}
-@media(max-width:760px){.business-grid{grid-template-columns:1fr}.biz-side{display:grid;grid-template-columns:1fr 1fr}.biz-ad{min-height:100px}.biz-bottom{grid-template-columns:1fr}.biz-form{grid-template-columns:1fr}.biz-form .full{grid-column:auto}.biz-event{grid-template-columns:64px 1fr}.biz-event-actions{grid-column:2}}
+@media(max-width:760px){.business-grid{grid-template-columns:1fr}.biz-side{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}.biz-ad{min-height:100px}.biz-bottom{grid-template-columns:1fr}.biz-form{grid-template-columns:1fr}.biz-form .full{grid-column:auto}.biz-event{grid-template-columns:64px 1fr}.biz-event-actions{grid-column:2}}
 /* ============================================================
    KHERWAR BUSINESS / ADVERTISEMENT DESKTOP FIX
    ============================================================ */
@@ -10097,15 +10101,6 @@ console.log('✅ Events container filter loaded');
 
     }
 
-
-    document.addEventListener('DOMContentLoaded', () => {
-
-        setTimeout(renderAdditionalAds, 700);
-
-    });
-
-
-    setInterval(renderAdditionalAds, 30000);
 
 })();
 </script>
