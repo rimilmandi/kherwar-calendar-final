@@ -2752,7 +2752,384 @@ body{background:#eef3ef!important;padding:0!important}
 
 }
 </style>
+<style id="kherwar-business-final-layout">
 
+/* =========================================================
+   KHERWAR BUSINESS FINAL LAYOUT
+   NO JAVASCRIPT CHANGE
+   ========================================================= */
+
+
+/* =========================================================
+   DESKTOP
+   LEFT TOP | FEATURED
+   RIGHT ADS BELOW
+   ========================================================= */
+
+@media (min-width: 761px) {
+
+    /* LEFT + FEATURED */
+    .business-top-layout{
+    display:grid !important;
+    grid-template-columns:300px minmax(0,1fr) !important;
+    gap:16px !important;
+
+    /* দুই পাশের height সমান */
+    align-items:stretch !important;
+
+    width:100% !important;
+}
+
+
+    /* LEFT TOP */
+    .left-business-side{
+
+        width:100% !important;
+
+        display:flex !important;
+
+        flex-direction:column !important;
+
+        gap:12px !important;
+
+        min-width:0 !important;
+    }
+
+
+    .left-business-side .biz-ad{
+
+        width:100% !important;
+
+        min-height:220px !important;
+
+        margin:0 !important;
+    }
+
+
+    /* FEATURED */
+    .featured-column{
+
+        width:100% !important;
+
+        min-width:0 !important;
+    }
+
+
+    .featured-box{
+
+        width:100% !important;
+
+        margin:0 !important;
+
+        overflow:hidden !important;
+    }
+
+
+    /* FEATURED IMAGE
+       সম্পূর্ণ image দেখাবে */
+    #featuredBusiness img{
+
+        width:100% !important;
+
+        height:auto !important;
+
+        max-height:none !important;
+
+        object-fit:contain !important;
+
+        object-position:center !important;
+
+        display:block !important;
+
+        border-radius:10px !important;
+
+        margin:10px 0 !important;
+    }
+
+
+    /* SHARE + BUSINESS PROMOTION
+       Featured box-এর ভিতরে */
+    .featured-actions{
+
+        display:flex !important;
+
+        flex-wrap:wrap !important;
+
+        align-items:center !important;
+
+        gap:8px !important;
+
+        margin-top:12px !important;
+
+        padding-top:12px !important;
+
+        border-top:1px solid #e2ebe6 !important;
+    }
+
+
+    /* MONTHLY EVENT */
+    .featured-column .biz-section{
+
+        width:100% !important;
+
+        margin:16px 0 0 !important;
+    }
+
+
+    /* =====================================================
+       RIGHT TOP + RIGHT BOTTOM
+       Desktop-এ ডানদিকে নয়
+       নিচে থাকবে
+       ===================================================== */
+
+    .right-business-side{
+
+        width:100% !important;
+
+        display:flex !important;
+
+        flex-direction:column !important;
+
+        gap:12px !important;
+
+        margin-top:16px !important;
+    }
+
+
+    .right-business-side .biz-ad{
+
+        width:100% !important;
+
+        min-height:150px !important;
+
+        margin:0 !important;
+    }
+
+}
+
+@media (min-width:761px){
+
+    /* LEFT TOP এবং FEATURED একই height */
+    .business-top-layout > .left-business-side,
+    .business-top-layout > .featured-column{
+        height:100% !important;
+        min-height:0 !important;
+    }
+
+    /* Featured card পুরো available height নেবে */
+    .business-top-layout .featured-box{
+        height:500px !important;
+        box-sizing:border-box !important;
+
+        display:flex !important;
+        flex-direction:column !important;
+    }
+
+    /* Featured-এর ভিতরের content */
+    .business-top-layout #featuredBusiness{
+        flex:1 1 auto !important;
+        min-height:0 !important;
+    }
+
+    /* Share + Business Promotion নিচে থাকবে */
+    .business-top-layout .featured-actions{
+        flex:0 0 auto !important;
+        margin-top:auto !important;
+    }
+
+    /* LEFT TOP box-ও সম্পূর্ণ height নেবে */
+    .business-top-layout .left-business-side .biz-ad{
+        height:500px !important;
+        min-height:0 !important;
+        box-sizing:border-box !important;
+    }
+    {
+
+    .business-top-layout > .left-business-side,
+    .business-top-layout > .featured-column{
+        height:400px !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width:760px){
+
+    /*
+       সবকিছু এক column
+    */
+    .business-top-layout{
+
+        display:flex !important;
+
+        flex-direction:column !important;
+
+        width:100% !important;
+
+        gap:12px !important;
+    }
+
+
+    /* =====================================================
+       LEFT TOP — পুরো WIDTH
+       ===================================================== */
+
+    .left-business-side{
+
+        width:100% !important;
+
+        display:block !important;
+
+        order:1 !important;
+    }
+
+
+    .left-business-side .biz-ad{
+
+        width:100% !important;
+
+        min-height:180px !important;
+
+        margin:0 !important;
+    }
+
+
+    /* =====================================================
+       FEATURED — LEFT TOP-এর নিচে
+       ===================================================== */
+
+    .featured-column{
+
+        width:100% !important;
+
+        min-width:0 !important;
+
+        order:2 !important;
+    }
+
+
+    .featured-box{
+
+        width:100% !important;
+
+        margin:0 !important;
+
+        overflow:hidden !important;
+    }
+
+
+    /* Featured image পুরো দেখা যাবে */
+    #featuredBusiness img{
+
+        width:100% !important;
+
+        height:auto !important;
+
+        max-height:none !important;
+
+        object-fit:contain !important;
+
+        object-position:center !important;
+
+        display:block !important;
+
+        border-radius:10px !important;
+
+        margin:10px 0 !important;
+    }
+
+
+    /* Share + Business Promotion */
+    .featured-actions{
+
+        display:flex !important;
+
+        flex-wrap:wrap !important;
+
+        gap:8px !important;
+
+        margin-top:12px !important;
+
+        padding-top:12px !important;
+
+        border-top:1px solid #e2ebe6 !important;
+    }
+
+
+    .featured-actions .biz-btn{
+
+        flex:1 1 130px !important;
+
+        text-align:center !important;
+    }
+
+
+    /* =====================================================
+       RIGHT ADS
+       Featured-এর পরে
+       ===================================================== */
+
+    .right-business-side{
+
+        width:100% !important;
+
+        display:flex !important;
+
+        flex-direction:column !important;
+
+        gap:12px !important;
+
+        margin-top:0 !important;
+
+        order:3 !important;
+    }
+
+
+    .right-business-side .biz-ad{
+
+        width:100% !important;
+
+        min-height:110px !important;
+
+        margin:0 !important;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width:380px){
+
+    .left-business-side .biz-ad{
+
+        min-height:160px !important;
+    }
+
+
+    .featured-actions{
+
+        flex-direction:column !important;
+
+        width:100% !important;
+    }
+
+
+    .featured-actions .biz-btn{
+
+        width:100% !important;
+
+        flex:0 0 auto !important;
+    }
+
+}
+
+</style>
 </head>
 <body>
     <div class="container">
@@ -7967,44 +8344,158 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
 </script>
 
 <!-- ================= BUSINESS CALENDAR LAYER ================= -->
+
 <section class="business-shell" id="businessHub" aria-label="Business and events">
-  <div class="business-grid">
-    <aside class="biz-side" aria-label="Left advertising">
-      <div class="biz-ad" data-ad-slot="left_top"><span class="ad-label">ADVERTISEMENT</span>Your Ad<br>Here</div>
-      <div class="biz-card">
-        <h3> Featured</h3>
-        <p>Promote your products, institutions, or events.</p>
-        <div class="biz-cta"><button class="biz-btn gold" onclick="openAdvertise()">Place Advertisement</button></div>
-      </div>
-    </aside>
 
-    <div>
-      <div class="biz-card biz-sponsored" id="featuredBusiness" data-ad-slot="featured">
-    <h3> Kherwar Featured</h3>
-    <p id="featuredBusinessText">Information on Santali culture, events, and local businesses will be displayed here.</p>
-  </div>
-</div>
-        <div class="biz-cta">
-          <button class="biz-btn" onclick="shareCalendar()">↗ Share</button>
-          <button class="biz-btn alt" onclick="openAdvertise()">Business Promotion</button>
-        </div>
-      </div>
+    <!-- ==========================================
+         TOP ROW
+         LEFT TOP + FEATURED
+         ========================================== -->
 
-      <div class="biz-section">
-        <div class="biz-card">
-          <h3>📅 This month's event</h3>
-          <div class="biz-events" id="businessEventList">
-            <div class="biz-event"><div class="biz-event-date">—</div><div><div class="biz-event-title">Event database থেকে অনুষ্ঠান এখানে আসবে</div><div class="biz-event-meta">Admin Panel থেকে lunar event যোগ করুন</div></div></div>
-          </div>
+    <div class="business-top-layout">
+
+        <!-- LEFT TOP -->
+        <aside class="biz-side left-business-side"
+               aria-label="Left advertising">
+
+            <div class="biz-ad"
+                 data-ad-slot="left_top">
+
+                <span class="ad-label">
+                    ADVERTISEMENT
+                </span>
+
+                Your Ad<br>Here
+
+            </div>
+
+        </aside>
+
+
+        <!-- FEATURED -->
+        <div class="featured-column">
+
+            <div class="biz-card biz-sponsored featured-box">
+
+                <div id="featuredBusiness"
+                     data-ad-slot="featured">
+
+                    <h3>🌿 Kherwar Featured</h3>
+
+                    <p id="featuredBusinessText">
+                        Information on Santali culture,
+                        events, and local businesses
+                        will be displayed here.
+                    </p>
+
+                </div>
+
+
+                <!-- SHARE + BUSINESS PROMOTION -->
+                <div class="featured-actions">
+
+                    <button
+                        class="biz-btn"
+                        onclick="shareCalendar()">
+
+                        ↗ Share
+
+                    </button>
+
+
+                    <button
+                        class="biz-btn alt"
+                        onclick="openAdvertise()">
+
+                        Business Promotion
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- MONTHLY EVENT -->
+            <div class="biz-section">
+
+                <div class="biz-card">
+
+                    <h3>📅 This month's event</h3>
+
+                    <div class="biz-events"
+                         id="businessEventList">
+
+                        <div class="biz-event">
+
+                            <div class="biz-event-date">
+                                —
+                            </div>
+
+                            <div>
+
+                                <div class="biz-event-title">
+                                    Event database থেকে অনুষ্ঠান এখানে আসবে
+                                </div>
+
+                                <div class="biz-event-meta">
+                                    Admin Panel থেকে lunar event যোগ করুন
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
-      </div>
+
     </div>
 
-    <aside class="biz-side" aria-label="Right advertising">
-      <div class="biz-ad" data-ad-slot="right_top"><span class="ad-label">ADVERTISEMENT</span>Your Ad<br>Here</div>
-      <div class="biz-ad" data-ad-slot="right_bottom"><span class="ad-label">ADVERTISEMENT</span>Sponsored Event</div>
+
+    <!-- ==========================================
+         RIGHT ADS
+         DESKTOP-এও ডানদিকে নয়
+         TOP ROW-এর নিচে থাকবে
+         ========================================== -->
+
+    <aside class="biz-side right-business-side"
+           aria-label="Right advertising">
+
+        <!-- RIGHT TOP -->
+
+        <div class="biz-ad"
+             data-ad-slot="right_top">
+
+            <span class="ad-label">
+                ADVERTISEMENT
+            </span>
+
+            Your Ad<br>Here
+
+        </div>
+
+
+        <!-- RIGHT BOTTOM -->
+
+        <div class="biz-ad"
+             data-ad-slot="right_bottom">
+
+            <span class="ad-label">
+                ADVERTISEMENT
+            </span>
+
+            Sponsored Event
+
+        </div>
+
     </aside>
-  </div>
+
+</section>
 
   <!-- =========================================================
      ADDITIONAL ADVERTISEMENT BOXES
