@@ -8819,6 +8819,7 @@ window.sync = async function() {
     try {
         const r = await fetch('/api/calendar/bootstrap/', {
             credentials: 'same-origin',
+            cache: 'no-store',
             headers: { 'X-Requested-With': 'XMLHttpRequest' }
         });
         
