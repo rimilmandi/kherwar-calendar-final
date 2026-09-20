@@ -8544,51 +8544,7 @@ if ('BroadcastChannel' in window) {
 }
 </style>
 
-<style id="kherwar-biz-side-mobile-stack">
-/* ============================================================
-   MOBILE — Right Top & Right Bottom উপরে-নিচে সাজানো
-   বাকি সব layout অপরিবর্তিত
-   ============================================================ */
-@media (max-width: 760px) {
 
-  /* ডান পাশের sidebar — দুইটা ad উপরে-নিচে */
-  .business-grid > .biz-side:last-of-type {
-    display: flex !important;
-    flex-direction: column !important;
-    grid-template-columns: none !important;
-    gap: 10px !important;
-  }
-
-  /* প্রতিটি ডান দিকের ad পুরো প্রস্থ নেবে */
-  .business-grid > .biz-side:last-of-type .biz-ad {
-    width: 100% !important;
-    min-height: 110px !important;
-  }
-
-  /* বাম পাশের sidebar আগের মতোই পাশাপাশি (যদি একাধিক ad থাকে) */
-  .business-grid > .biz-side:first-of-type {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 10px !important;
-  }
-
-  /* বাম পাশের featured কার্ডও পাশাপাশি থাকবে */
-  .business-grid > .biz-side:first-of-type .biz-card {
-    grid-column: 1 / -1;
-  }
-}
-
-/* ছোট মোবাইলে আরও কমপ্যাক্ট */
-@media (max-width: 380px) {
-  .business-grid > .biz-side:last-of-type .biz-ad {
-    min-height: 90px !important;
-  }
-
-  .business-grid > .biz-side:last-of-type {
-    gap: 8px !important;
-  }
-}
-</style>
 <style id="kherwar-mobile-footer-compact">
 /* ============================================================
    MOBILE FOOTER — হাইট কমানো
