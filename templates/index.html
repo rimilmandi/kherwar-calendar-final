@@ -3319,6 +3319,68 @@ body{background:#eef3ef!important;padding:0!important}
 
 </style>
 
+<style id="kherwar-left-top-mobile-fullwidth">
+/* ============================================================
+   MOBILE — LEFT TOP AD পুরো প্রস্থ জুড়ে
+   শুধু left_top slot কে target করে
+   ============================================================ */
+@media (max-width: 760px) {
+
+  /* বাম পাশের sidebar — যেটা left_top ধারণ করে */
+  .business-grid > .biz-side:first-of-type {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    grid-template-columns: none !important;
+    grid-column: 1 / -1 !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* left_top slot নিজেই */
+  .business-grid > .biz-side:first-of-type > .biz-ad,
+  .business-grid [data-ad-slot="left_top"] {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    min-height: 180px !important;
+  }
+
+  /* left_top এর ভিতরের image/anchor পুরো প্রস্থ */
+  .business-grid [data-ad-slot="left_top"] img,
+  .business-grid [data-ad-slot="left_top"] a {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block !important;
+    box-sizing: border-box !important;
+  }
+
+  /* left_top এর ভিতরের image height */
+  .business-grid [data-ad-slot="left_top"] img {
+    min-height: 180px !important;
+    object-fit: cover !important;
+  }
+}
+
+/* ৩৮০px এর নিচে আরও কমপ্যাক্ট */
+@media (max-width: 380px) {
+
+  .business-grid > .biz-side:first-of-type > .biz-ad,
+  .business-grid [data-ad-slot="left_top"] {
+    min-height: 160px !important;
+  }
+
+  .business-grid [data-ad-slot="left_top"] img {
+    min-height: 160px !important;
+  }
+}
+</style>
+
 </head>
 <body>
     <div class="container">
