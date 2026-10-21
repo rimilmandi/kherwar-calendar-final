@@ -62,6 +62,7 @@ textarea{min-height:76px;resize:vertical;line-height:1.45}
     <button class="tab" data-p="events">🎉 Lunar Events</button>
     <button class="tab" data-p="solar">☀ Solar Events</button>
     <button class="tab" data-p="ads">📢 Ads</button>
+    <button class="tab" data-p="monthimages">🌙 Month Images</button>
     <button class="tab" data-p="settings">🎨 UI</button>
     <button class="tab" data-p="preview">👁 Preview</button>
   </nav>
@@ -299,6 +300,100 @@ textarea{min-height:76px;resize:vertical;line-height:1.45}
     </div>
   </section>
 
+
+
+  <!-- ================= SANTALI MONTH IMAGES ================= -->
+  <section id="monthimages" class="panel">
+    <div class="card">
+      <h2>🌙 ১৩টি সাঁওতালি মাসের ছবি</h2>
+      <p style="color:var(--muted);font-size:12px">প্রতিটি মাসের ছবি আলাদাভাবে আপলোড করুন। ছবি আপলোডের পর নিচের Save বোতাম চাপুন। Save করলে শুধু মাসের ছবির সেটিংস সংরক্ষিত হবে; অন্য UI/Advertisement settings পরিবর্তন হবে না।</p>
+      <div class="grid3">
+        <div style="border:1px solid var(--line);border-radius:10px;padding:10px;min-width:0">
+          <label>ᱢᱟᱜᱽ <span style="color:var(--muted)">(MAG)</span></label>
+          <input id="month_image_MAG" placeholder="/media/calendar_images/..." oninput="previewImg('month_image_MAG','monthImagePreviewMAG')">
+          <input id="monthImageFileMAG" type="file" accept="image/*" style="margin-top:6px">
+          <div id="monthImagePreviewMAG" class="ad-preview" style="display:none;max-width:100%;margin-top:8px"><img alt="MAG month image preview" style="width:100%;height:90px;object-fit:cover;border-radius:8px"></div>
+        </div>
+        <div style="border:1px solid var(--line);border-radius:10px;padding:10px;min-width:0">
+          <label>ᱯᱷᱟᱹᱜᱩᱱ <span style="color:var(--muted)">(FAGUN)</span></label>
+          <input id="month_image_FAGUN" placeholder="/media/calendar_images/..." oninput="previewImg('month_image_FAGUN','monthImagePreviewFAGUN')">
+          <input id="monthImageFileFAGUN" type="file" accept="image/*" style="margin-top:6px">
+          <div id="monthImagePreviewFAGUN" class="ad-preview" style="display:none;max-width:100%;margin-top:8px"><img alt="FAGUN month image preview" style="width:100%;height:90px;object-fit:cover;border-radius:8px"></div>
+        </div>
+        <div style="border:1px solid var(--line);border-radius:10px;padding:10px;min-width:0">
+          <label>ᱪᱟᱹᱛ <span style="color:var(--muted)">(CHAIT)</span></label>
+          <input id="month_image_CHAIT" placeholder="/media/calendar_images/..." oninput="previewImg('month_image_CHAIT','monthImagePreviewCHAIT')">
+          <input id="monthImageFileCHAIT" type="file" accept="image/*" style="margin-top:6px">
+          <div id="monthImagePreviewCHAIT" class="ad-preview" style="display:none;max-width:100%;margin-top:8px"><img alt="CHAIT month image preview" style="width:100%;height:90px;object-fit:cover;border-radius:8px"></div>
+        </div>
+        <div style="border:1px solid var(--line);border-radius:10px;padding:10px;min-width:0">
+          <label>ᱵᱟᱹᱭᱥᱟᱹᱠ <span style="color:var(--muted)">(BAISAK)</span></label>
+          <input id="month_image_BAISAK" placeholder="/media/calendar_images/..." oninput="previewImg('month_image_BAISAK','monthImagePreviewBAISAK')">
+          <input id="monthImageFileBAISAK" type="file" accept="image/*" style="margin-top:6px">
+          <div id="monthImagePreviewBAISAK" class="ad-preview" style="display:none;max-width:100%;margin-top:8px"><img alt="BAISAK month image preview" style="width:100%;height:90px;object-fit:cover;border-radius:8px"></div>
+        </div>
+        <div style="border:1px solid var(--line);border-radius:10px;padding:10px;min-width:0">
+          <label>ᱡᱷᱮᱸᱴ <span style="color:var(--muted)">(JHET)</span></label>
+          <input id="month_image_JHET" placeholder="/media/calendar_images/..." oninput="previewImg('month_image_JHET','monthImagePreviewJHET')">
+          <input id="monthImageFileJHET" type="file" accept="image/*" style="margin-top:6px">
+          <div id="monthImagePreviewJHET" class="ad-preview" style="display:none;max-width:100%;margin-top:8px"><img alt="JHET month image preview" style="width:100%;height:90px;object-fit:cover;border-radius:8px"></div>
+        </div>
+        <div style="border:1px solid var(--line);border-radius:10px;padding:10px;min-width:0">
+          <label>ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ <span style="color:var(--muted)">(BARDHI JHET)</span></label>
+          <input id="month_image_BARDHI_JHET" placeholder="/media/calendar_images/..." oninput="previewImg('month_image_BARDHI_JHET','monthImagePreviewBARDHI_JHET')">
+          <input id="monthImageFileBARDHI_JHET" type="file" accept="image/*" style="margin-top:6px">
+          <div id="monthImagePreviewBARDHI_JHET" class="ad-preview" style="display:none;max-width:100%;margin-top:8px"><img alt="BARDHI_JHET month image preview" style="width:100%;height:90px;object-fit:cover;border-radius:8px"></div>
+        </div>
+        <div style="border:1px solid var(--line);border-radius:10px;padding:10px;min-width:0">
+          <label>ᱟᱥᱟᱲ <span style="color:var(--muted)">(ASAR)</span></label>
+          <input id="month_image_ASAR" placeholder="/media/calendar_images/..." oninput="previewImg('month_image_ASAR','monthImagePreviewASAR')">
+          <input id="monthImageFileASAR" type="file" accept="image/*" style="margin-top:6px">
+          <div id="monthImagePreviewASAR" class="ad-preview" style="display:none;max-width:100%;margin-top:8px"><img alt="ASAR month image preview" style="width:100%;height:90px;object-fit:cover;border-radius:8px"></div>
+        </div>
+        <div style="border:1px solid var(--line);border-radius:10px;padding:10px;min-width:0">
+          <label>ᱥᱟᱱ <span style="color:var(--muted)">(SAN)</span></label>
+          <input id="month_image_SAN" placeholder="/media/calendar_images/..." oninput="previewImg('month_image_SAN','monthImagePreviewSAN')">
+          <input id="monthImageFileSAN" type="file" accept="image/*" style="margin-top:6px">
+          <div id="monthImagePreviewSAN" class="ad-preview" style="display:none;max-width:100%;margin-top:8px"><img alt="SAN month image preview" style="width:100%;height:90px;object-fit:cover;border-radius:8px"></div>
+        </div>
+        <div style="border:1px solid var(--line);border-radius:10px;padding:10px;min-width:0">
+          <label>ᱵᱷᱟᱫᱚᱨ <span style="color:var(--muted)">(BHADAR)</span></label>
+          <input id="month_image_BHADAR" placeholder="/media/calendar_images/..." oninput="previewImg('month_image_BHADAR','monthImagePreviewBHADAR')">
+          <input id="monthImageFileBHADAR" type="file" accept="image/*" style="margin-top:6px">
+          <div id="monthImagePreviewBHADAR" class="ad-preview" style="display:none;max-width:100%;margin-top:8px"><img alt="BHADAR month image preview" style="width:100%;height:90px;object-fit:cover;border-radius:8px"></div>
+        </div>
+        <div style="border:1px solid var(--line);border-radius:10px;padding:10px;min-width:0">
+          <label>ᱫᱟᱸᱥᱟᱸᱭ <span style="color:var(--muted)">(DANSAY)</span></label>
+          <input id="month_image_DANSAY" placeholder="/media/calendar_images/..." oninput="previewImg('month_image_DANSAY','monthImagePreviewDANSAY')">
+          <input id="monthImageFileDANSAY" type="file" accept="image/*" style="margin-top:6px">
+          <div id="monthImagePreviewDANSAY" class="ad-preview" style="display:none;max-width:100%;margin-top:8px"><img alt="DANSAY month image preview" style="width:100%;height:90px;object-fit:cover;border-radius:8px"></div>
+        </div>
+        <div style="border:1px solid var(--line);border-radius:10px;padding:10px;min-width:0">
+          <label>ᱥᱚᱦᱨᱟᱭ <span style="color:var(--muted)">(SOHRAY)</span></label>
+          <input id="month_image_SOHRAY" placeholder="/media/calendar_images/..." oninput="previewImg('month_image_SOHRAY','monthImagePreviewSOHRAY')">
+          <input id="monthImageFileSOHRAY" type="file" accept="image/*" style="margin-top:6px">
+          <div id="monthImagePreviewSOHRAY" class="ad-preview" style="display:none;max-width:100%;margin-top:8px"><img alt="SOHRAY month image preview" style="width:100%;height:90px;object-fit:cover;border-radius:8px"></div>
+        </div>
+        <div style="border:1px solid var(--line);border-radius:10px;padding:10px;min-width:0">
+          <label>ᱟᱸᱜᱷᱟᱲ <span style="color:var(--muted)">(ANGHAR)</span></label>
+          <input id="month_image_ANGHAR" placeholder="/media/calendar_images/..." oninput="previewImg('month_image_ANGHAR','monthImagePreviewANGHAR')">
+          <input id="monthImageFileANGHAR" type="file" accept="image/*" style="margin-top:6px">
+          <div id="monthImagePreviewANGHAR" class="ad-preview" style="display:none;max-width:100%;margin-top:8px"><img alt="ANGHAR month image preview" style="width:100%;height:90px;object-fit:cover;border-radius:8px"></div>
+        </div>
+        <div style="border:1px solid var(--line);border-radius:10px;padding:10px;min-width:0">
+          <label>ᱯᱩᱥ <span style="color:var(--muted)">(PUS)</span></label>
+          <input id="month_image_PUS" placeholder="/media/calendar_images/..." oninput="previewImg('month_image_PUS','monthImagePreviewPUS')">
+          <input id="monthImageFilePUS" type="file" accept="image/*" style="margin-top:6px">
+          <div id="monthImagePreviewPUS" class="ad-preview" style="display:none;max-width:100%;margin-top:8px"><img alt="PUS month image preview" style="width:100%;height:90px;object-fit:cover;border-radius:8px"></div>
+        </div>
+      </div>
+      <div class="actions">
+        <button type="button" class="btn primary" onclick="saveMonthImages()">💾 Save all 13 month images</button>
+        <button type="button" class="btn secondary" onclick="loadDB()">↻ Reload saved images</button>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= SETTINGS ================= -->
   <section id="settings" class="panel">
     <div class="card">
@@ -391,6 +486,32 @@ function render(){
   $('ug').value=D.settings.gold||'#d7a52a';
   $('ut').value=D.settings.title||'Kherwar Calendar';
   $('us').value=D.settings.subtitle||'Santali • Bengali • English';
+  $('month_image_MAG').value=D.settings.month_image_MAG||D.settings.month_image_1||'';
+  previewImg('month_image_MAG','monthImagePreviewMAG');
+  $('month_image_FAGUN').value=D.settings.month_image_FAGUN||D.settings.month_image_2||'';
+  previewImg('month_image_FAGUN','monthImagePreviewFAGUN');
+  $('month_image_CHAIT').value=D.settings.month_image_CHAIT||D.settings.month_image_3||'';
+  previewImg('month_image_CHAIT','monthImagePreviewCHAIT');
+  $('month_image_BAISAK').value=D.settings.month_image_BAISAK||D.settings.month_image_4||'';
+  previewImg('month_image_BAISAK','monthImagePreviewBAISAK');
+  $('month_image_JHET').value=D.settings.month_image_JHET||D.settings.month_image_5||'';
+  previewImg('month_image_JHET','monthImagePreviewJHET');
+  $('month_image_BARDHI_JHET').value=D.settings.month_image_BARDHI_JHET||D.settings.month_image_6||'';
+  previewImg('month_image_BARDHI_JHET','monthImagePreviewBARDHI_JHET');
+  $('month_image_ASAR').value=D.settings.month_image_ASAR||D.settings.month_image_7||'';
+  previewImg('month_image_ASAR','monthImagePreviewASAR');
+  $('month_image_SAN').value=D.settings.month_image_SAN||D.settings.month_image_8||'';
+  previewImg('month_image_SAN','monthImagePreviewSAN');
+  $('month_image_BHADAR').value=D.settings.month_image_BHADAR||D.settings.month_image_9||'';
+  previewImg('month_image_BHADAR','monthImagePreviewBHADAR');
+  $('month_image_DANSAY').value=D.settings.month_image_DANSAY||D.settings.month_image_10||'';
+  previewImg('month_image_DANSAY','monthImagePreviewDANSAY');
+  $('month_image_SOHRAY').value=D.settings.month_image_SOHRAY||D.settings.month_image_11||'';
+  previewImg('month_image_SOHRAY','monthImagePreviewSOHRAY');
+  $('month_image_ANGHAR').value=D.settings.month_image_ANGHAR||D.settings.month_image_12||'';
+  previewImg('month_image_ANGHAR','monthImagePreviewANGHAR');
+  $('month_image_PUS').value=D.settings.month_image_PUS||D.settings.month_image_13||'';
+  previewImg('month_image_PUS','monthImagePreviewPUS');
   $('kh').textContent=D.history.length;
   $('km').textContent=D.newMoons.length;
   $('ke').textContent=D.events.length;
@@ -879,6 +1000,21 @@ async function saveSettings(){
 }
 
 /* ============================================================
+   Month images — save only these settings
+   ============================================================ */
+async function saveMonthImages(){
+  const keys=['month_image_MAG','month_image_FAGUN','month_image_CHAIT','month_image_BAISAK','month_image_JHET','month_image_BARDHI_JHET','month_image_ASAR','month_image_SAN','month_image_BHADAR','month_image_DANSAY','month_image_SOHRAY','month_image_ANGHAR','month_image_PUS'];
+  try{
+    for(const key of keys){
+      const el=$(key);
+      await req('setting','POST',{key,value:el.value.trim()});
+    }
+    await loadDB();
+    toast('✅ All 13 month images saved');
+  }catch(e){toast(e.message)}
+}
+
+/* ============================================================
    Generic Delete
    ============================================================ */
 async function del(k,id){
@@ -910,6 +1046,7 @@ async function uploadImage(inputId,targetId){
     if(targetId === 'eimg') previewImg('eimg','eimgPreview');
     if(targetId === 'si')   previewImg('si','siPreview');
     if(targetId === 'ai')   previewImg('ai','aiPreview');
+    if(targetId.startsWith('month_image_')) previewImg(targetId,'monthImagePreview'+targetId.slice('month_image_'.length));
     toast('Image uploaded: '+x.url);
   }catch(e){toast(e.message)}
 }
@@ -917,6 +1054,19 @@ async function uploadImage(inputId,targetId){
 $('eimgFile').onchange = () => uploadImage('eimgFile','eimg');
 $('siFile').onchange   = () => uploadImage('siFile','si');
 $('aiFile').onchange   = () => uploadImage('aiFile','ai');
+$('monthImageFileMAG').onchange = () => uploadImage('monthImageFileMAG','month_image_MAG');
+$('monthImageFileFAGUN').onchange = () => uploadImage('monthImageFileFAGUN','month_image_FAGUN');
+$('monthImageFileCHAIT').onchange = () => uploadImage('monthImageFileCHAIT','month_image_CHAIT');
+$('monthImageFileBAISAK').onchange = () => uploadImage('monthImageFileBAISAK','month_image_BAISAK');
+$('monthImageFileJHET').onchange = () => uploadImage('monthImageFileJHET','month_image_JHET');
+$('monthImageFileBARDHI_JHET').onchange = () => uploadImage('monthImageFileBARDHI_JHET','month_image_BARDHI_JHET');
+$('monthImageFileASAR').onchange = () => uploadImage('monthImageFileASAR','month_image_ASAR');
+$('monthImageFileSAN').onchange = () => uploadImage('monthImageFileSAN','month_image_SAN');
+$('monthImageFileBHADAR').onchange = () => uploadImage('monthImageFileBHADAR','month_image_BHADAR');
+$('monthImageFileDANSAY').onchange = () => uploadImage('monthImageFileDANSAY','month_image_DANSAY');
+$('monthImageFileSOHRAY').onchange = () => uploadImage('monthImageFileSOHRAY','month_image_SOHRAY');
+$('monthImageFileANGHAR').onchange = () => uploadImage('monthImageFileANGHAR','month_image_ANGHAR');
+$('monthImageFilePUS').onchange = () => uploadImage('monthImageFilePUS','month_image_PUS');
 $('ed_type').onchange = toggleDayInput;
 toggleDayInput();
 
