@@ -268,6 +268,7 @@ textarea{min-height:76px;resize:vertical;line-height:1.45}
             <option value="right_top">Right Top</option>
             <option value="right_bottom">Right Bottom</option>
             <option value="featured">Featured</option>
+<option value="additional_1">Additional Ad Box 1</option><option value="additional_2">Additional Ad Box 2</option><option value="additional_3">Additional Ad Box 3</option><option value="additional_4">Additional Ad Box 4</option><option value="additional_5">Additional Ad Box 5</option><option value="additional_6">Additional Ad Box 6</option><option value="additional_7">Additional Ad Box 7</option><option value="additional_8">Additional Ad Box 8</option><option value="additional_9">Additional Ad Box 9</option><option value="additional_10">Additional Ad Box 10</option>
             <option value="additional_1">Additional Ad Box 1</option>
             <option value="additional_2">Additional Ad Box 2</option>
           </select>
@@ -407,7 +408,59 @@ textarea{min-height:76px;resize:vertical;line-height:1.45}
         <div><label>Title</label><input id="ut"></div>
         <div><label>Subtitle</label><input id="us"></div>
       </div>
-      <button class="btn primary" style="margin-top:10px" onclick="saveSettings()">Save UI Settings</button>
+      <h3 style="margin:18px 0 8px">🖼️ Desktop Masthead Left Image</h3>
+      <p style="color:var(--muted);font-size:12px">ডেস্কটপের হেডারের বাম পাশের ছবি এখানে আপলোড করে নিয়ন্ত্রণ করুন। ডান পাশের ছবি ১৩টি সাঁওতালি মাসের ছবির মধ্যে থেকে স্বয়ংক্রিয়ভাবে বদলাবে।</p>
+      <div class="grid">
+        <div><label>Left image URL</label><input id="masthead_left_image" placeholder="/media/calendar_images/..." oninput="previewImg('masthead_left_image','mastheadLeftPreview')"></div>
+        <div><label>Upload left image</label><input id="mastheadLeftImageFile" type="file" accept="image/*"><div id="mastheadLeftPreview" class="ad-preview" style="display:none;max-width:240px;margin-top:8px"><img alt="Masthead left image preview" style="width:100%;max-height:120px;object-fit:cover;border-radius:8px"></div></div>
+      </div>
+      <p style="font-size:12px;color:var(--muted)">ছবি আপলোডের পরে Save all UI & Advertisement Settings চাপুন।</p>
+      <h3 style="margin:18px 0 8px">📐 Layout & Typography</h3>
+      <div class="grid3">
+        <div><label>Page max width (px)</label><input id="ui_page_width" type="number" min="900" max="1800" value="1240"></div>
+        <div><label>Base font size (px)</label><input id="ui_font_size" type="number" min="12" max="20" value="16"></div>
+        <div><label>Section spacing (px)</label><input id="ui_spacing" type="number" min="4" max="40" value="16"></div>
+      </div>
+      <div class="grid3">
+        <div><label>Card radius (px)</label><input id="ui_card_radius" type="number" min="0" max="36" value="16"></div>
+        <div><label>Card shadow</label><select id="ui_card_shadow"><option value="soft">Soft</option><option value="medium">Medium</option><option value="none">None</option></select></div>
+        <div><label>Ad border style</label><select id="ui_ad_border"><option value="solid">Solid</option><option value="dashed">Dashed</option><option value="none">None</option></select></div>
+      </div>
+      <h3 style="margin:18px 0 8px">📢 Advertisement sizes</h3>
+      <p style="color:var(--muted);font-size:12px">প্রস্থ/উচ্চতা px-এ দিন। 0 width দিলে স্বাভাবিক responsive width থাকবে।</p>
+      <div class="grid3">
+        <div><label>Left ad width (px)</label><input id="ad_left_width" type="number" min="0" max="500" value="190"></div>
+        <div><label>Left ad height (px)</label><input id="ad_left_height" type="number" min="0" max="800" value="180"></div>
+        <div><label>Right ad width (px)</label><input id="ad_right_width" type="number" min="0" max="500" value="190"></div>
+      </div>
+      <div class="grid3">
+        <div><label>Right top height (px)</label><input id="ad_right_top_height" type="number" min="0" max="800" value="180"></div>
+        <div><label>Right bottom height (px)</label><input id="ad_right_bottom_height" type="number" min="0" max="800" value="150"></div>
+        <div><label>Featured minimum height (px)</label><input id="ad_featured_height" type="number" min="0" max="1000" value="180"></div>
+      </div>
+      <div class="grid3">
+        <div><label>Mobile ad height (px)</label><input id="ad_mobile_height" type="number" min="0" max="500" value="110"></div>
+        <div><label>Ad corner radius (px)</label><input id="ad_radius" type="number" min="0" max="36" value="14"></div>
+        <div><label>Ad gap (px)</label><input id="ad_gap" type="number" min="0" max="40" value="12"></div>
+      </div>
+      <h3 style="margin:18px 0 8px">🖼️ Image boxes & row layout</h3>
+      <div class="grid3">
+        <div><label>Additional boxes (0–10)</label><input id="ad_extra_count" type="number" min="0" max="10" value="10"></div>
+        <div><label>Boxes per row (desktop)</label><input id="ad_boxes_per_row" type="number" min="1" max="6" value="2"></div>
+        <div><label>Image height (px)</label><input id="ad_image_height" type="number" min="80" max="800" value="180"></div>
+      </div>
+      <p style="color:var(--muted);font-size:12px">অতিরিক্ত বক্সের সংখ্যা বাড়ালে Admin-এর Advertisement Slot-এ একই নম্বরের Additional Ad Box বেছে বিজ্ঞাপন যোগ করুন। ছবিগুলি বক্সের মাপ অনুযায়ী crop/fit হবে।</p>
+      <div class="grid3">
+        <div><label>Show left ad</label><select id="ad_show_left"><option value="1">Show</option><option value="0">Hide</option></select></div>
+        <div><label>Show right top ad</label><select id="ad_show_right_top"><option value="1">Show</option><option value="0">Hide</option></select></div>
+        <div><label>Show right bottom ad</label><select id="ad_show_right_bottom"><option value="1">Show</option><option value="0">Hide</option></select></div>
+      </div>
+      <div class="grid3">
+        <div><label>Show featured block</label><select id="ad_show_featured"><option value="1">Show</option><option value="0">Hide</option></select></div>
+        <div><label>Image fit</label><select id="ad_image_fit"><option value="cover">Cover</option><option value="contain">Contain</option><option value="fill">Fill</option></select></div>
+        <div><label>Ad label</label><select id="ad_show_label"><option value="1">Show label</option><option value="0">Hide label</option></select></div>
+      </div>
+      <button class="btn primary" style="margin-top:14px" onclick="saveSettings()">Save all UI & Advertisement Settings</button>
     </div>
   </section>
 
@@ -486,6 +539,10 @@ function render(){
   $('ug').value=D.settings.gold||'#d7a52a';
   $('ut').value=D.settings.title||'Kherwar Calendar';
   $('us').value=D.settings.subtitle||'Santali • Bengali • English';
+  $('masthead_left_image').value=D.settings.masthead_left_image||'';
+  previewImg('masthead_left_image','mastheadLeftPreview');
+  const uiDefaults={ui_page_width:1240,ui_font_size:16,ui_spacing:16,ui_card_radius:16,ui_card_shadow:'soft',ui_ad_border:'solid',ad_left_width:190,ad_left_height:180,ad_right_width:190,ad_right_top_height:180,ad_right_bottom_height:150,ad_featured_height:180,ad_mobile_height:110,ad_radius:14,ad_gap:12,ad_extra_count:10,ad_boxes_per_row:2,ad_image_height:180,ad_show_left:'1',ad_show_right_top:'1',ad_show_right_bottom:'1',ad_show_featured:'1',ad_image_fit:'cover',ad_show_label:'1'};
+  Object.entries(uiDefaults).forEach(([k,v])=>{const el=$(k);if(el)el.value=D.settings[k]??String(v)});
   $('month_image_MAG').value=D.settings.month_image_MAG||D.settings.month_image_1||'';
   previewImg('month_image_MAG','monthImagePreviewMAG');
   $('month_image_FAGUN').value=D.settings.month_image_FAGUN||D.settings.month_image_2||'';
@@ -985,18 +1042,22 @@ function renderAdPreviewBox(id,slot){
    UI Settings
    ============================================================ */
 async function saveSettings(){
-  for(const [key,value] of [
-    ['primary',$('up').value],
-    ['secondary',$('up2').value],
-    ['gold',$('ug').value],
-    ['title',$('ut').value],
-    ['subtitle',$('us').value]
-  ]){
-    try{ await req('setting','POST',{key,value}) }
-    catch(e){ return toast(e.message) }
-  }
-  await loadDB();
-  toast('✅ UI Settings saved');
+  const keys=['ui_page_width','ui_font_size','ui_spacing','ui_card_radius','ui_card_shadow','ui_ad_border',
+    'ad_left_width','ad_left_height','ad_right_width','ad_right_top_height','ad_right_bottom_height',
+    'ad_featured_height','ad_mobile_height','ad_radius','ad_gap','ad_extra_count','ad_boxes_per_row','ad_image_height',
+    'ad_show_left','ad_show_right_top','ad_show_right_bottom','ad_show_featured','ad_image_fit','ad_show_label'];
+  const pairs=[
+    ['primary',$('up').value],['secondary',$('up2').value],['gold',$('ug').value],
+    ['title',$('ut').value],['subtitle',$('us').value],
+    ['masthead_left_image',$('masthead_left_image').value.trim()],
+    ...keys.map(k=>[k,$(k).value])
+  ];
+  try{
+    for(const [key,value] of pairs) await req('setting','POST',{key,value});
+    await loadDB();
+    toast('✅ UI & Advertisement settings saved');
+    window.dispatchEvent(new Event('kherwar:settings-updated'));
+  }catch(e){toast(e.message)}
 }
 
 /* ============================================================
@@ -1046,6 +1107,7 @@ async function uploadImage(inputId,targetId){
     if(targetId === 'eimg') previewImg('eimg','eimgPreview');
     if(targetId === 'si')   previewImg('si','siPreview');
     if(targetId === 'ai')   previewImg('ai','aiPreview');
+    if(targetId === 'masthead_left_image') previewImg('masthead_left_image','mastheadLeftPreview');
     if(targetId.startsWith('month_image_')) previewImg(targetId,'monthImagePreview'+targetId.slice('month_image_'.length));
     toast('Image uploaded: '+x.url);
   }catch(e){toast(e.message)}
@@ -1054,6 +1116,7 @@ async function uploadImage(inputId,targetId){
 $('eimgFile').onchange = () => uploadImage('eimgFile','eimg');
 $('siFile').onchange   = () => uploadImage('siFile','si');
 $('aiFile').onchange   = () => uploadImage('aiFile','ai');
+$('mastheadLeftImageFile').onchange = () => uploadImage('mastheadLeftImageFile','masthead_left_image');
 $('monthImageFileMAG').onchange = () => uploadImage('monthImageFileMAG','month_image_MAG');
 $('monthImageFileFAGUN').onchange = () => uploadImage('monthImageFileFAGUN','month_image_FAGUN');
 $('monthImageFileCHAIT').onchange = () => uploadImage('monthImageFileCHAIT','month_image_CHAIT');

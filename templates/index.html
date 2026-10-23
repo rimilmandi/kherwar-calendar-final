@@ -14,7 +14,7 @@
             box-sizing: border-box;
             -webkit-tap-highlight-color: transparent;
         }
-
+        
         body {
             font-family: 'Noto Sans Bengali', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background: linear-gradient(135deg, #c0d8a1 0%, #a8c686 100%);
@@ -25,7 +25,7 @@
             touch-action: manipulation;
             overflow-x: hidden;
         }
-
+        
         .container {
             max-width: 100%;
             margin: 0 auto;
@@ -34,7 +34,7 @@
             overflow: hidden;
             min-height: 100vh;
         }
-
+        
         header {
             background: linear-gradient(to right, #388e3c, #4caf50);
             color: white;
@@ -45,19 +45,19 @@
             z-index: 100;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
-
+        
         h1 {
             font-size: 1.5rem;
             margin-bottom: 5px;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
-
+        
         .santali-title {
             font-family: "Noto Sans Ol Chiki", sans-serif;
             font-size: 1.5rem;
             margin-bottom: 2px;
         }
-
+        
         .control-panel {
             display: flex;
             justify-content: space-between;
@@ -67,7 +67,7 @@
             border-bottom: 1px solid #ddd;
             position: relative;
         }
-
+        
         .date-controls {
             display: flex;
             align-items: center;
@@ -1204,7 +1204,7 @@
 
         /* মোবাইল ভিউর জন্য */
 @media only screen and (max-width: 600px) {
-
+    
     .event-container {
         display: grid;
         grid-template-columns: 1fr; /* ১:১ অনুপাতে দুইটি কলাম (পাশাপাশি) */
@@ -1215,7 +1215,7 @@
     /* আপনার কমলা বক্সের স্টাইল */
     .solar-box {
         /* এখানে আপনার আগের স্টাইল থাকলে সেগুলো থাকবে */
-        width: 100%;
+        width: 100%; 
     }
 
     /* আপনার সবুজ বক্সের স্টাইল */
@@ -1484,27 +1484,27 @@
    SMALL MOBILE (max-width: 380px) — ছোট মোবাইলের জন্য বিশেষ স্টাইল
    ============================================================ */
 @media (max-width: 380px) {
-
+    
     /* কন্ট্রোল প্যানেল */
     .control-panel {
         padding: 8px 6px;
         gap: 6px;
     }
-
+    
     .nav-btn, .reload-btn {
         width: 32px;
         height: 32px;
         border-radius: 8px;
         font-size: 0.85rem;
     }
-
+    
     .date-display select {
         height: 32px;
         font-size: 0.68rem;
         padding: 6px 5px;
         border-radius: 14px;
     }
-
+    
     .time-display {
         min-width: 82px;
         height: 32px;
@@ -1512,7 +1512,7 @@
         padding: 6px 6px;
         border-radius: 14px;
     }
-
+    
     /* ক্যালেন্ডার হেডার */
     .calendar-header {
         margin: 6px 5px 0;
@@ -1521,19 +1521,19 @@
         min-height: 34px;
         border-radius: 9px;
     }
-
+    
     .english-header { font-size: 0.75rem; }
     .santali-header { font-size: 0.68rem; }
-
+    
     /* ক্যালেন্ডার গ্রিড */
     .calendar-container {
         padding: 7px 4px 70px;
     }
-
+    
     .calendar {
         gap: 2px;
     }
-
+    
     /* দিনের হেডার */
     .day-header {
         min-height: 38px;
@@ -1541,12 +1541,12 @@
         border-radius: 6px;
         font-size: 0.55rem;
     }
-
+    
     .santali-day {
         font-size: 0.48rem;
         margin-top: 1px;
     }
-
+    
     /* ============================================================
        ডেট সেল (সবচেয়ে গুরুত্বপূর্ণ অংশ)
        ============================================================ */
@@ -1555,31 +1555,31 @@
         padding: 2px 1px;
         border-radius: 6px;
     }
-
+    
     /* তারিখের কনটেন্ট */
     .date-content {
         gap: 0;
         text-shadow: 0 0 2px white, 0 0 2px white;
     }
-
+    
     /* ইংরেজি তারিখ */
     .english-date {
         font-size: 0.7rem;
         line-height: 1.1;
     }
-
+    
     /* সাঁওতালি তারিখ */
     .santali-date {
         font-size: 0.82rem;
         line-height: 1.1;
     }
-
+    
     /* বাংলা তারিখ */
     .bengali-date {
         font-size: 0.55rem;
         line-height: 1.1;
     }
-
+    
     /* মাসের নাম (১ তারিখে) */
     .santali-month-name,
     .bengali-month-name {
@@ -1587,67 +1587,67 @@
         padding: 1px 2px;
         border-radius: 3px;
     }
-
+    
     /* ইভেন্টের ইমেজ (অতিরিক্ত বড় হলে হাইড) */
     .moon-image {
         width: 16px;
         height: 16px;
         margin-top: 1px;
     }
-
+    
     .event-image {
         width: 16px;
         height: 16px;
     }
-
+    
     /* ইভেন্ট লেবেল */
     .event-label {
         font-size: 0.5rem;
         padding: 1px 0;
     }
-
+    
     /* সোয়াইপ ইন্ডিকেটর */
     .swipe-indicator {
         font-size: 0.6rem;
         margin-top: 7px;
     }
-
+    
     /* ইভেন্ট কন্টেইনার */
     .events-container {
         margin-top: 10px;
         padding: 9px;
         border-radius: 10px;
     }
-
+    
     .events-title {
         font-size: 0.72rem;
     }
-
+    
     .event-item {
         padding: 7px;
         gap: 7px;
         min-height: 78px;
         border-radius: 10px;
     }
-
+    
     .event-image-large {
         width: 46px;
         height: 58px;
         border-radius: 6px;
     }
-
+    
     .event-details h3 {
         font-size: 0.72rem;
     }
-
+    
     .event-details p {
         font-size: 0.6rem;
     }
-
+    
     .event-date {
         font-size: 0.58rem !important;
     }
-
+    
     /* ============================================================
        সৌর ও চন্দ্র বক্স (মোবাইলে পাশাপাশি)
        ============================================================ */
@@ -1656,51 +1656,51 @@
         margin-top: 10px !important;
         padding: 0 3px !important;
     }
-
+    
     .side-card {
         padding: 8px !important;
     }
-
+    
     .solar-card h3,
     .lunar-card h3 {
         font-size: 0.62rem !important;
         margin-bottom: 6px !important;
     }
-
+    
     .solar-item, .lunar-item {
         padding: 4px 5px !important;
         margin-bottom: 3px !important;
         border-radius: 6px !important;
     }
-
+    
     .solar-item b, .lunar-item b {
         font-size: 0.55rem !important;
     }
-
+    
     .solar-item span, .lunar-item span {
         font-size: 0.5rem !important;
     }
-
+    
     /* ফুটার */
     footer {
         padding: 10px 8px 80px;
         font-size: 0.58rem;
     }
-
+    
     /* মোবাইল অ্যাপ টুলস */
     .mobile-app-tools button {
         font-size: 0.62rem;
         padding: 6px 4px;
         border-radius: 9px;
     }
-
+    
     /* ক্যালেন্ডার টাইপ বাটন */
     .calendar-type-btn {
         padding: 6px 3px;
         font-size: 0.62rem;
         border-radius: 9px;
     }
-
+    
     /* FAB বাটন */
     .app-fab {
         width: 46px;
@@ -1709,18 +1709,18 @@
         bottom: 78px;
         right: 12px;
     }
-
+    
     /* বটম নেভিগেশন */
     .app-bottom-nav {
         height: 60px;
         padding: 4px 4px calc(4px + env(safe-area-inset-bottom));
     }
-
+    
     .app-bottom-nav button {
         font-size: 0.55rem;
         gap: 2px;
     }
-
+    
     .app-bottom-nav button i {
         font-size: 0.95rem;
     }
@@ -1784,23 +1784,23 @@
         min-height: 54px;
         padding: 2px 0;
     }
-
+    
     .english-date { font-size: 0.62rem; }
     .santali-date { font-size: 0.72rem; }
     .bengali-date { font-size: 0.48rem; }
-
+    
     .day-header {
         min-height: 34px;
         font-size: 0.5rem;
     }
-
+    
     .santali-day { font-size: 0.42rem; }
-
+    
     .santali-month-name,
     .bengali-month-name {
         font-size: 0.38rem;
     }
-
+    
     .calendar {
         gap: 1px;
     }
@@ -2313,7 +2313,7 @@ body{background:#eef3ef!important;padding:0!important}
   .calendar-side{display:block !important;gap:0 !important;padding:0 !important;margin:0 !important;position:static !important;order:2;width:100%}
   .calendar-side.left-side{grid-column:1}
   .calendar-side.right-side{grid-column:2}
-
+  
   /* সৌর ও চন্দ্র কার্ড */
   .solar-card,
   .lunar-card{padding:12px !important;min-height:auto !important;margin:0 !important}
@@ -3444,7 +3444,6 @@ body{background:#eef3ef!important;padding:0!important}
 </style>
 
 
-
 <style id="kherwar-desktop-header-layout-v5">
 /* Desktop-only three-part masthead. Mobile UI remains untouched. */
 @media (min-width: 801px) {
@@ -3480,79 +3479,6 @@ body{background:#eef3ef!important;padding:0!important}
   .desktop-calendar-main { min-width:0; }
   .calendar-container { min-width:0; }
 }
-
-/* Desktop: remove white background behind controls */
-@media (min-width: 801px) {
-  .desktop-masthead-title-v5 .control-panel,
-  .desktop-masthead-title-v5 .calendar-type-selector,
-  .desktop-masthead-title-v5 .calendar-header {
-    background: transparent !important;
-    background-color: transparent !important;
-    box-shadow: none !important;
-    border-color: transparent !important;
-  }
-
-  .desktop-masthead-title-v5 #month-selector,
-  .desktop-masthead-title-v5 #year-selector,
-  .desktop-masthead-title-v5 #time-display,
-  .desktop-masthead-title-v5 .calendar-type-btn {
-    background: transparent !important;
-    box-shadow: none !important;
-  }
-
-  .desktop-masthead-title-v5 #month-selector,
-  .desktop-masthead-title-v5 #year-selector,
-  .desktop-masthead-title-v5 #time-display,
-  .desktop-masthead-title-v5 .calendar-type-btn {
-    color: #fff !important;
-    border: 1px solid rgba(255,255,255,.5) !important;
-  }
-
-  .desktop-masthead-title-v5 .calendar-type-btn.active {
-    background: rgba(255,255,255,.18) !important;
-    border-color: #f2c94c !important;
-  }
-}
-
-/* Fix desktop month/year dropdown */
-@media (min-width: 801px) {
-  .desktop-masthead-title-v5 #month-selector,
-  .desktop-masthead-title-v5 #year-selector {
-    display: block;
-    width: 125px !important;
-    height: 40px !important;
-    min-height: 40px !important;
-    max-height: 40px !important;
-    padding: 0 12px !important;
-    font-size: 14px !important;
-    line-height: normal !important;
-    border-radius: 10px !important;
-    box-sizing: border-box !important;
-    vertical-align: middle;
-  }
-
-  .desktop-masthead-title-v5 #year-selector {
-    width: 120px !important;
-  }
-}
-
-@media (min-width: 801px) {
-  .desktop-masthead-title-v5 #year-selector {
-    color: #ffffff !important;
-    background-color: transparent !important;
-  }
-
-  .desktop-masthead-title-v5 #year-selector option {
-    color: #111111 !important;
-    background-color: #ffffff !important;
-  }
-
-  .desktop-masthead-title-v5 #month-selector option {
-    color: #111111 !important;
-    background-color: #ffffff !important;
-  }
-}
-
 @media (max-width:800px) { .desktop-masthead-v5 { display:none !important; } }
 </style>
 </head>
@@ -3562,7 +3488,7 @@ body{background:#eef3ef!important;padding:0!important}
             <h1>KHERWAR LUNI-SOLAR CALENDAR 5026</h1>
             <div class="santali-title">ᱠᱷᱮᱨᱣᱟᱲ ᱥᱮᱨᱢᱟᱼᱪᱟᱸᱫᱳ ᱞᱮᱠᱷᱟ ᱕᱐᱒᱖</div>
         </header>
-
+        
         <div class="control-panel">
             <div class="date-controls">
                 <button class="nav-btn" onclick="changeMonth(-1)"><i class="fas fa-chevron-left"></i></button>
@@ -3587,18 +3513,18 @@ body{background:#eef3ef!important;padding:0!important}
                 </div>
                 <button class="nav-btn" onclick="changeMonth(1)"><i class="fas fa-chevron-right"></i></button>
             </div>
-
+            
             <div id="time-display" class="time-display">00:00:00</div>
             <button id="reload-btn" class="reload-btn hidden" onclick="resetToCurrentDate()"><i class="fas fa-sync-alt"></i></button>
         </div>
-
+        
         <div class="calendar-type-selector">
             <button class="calendar-type-btn active" onclick="changeCalendarType('english')">English</button>
             <button class="calendar-type-btn" onclick="changeCalendarType('bengali')">বাংলা</button>
             <button class="calendar-type-btn" onclick="changeCalendarType('santali')">ᱠᱷᱮᱨᱣᱟᱲ</button>
         </div>
-
-
+        
+        
 <div class="mobile-app-tools" aria-label="দ্রুত ক্যালেন্ডার অপশন">
   <button type="button" onclick="resetToCurrentDate()"><i class="fas fa-calendar-day"></i> আজ</button>
   <button type="button" onclick="changeMonth(-1)"><i class="fas fa-angle-left"></i> আগের</button>
@@ -3610,20 +3536,20 @@ body{background:#eef3ef!important;padding:0!important}
             <span> | </span>
             <span class="santali-header">SAN-BHADAR 5025</span>
         </div>
-
+        
         <div class="calendar-container" id="calendar-container">
             <div class="calendar" id="calendar">
                 <!-- Calendar will be generated here -->
             </div>
-
+            
             <div class="swipe-indicator">
                 <i class="fas fa-arrows-alt-h"></i>
                 সোয়াইপ করে মাস পরিবর্তন করুন
             </div>
-
+            
             <div class="events-container">
                 <h2 class="events-title"><i class="fas fa-calendar-day"></i> ᱱᱚᱣᱟ ᱪᱟᱸᱫᱳᱨᱮᱱᱟᱜ ᱧᱩᱢᱟᱱ ᱢᱟᱦᱟᱠᱚ</h2>
-
+                
                 <div class="event-carousel" id="event-carousel">
                     <div class="event-track" id="event-track">
                         <!-- Event slides will be generated here -->
@@ -3634,7 +3560,7 @@ body{background:#eef3ef!important;padding:0!important}
                 </div>
             </div>
         </div>
-
+        
         <footer>
             <p>© 2026 ᱠᱷᱮᱨᱣᱟᱲ ᱼ বাংলা ᱼ Gregorian Calendar</p>
         </footer>
@@ -3644,15 +3570,15 @@ body{background:#eef3ef!important;padding:0!important}
         // Global variables
         let currentCalendarType = 'english'; // 'english', 'bengali', or 'santali'
         let activeEventImages = {}; // For managing multiple event images per day
-
+        
         // সাঁওতালি মাস এবং দিনের নাম
         const santaliMonths = ["ᱯᱩᱥ", "ᱢᱟᱜᱽ", "ᱯᱷᱟᱹᱜᱩᱱ", "ᱪᱟᱹᱛ", "ᱵᱟᱹᱭᱥᱟᱹᱠ", "ᱡᱷᱮᱸᱴ", "ᱟᱥᱟᱲ", "ᱥᱟᱱ", "ᱵᱷᱟᱫᱚᱨ", "ᱫᱟᱸᱥᱟᱸᱭ", "ᱥᱚᱦᱨᱟᱭ", "ᱟᱸᱜᱷᱟᱲ"];
         const santaliDays = ["ᱥᱤᱸᱜᱮ", "ᱚᱛᱮ", "ᱵᱟᱞᱮ", "ᱥᱟᱹᱜᱩᱱ", "ᱥᱟᱹᱨᱫᱤ", "ᱡᱟᱹᱨᱩᱢ", "ᱧᱩᱦᱩᱢ"];
-
+        
         // বাংলা মাস এবং দিনের নাম
         const bengaliMonths = ["পৌষ", "মাঘ", "ফাল্গুন", "চৈত্র", "বৈশাখ", "জ্যৈষ্ঠ", "আষাঢ়", "শ্রাবণ", "ভাদ্র", "আশ্বিন", "কার্তিক", "অগ্রহায়ণ"];
         const bengaliDays = ["রবিবার", "সোমবার", "মঙ্গলবার", "বুধবার", "বৃহস্পতিবার", "শুক্রবার", "শনিবার"];
-
+        
         // বাংলা মাসের রং
         const bengaliMonthColors = {
             "পৌষ": "#1976d2",
@@ -3668,7 +3594,7 @@ body{background:#eef3ef!important;padding:0!important}
             "কার্তিক": "#1976d2",
             "অগ্রহায়ণ": "#ffd54f"
         };
-
+        
         // বাংলা মাসের তারিখ ম্যাপিং
         const bengaliMonthMaps = {
             2025: [
@@ -4064,23 +3990,23 @@ body{background:#eef3ef!important;padding:0!important}
 
 
         };
-
+        
         // Fixed events (don't change year to year)
         const fixedEvents = {
             "01-01": {
-                title: "ᱠᱷᱟᱨᱥᱟᱶᱟ ᱜᱚᱞᱤᱠᱟᱱᱰ",
+                title: "ᱠᱷᱟᱨᱥᱟᱶᱟ ᱜᱚᱞᱤᱠᱟᱱᱰ", 
                 description: "Kharsanwa Golikand",
-                santaliTitle: "ᱥᱟᱸᱵᱷᱮᱛᱟᱱ ᱢᱟᱦᱟᱸ",
+                santaliTitle: "ᱥᱟᱸᱵᱷᱮᱛᱟᱱ ᱢᱟᱦᱟᱸ", 
                 bengaliTitle: "খারসাঁওআ গুলিকান্ড",
-                image: "/static/images/kharsanwa.png",
-                eventLabel: ""
+                image: "/static/images/kharsanwa.png", 
+                eventLabel: "" 
             },
             "01-03": {
-                title: "ᱡᱚᱭᱯᱟᱞ ᱥᱤᱝ ᱢᱩᱱᱰᱟᱹ ᱡᱟᱱᱟᱢ ᱢᱟᱦᱟ",
+                title: "ᱡᱚᱭᱯᱟᱞ ᱥᱤᱝ ᱢᱩᱱᱰᱟᱹ ᱡᱟᱱᱟᱢ ᱢᱟᱦᱟ", 
                 description: "Jaipal Sing Munda Birth Day-1903",
-                santaliTitle: "ᱡᱚᱭᱯᱟᱞ ᱥᱤᱝ ᱢᱩᱱᱰᱟᱹ ᱡᱟᱱᱟᱢ ᱢᱟᱦᱟᱚ",
+                santaliTitle: "ᱡᱚᱭᱯᱟᱞ ᱥᱤᱝ ᱢᱩᱱᱰᱟᱹ ᱡᱟᱱᱟᱢ ᱢᱟᱦᱟᱚ", 
                 bengaliTitle: "জয়পাল সিং মুন্ডা জন্মদিন",
-                image: "/static/images/jaipal.png",
+                image: "/static/images/jaipal.png", 
                 eventLabel: ""
             },
             "01-13": {
@@ -4244,7 +4170,7 @@ body{background:#eef3ef!important;padding:0!important}
                 eventLabel: ""
             }
         };
-
+        
         // Variable events (year-specific)
         const variableEvents = {
             "2025": {
@@ -4254,24 +4180,24 @@ body{background:#eef3ef!important;padding:0!important}
                 // Additional year-specific events can be added here
             }
         };
-
+        
        // Function to get events for a specific date
 function getEventsForDate(dateString) {
     const events = [];
     const date = new Date(dateString);
     const monthDay = `${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
-
+    
     // Add fixed events
     if (fixedEvents[monthDay]) {
         events.push(fixedEvents[monthDay]);
     }
-
+    
     // Add variable events for the year
     const year = date.getFullYear().toString();
     if (variableEvents[year] && variableEvents[year][dateString]) {
         events.push(variableEvents[year][dateString]);
     }
-
+    
     // Add moon phases as events
     if (moonPhases[dateString]) {
         const moonType = moonPhases[dateString];
@@ -4284,10 +4210,10 @@ function getEventsForDate(dateString) {
             eventLabel: ''
         });
     }
-
+    
     return events;
 }
-
+        
         // পূর্ণিমা এবং অমাবস্যার তারিখ
         const moonPhases = {
             "2025-01-14": "fullmoon",
@@ -4965,14 +4891,14 @@ function getEventsForDate(dateString) {
 "2050-11-28": "fullmoon",
 "2050-12-14": "newmoon",
 "2050-12-28": "fullmoon"
-
+            
 
             };
-
+        
         // Global variables for carousel
         let currentSlide = 0;
         let eventSlides = [];
-
+        
         /* MANUAL MAPPING ONLY — source: supplied Word file (1900–2027) + existing manual map (2028–2050) */
 function getSantaliMonthMap(year) {
     year = Number(year);
@@ -5156,7 +5082,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱫᱟᱸᱥᱟᱸᱭ", startDate: new Date(1809, 9, 6), endDate: new Date(1809, 10, 4, 23, 59), year: 4809, color: "#388e3c", order: 10 },
             { month: "ᱥᱚᱦᱨᱟᱭ", startDate: new Date(1809, 10, 5), endDate: new Date(1809, 11, 3, 23, 59), year: 4809, color: "#e53935", order: 11 },
             { month: "ᱟᱸᱜᱷᱟᱬ", startDate: new Date(1809, 11, 4), endDate: new Date(1810, 0, 2, 23, 59), year: 4809, color: "#388e3c", order: 12 }
-
+            
         ];
     }
 
@@ -6809,11 +6735,11 @@ function getSantaliMonthMap(year) {
             { month: "ᱟᱸᱜᱷᱟᱬ", startDate: new Date(1899, 11, 4), endDate: new Date(1900, 0, 1, 23, 59), year: 4899, color: "#e53935", order: 11 }
         ];
     }
-
+    
     else if (year === 1900) {
         return [
              { month: "ᱟᱸᱜᱷᱟᱬ", startDate: new Date(1899, 11, 4), endDate: new Date(1900, 0, 1, 23, 59), year: 4899, color: "#e53935", order: 11 },
-            { month: "ᱯᱩᱥ", startDate: new Date(1900, 0, 2), endDate: new Date(1900, 0, 31, 23, 59), year: 4899, color: "#388e3c", order: 12 },
+            { month: "ᱯᱩᱥ", startDate: new Date(1900, 0, 2), endDate: new Date(1900, 0, 31, 23, 59), year: 4899, color: "#388e3c", order: 12 }, 
             { month: "ᱢᱟᱜᱽ", startDate: new Date(1900, 1, 1), endDate: new Date(1900, 2, 1, 23, 59), year: 4900, color: "#e53935", order: 1 },
             { month: "ᱯᱷᱟᱹᱜᱩᱱ", startDate: new Date(1900, 2, 2), endDate: new Date(1900, 2, 30, 23, 59), year: 4900, color: "#388e3c", order: 2 },
             { month: "ᱪᱟᱹᱛ", startDate: new Date(1900, 2, 31), endDate: new Date(1900, 3, 29, 23, 59), year: 4900, color: "#e53935", order: 3 },
@@ -6828,7 +6754,7 @@ function getSantaliMonthMap(year) {
             { month: "ᱯᱩᱥ", startDate: new Date(1900, 11, 22), endDate: new Date(1901, 0, 20, 23, 59), year: 4900, color: "#388e3c", order: 12 }
         ];
     }
-
+    
     else if (year === 1901) {
         return [
             { month: "ᱯᱩᱥ", startDate: new Date(1900, 11, 22), endDate: new Date(1901, 0, 20, 23, 59), year: 4900, color: "#388e3c", order: 12 },
@@ -9032,7 +8958,7 @@ function getSantaliMonthMap(year) {
             { month:"ᱯᱩᱥ", startDate:new Date(2027,11,29), endDate:new Date(2028,0,26,23,59), year:5027, color:"#388e3c", order:12 }
     ];
     }
-
+   
  else if (year === 2028) {
     return [
         { month:"ᱯᱩᱥ",    startDate:new Date(2027,11,29), endDate:new Date(2028,0,26,23,59), year:5028, color:"#388e3c", order:12 },
@@ -9172,7 +9098,7 @@ else if (year === 2035) {
 }
 else if (year === 2036) {
     return [
-
+        
         { month:"ᱯᱩᱥ",    startDate:new Date(2035,11,29), endDate:new Date(2036,0,27,23,59), year:5035, color:"#e53935", order:12 },
         { month:"ᱢᱟᱜᱽ",   startDate:new Date(2036,0,28), endDate:new Date(2036,1,26,23,59), year:5036, color:"#388e3c", order:1  },
         { month:"ᱯᱷᱟᱹᱜᱩᱱ",startDate:new Date(2036,1,27), endDate:new Date(2036,2,27,23,59), year:5036, color:"#e53935", order:2  },
@@ -9452,15 +9378,15 @@ else if (year === 2050) {
         function getBengaliDate(currentDate) {
             const year = currentDate.getFullYear();
             const bengaliMonthMap = bengaliMonthMaps[year] || bengaliMonthMaps[2025]; // Default to 2025 if year not found
-
+            
             for (const bengaliMonth of bengaliMonthMap) {
                 if (currentDate >= bengaliMonth.startDate && currentDate <= bengaliMonth.endDate) {
                     const bengaliDay = Math.floor((currentDate - bengaliMonth.startDate) / (1000 * 60 * 60 * 24)) + 1;
-                    return {
-                        month: bengaliMonth.month,
-                        day: bengaliDay,
-                        year: bengaliMonth.year,
-                        color: bengaliMonth.color
+                    return { 
+                        month: bengaliMonth.month, 
+                        day: bengaliDay, 
+                        year: bengaliMonth.year, 
+                        color: bengaliMonth.color 
                     };
                 }
             }
@@ -9481,21 +9407,21 @@ else if (year === 2050) {
             const timeString = now.toLocaleTimeString();
             document.getElementById("time-display").textContent = timeString;
         }
-
+        
         // ক্যালেন্ডার হেডার আপডেট
         function updateCalendarHeader() {
             const year = parseInt(document.getElementById("year-selector").value);
             const month = parseInt(document.getElementById("month-selector").value);
-
+            
             const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
             const englishHeader = `${monthNames[month]} ${year}`;
-
+            
             // সাঁওতালি মাসের নাম নির্ধারণ
             const santaliMonthMap = getSantaliMonthMap(year);
             const startSantali = getSantaliDate(new Date(year, month, 1), santaliMonthMap);
             const endSantali = getSantaliDate(new Date(year, month, new Date(year, month+1, 0).getDate()), santaliMonthMap);
-
-
+                    
+            
             let santaliHeader = "";
             if (startSantali && endSantali) {
                 if (startSantali.month === endSantali.month) {
@@ -9508,7 +9434,7 @@ else if (year === 2050) {
             // বাংলা মাসের নাম নির্ধারণ
             const startBengali = getBengaliDate(new Date(year, month, 1));
             const endBengali = getBengaliDate(new Date(year, month, new Date(year, month+1, 0).getDate()));
-
+            
             let bengaliHeader = "";
             if (startBengali && endBengali) {
                 if (startBengali.month === endBengali.month) {
@@ -9517,12 +9443,12 @@ else if (year === 2050) {
                     bengaliHeader = `${startBengali.month}-${endBengali.month} ${toBengaliNumber(startBengali.year)}`;
                 }
             }
-
+            
             // Get current date for Santali header display
             const currentDate = new Date();
             const currentSantaliDate = getSantaliDate(currentDate, getSantaliMonthMap(currentDate.getFullYear()));
             const currentSantaliDay = santaliDays[currentDate.getDay()];
-
+            
             // ক্যালেন্ডার টাইপ অনুযায়ী হেডার আপডেট
             if (currentCalendarType === 'bengali') {
                 document.getElementById("calendar-header").innerHTML = `
@@ -9539,18 +9465,18 @@ else if (year === 2050) {
                     <span class="santali-header">${currentSantaliDay}, ${currentSantaliDate.day} ${currentSantaliDate.month} ${toOlChikiNumber(currentSantaliDate.year)}</span>
                 `;
             }
-
+            
             // রিলোড বোতামের ভিজিবিলিটি আপডেট
             updateReloadButton();
         }
-
+    
         // রিলোড বোতাম আপডেট
         function updateReloadButton() {
             const reloadBtn = document.getElementById("reload-btn");
             const currentDate = new Date();
             const selectedYear = parseInt(document.getElementById("year-selector").value);
             const selectedMonth = parseInt(document.getElementById("month-selector").value);
-
+            
             if (selectedYear === currentDate.getFullYear() && selectedMonth === currentDate.getMonth()) {
                 reloadBtn.classList.add("hidden");
             } else {
@@ -9563,10 +9489,10 @@ else if (year === 2050) {
             for (const santaliMonth of santaliMonthMap) {
                 if (currentDate >= santaliMonth.startDate && currentDate <= santaliMonth.endDate) {
                     const santaliDay = Math.floor((currentDate - santaliMonth.startDate) / (1000 * 60 * 60 * 24)) + 1;
-                    return { month: santaliMonth.month,
-                             day: santaliDay,
-                             year: santaliMonth.year,
-                             color: santaliMonth.color
+                    return { month: santaliMonth.month, 
+                             day: santaliDay, 
+                             year: santaliMonth.year, 
+                             color: santaliMonth.color 
                             };
                 }
             }
@@ -9578,7 +9504,7 @@ else if (year === 2050) {
             const olChikiDigits = ["᱐", "᱑", "᱒", "᱓", "᱔", "᱕", "᱖", "᱗", "᱘", "᱙"];
             return number.toString().split("").map(digit => olChikiDigits[parseInt(digit)]).join("");
         }
-
+        
         // সংখ্যাকে বাংলা সংখ্যায় রূপান্তর
         function toBengaliNumber(number) {
             const bengaliDigits = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
@@ -9592,17 +9518,17 @@ else if (year === 2050) {
                    date.getMonth() === today.getMonth() &&
                    date.getDate() === today.getDate();
         }
-
+        
         // মাস পরিবর্তন
         function changeMonth(direction) {
             const monthSelector = document.getElementById("month-selector");
             const yearSelector = document.getElementById("year-selector");
-
+            
             let currentMonth = parseInt(monthSelector.value);
             let currentYear = parseInt(yearSelector.value);
-
+            
             currentMonth += direction;
-
+            
             if (currentMonth > 11) {
                 currentMonth = 0;
                 currentYear++;
@@ -9610,42 +9536,42 @@ else if (year === 2050) {
                 currentMonth = 11;
                 currentYear--;
             }
-
+            
             monthSelector.value = currentMonth;
             yearSelector.value = currentYear;
-
+            
             updateCalendarHeader();
             generateCalendar();
         }
-
+        
         // বর্তমান তারিখে রিসেট করুন
         function resetToCurrentDate() {
             const currentDate = new Date();
             document.getElementById("year-selector").value = currentDate.getFullYear();
             document.getElementById("month-selector").value = currentDate.getMonth();
-
+            
             updateCalendarHeader();
             generateCalendar();
         }
-
+        
         function setupEventCarousel(monthEvents) {
     const eventTrack = document.getElementById('event-track');
     const carouselControls = document.getElementById('carousel-controls');
-
+    
     eventTrack.innerHTML = '';
     carouselControls.innerHTML = '';
-
+    
     if (monthEvents.length === 0) {
         eventTrack.innerHTML = '<div class="event-slide"><p>এই মাসে কোন বিশেষ দিন নেই</p></div>';
         return;
     }
-
+    
     // Create event slides
     eventSlides = monthEvents.map((event, index) => {
         const eventDate = new Date(event.date);
         const bengaliDate = getBengaliDate(eventDate);
         const santaliDate = getSantaliDate(eventDate, getSantaliMonthMap(eventDate.getFullYear()));
-
+        
         const slide = document.createElement('div');
         slide.className = 'event-slide';
         slide.innerHTML = `
@@ -9655,25 +9581,25 @@ else if (year === 2050) {
                     <h3>${event.title} ${event.bengaliTitle ? `(${event.bengaliTitle})` : ''}</h3>
                     <p>${event.description}</p>
                     <p class="event-date">
-                        ${eventDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} |
-                        ${toBengaliNumber(bengaliDate.day)} ${bengaliDate.month} ${toBengaliNumber(bengaliDate.year)} |
+                        ${eventDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} | 
+                        ${toBengaliNumber(bengaliDate.day)} ${bengaliDate.month} ${toBengaliNumber(bengaliDate.year)} | 
                         ${toOlChikiNumber(santaliDate.day)} ${santaliDate.month} ${toOlChikiNumber(santaliDate.year)}
                     </p>
                 </div>
             </div>
         `;
         eventTrack.appendChild(slide);
-
+        
         // Create carousel dot
         const dot = document.createElement('div');
         dot.className = 'carousel-dot';
         if (index === 0) dot.classList.add('active');
         dot.addEventListener('click', () => goToSlide(index));
         carouselControls.appendChild(dot);
-
+        
         return slide;
     });
-
+    
     // একাধিক ইভেন্ট থাকলে ফেড ইন/আউট এনিমেশন যোগ করুন
     if (monthEvents.length > 1) {
         eventTrack.style.animation = `fadeInOut 8s infinite`;
@@ -9683,35 +9609,35 @@ else if (year === 2050) {
     } else {
         eventTrack.style.animation = 'none';
     }
-
+    
     // Set up swipe events for the carousel
     setupCarouselSwipe();
 }
-
+        
         // ক্যারousel সোয়াইপ সেটআপ
         function setupCarouselSwipe() {
             const carousel = document.getElementById('event-carousel');
             let startX = 0;
             let endX = 0;
-
+            
             carousel.addEventListener('touchstart', (e) => {
                 startX = e.touches[0].clientX;
             }, { passive: true });
-
+            
             carousel.addEventListener('touchmove', (e) => {
                 endX = e.touches[0].clientX;
             }, { passive: true });
-
+            
             carousel.addEventListener('touchend', () => {
                 handleCarouselSwipe();
             }, { passive: true });
         }
-
+        
         // ক্যারousel সোয়াইপ হ্যান্ডলার
         function handleCarouselSwipe() {
             const diffX = startX - endX;
             const swipeThreshold = 50;
-
+            
             if (Math.abs(diffX) > swipeThreshold) {
                 if (diffX > 0) {
                     //向左滑动 - 다음 슬라이드
@@ -9722,28 +9648,28 @@ else if (year === 2050) {
                 }
             }
         }
-
+        
         // পরবর্তী স্লাইডে যান
         function nextSlide() {
             if (currentSlide < eventSlides.length - 1) {
                 goToSlide(currentSlide + 1);
             }
         }
-
+        
         // পূর্ববর্তী স্লাইডে যান
         function prevSlide() {
             if (currentSlide > 0) {
                 goToSlide(currentSlide - 1);
             }
         }
-
+        
         // নির্দিষ্ট স্লাইডে যান
         function goToSlide(slideIndex) {
             const eventTrack = document.getElementById('event-track');
             const dots = document.querySelectorAll('.carousel-dot');
-
+            
             eventTrack.style.transform = `translateX(-${slideIndex * 100}%)`;
-
+            
             // Update active dot
             dots.forEach((dot, index) => {
                 if (index === slideIndex) {
@@ -9752,15 +9678,15 @@ else if (year === 2050) {
                     dot.classList.remove('active');
                 }
             });
-
+            
             currentSlide = slideIndex;
         }
-
+        
         // ইভেন্ট লিস্ট আপডেট
 function updateEventList(month, year) {
     // এই মাসের ইভেন্টগুলি ফিল্টার করুন
     const monthEvents = [];
-
+    
     // Add fixed events for this month
     Object.keys(fixedEvents).forEach(monthDay => {
         const [eventMonth, eventDay] = monthDay.split('-').map(Number);
@@ -9772,7 +9698,7 @@ function updateEventList(month, year) {
             });
         }
     });
-
+    
     // Add variable events for this month and year
     if (variableEvents[year]) {
         Object.keys(variableEvents[year]).forEach(dateStr => {
@@ -9785,7 +9711,7 @@ function updateEventList(month, year) {
             }
         });
     }
-
+    
     // Add moon phases as events
     Object.keys(moonPhases).forEach(dateStr => {
         const date = new Date(dateStr);
@@ -9802,30 +9728,30 @@ function updateEventList(month, year) {
             });
         }
     });
-
+    
     // ক্যারousel সেটআপ করুন
     setupEventCarousel(monthEvents);
 }
-
+        
         // টাচ ইভেন্ট হ্যান্ডলার
         function setupTouchEvents() {
             const calendarContainer = document.getElementById('calendar-container');
             let startX = 0;
             let endX = 0;
-
+            
             calendarContainer.addEventListener('touchstart', function(event) {
                 startX = event.touches[0].clientX;
             }, false);
-
+            
             calendarContainer.addEventListener('touchend', function(event) {
                 endX = event.changedTouches[0].clientX;
                 handleSwipe();
             }, false);
-
+            
             function handleSwipe() {
                 const diffX = endX - startX;
                 const swipeThreshold = 100; // সোয়াইপ থ্রেশহোল্ড বাড়ানো হয়েছে
-
+    
                 if (Math.abs(diffX) > swipeThreshold) {
                     if (diffX > 0) {
                         // ডানদিকে সোয়াইপ - পূর্বের মাস
@@ -9837,32 +9763,32 @@ function updateEventList(month, year) {
                 }
             }
         }
-
+        
         // ক্যালেন্ডার টাইপ পরিবর্তন
         function changeCalendarType(type) {
             currentCalendarType = type;
             const buttons = document.querySelectorAll('.calendar-type-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
-
+            
             const activeBtn = document.querySelector(`.calendar-type-btn:nth-child(${type === 'english' ? 1 : type === 'bengali' ? 2 : 3})`);
             activeBtn.classList.add('active');
-
+            
             updateCalendarHeader();
             generateCalendar();
         }
-
+        
         // বছর সিলেক্টর পপুলেট করুন
         function populateYearSelector() {
             const yearSelector = document.getElementById('year-selector');
             yearSelector.innerHTML = '';
-
+            
             for (let year = 1800; year <= 2050; year++) {
                 const option = document.createElement('option');
                 option.value = year;
                 option.textContent = year;
                 yearSelector.appendChild(option);
             }
-
+            
             // বর্তমান বছর সেট করুন
             const currentYear = new Date().getFullYear();
             yearSelector.value = currentYear;
@@ -9872,20 +9798,20 @@ function updateEventList(month, year) {
         function rotateEventImages(dateString, dateElement) {
             const events = getEventsForDate(dateString);
             if (events.length <= 1) return;
-
+            
             let currentEventIndex = 0;
             const eventBg = dateElement.querySelector('.event-bg');
-
+            
             // Set initial event
             if (events[currentEventIndex].image) {
                 eventBg.src = events[currentEventIndex].image;
                 eventBg.classList.add('active');
             }
-
+            
             // Set up rotation
             activeEventImages[dateString] = setInterval(() => {
                 currentEventIndex = (currentEventIndex + 1) % events.length;
-
+                
                 if (events[currentEventIndex].image) {
                     eventBg.src = events[currentEventIndex].image;
                     eventBg.classList.add('active');
@@ -9935,7 +9861,7 @@ function updateEventList(month, year) {
         const santaliDate = getSantaliDate(currentDate, santaliMonthMap);
         // Bengali is optional; it must never block Santali rendering.
         const bengaliDate = (typeof getBengaliDate === 'function') ? getBengaliDate(currentDate) : null;
-        const dateString = formatDate(currentDate);
+        const dateString = formatDate(currentDate); 
         const isSunday = currentDate.getDay() === 0;
 
         const dateElement = document.createElement("div");
@@ -9946,15 +9872,15 @@ function updateEventList(month, year) {
         if (isCurrentDate(currentDate)) {
             dateElement.classList.add("highlight");
         }
-
+        
         // ইভেন্ট এবং চাঁদের অবস্থা চেক করুন
         const events = getEventsForDate(dateString);
         let hasImage = false;
         let hasMultipleEvents = events.length > 1;
-
+        
         // তারিখের কন্টেন্ট লুকানোর জন্য ক্লাস যোগ করুন
         const dateContentClass = events.length > 0 ? 'date-content hidden' : 'date-content';
-
+        
         // ============================================================
         // FIX: Santali date must NOT depend on Bengali date.
         // 1900–2024 manual Santali mapping has to display even when
@@ -9982,17 +9908,17 @@ function updateEventList(month, year) {
                 ${bengaliDate ? `<div class="bengali-date" style="color: ${bengaliDate.color};">${toBengaliNumber(bengaliDate.day)}</div>` : ''}
             `;
         }
-
+        
         // ইমেজ ব্যাকগ্রাউন্ড যোগ করুন
         let eventBackgrounds = '';
         if (events.length > 0) {
             hasImage = true;
-
+            
             // একাধিক ইমেজের জন্য বিশেষ ক্লাস যোগ করুন
             if (events.length > 1) {
                 dateElement.classList.add('multiple-images');
             }
-
+            
             // প্রতিটি ইভেন্টের জন্য আলাদা ইমেজ এলিমেন্ট তৈরি করুন
             events.forEach((event, index) => {
                 if (event.image && event.image.trim() !== '') {
@@ -10000,19 +9926,19 @@ function updateEventList(month, year) {
                 }
             });
         }
-
+        
         // বাংলা মাসের নাম (১ তারিখে)
         let bengaliMonthName = "";
         if (bengaliDate && bengaliDate.day === 1) {
             bengaliMonthName = `<div class="bengali-month-name" style="color: ${bengaliDate.color}">${bengaliDate.month}</div>`;
         }
-
+        
         // সাঁওতালি মাসের নাম (১ তারিখে)
         let santaliMonthName = "";
         if (santaliDate && santaliDate.day === 1) {
             santaliMonthName = `<div class="santali-month-name" style="color: ${santaliDate.color}">${santaliDate.month}</div>`;
         }
-
+        
         dateElement.innerHTML = `
             ${eventBackgrounds}
             <div class="${dateContentClass}">
@@ -10021,9 +9947,9 @@ function updateEventList(month, year) {
             ${bengaliMonthName}
             ${santaliMonthName}
         `;
-
+        
         calendar.appendChild(dateElement);
-
+        
         // একাধিক ইমেজ থাকলে সেগুলি ক্রমান্বয়ে প্রদর্শনের ব্যবস্থা করুন
         if (events.length > 1) {
             setupMultipleImages(dateElement, events.length);
@@ -10037,7 +9963,7 @@ function updateEventList(month, year) {
             }
         }
     }
-
+    
     // ইভেন্ট লিস্ট আপডেট করুন
     updateEventList(month, year);
 }
@@ -10050,12 +9976,12 @@ function addDateClickEvents() {
             dateElement.style.cursor = 'pointer';
             dateElement.title = 'এই তারিখের ইভেন্ট দেখুন';
             dateElement.addEventListener('click', function(e) {
-                const dateText = this.querySelector('.english-date')?.textContent ||
+                const dateText = this.querySelector('.english-date')?.textContent || 
                                 this.querySelector('.bengali-date')?.textContent;
                 const month = parseInt(document.getElementById('month-selector').value) + 1;
                 const year = parseInt(document.getElementById('year-selector').value);
                 const day = parseInt(dateText);
-
+                
                 if (day && !isNaN(day)) {
                     const dateString = year + '-' + String(month).padStart(2, '0') + '-' + String(day).padStart(2, '0');
                     scrollToEvent(dateString);
@@ -10069,12 +9995,12 @@ function addDateClickEvents() {
 function scrollToEvent(dateString) {
     const eventsContainer = document.querySelector('.events-container');
     if (!eventsContainer) return;
-
-    eventsContainer.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+    
+    eventsContainer.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start' 
     });
-
+    
     setTimeout(function() {
         document.querySelectorAll('.event-item').forEach(function(item) {
             const dateElement = item.querySelector('.event-date');
@@ -10086,7 +10012,7 @@ function scrollToEvent(dateString) {
                     item.style.border = '2px solid #d7a52a';
                     item.style.boxShadow = '0 4px 20px rgba(215, 165, 42, 0.3)';
                     item.style.borderRadius = '12px';
-
+                    
                     setTimeout(function() {
                         item.style.background = '';
                         item.style.border = '';
@@ -10164,20 +10090,20 @@ function setupMultipleImages(dateElement, imageCount) {
         // পেজ লোড হলে ক্যালেন্ডার তৈরি করুন
         document.addEventListener('DOMContentLoaded', function() {
             populateYearSelector();
-
+            
             const currentDate = new Date();
             document.getElementById("year-selector").value = currentDate.getFullYear();
             document.getElementById("month-selector").value = currentDate.getMonth();
-
+            
             updateCalendarHeader();
             generateCalendar();
             updateClock();
             setInterval(updateClock, 1000);
-
+            
             // টাচ ইভেন্ট সেটআপ
             setupTouchEvents();
         });
-
+    
 /* =========================================================
    KHERWAR CALENDAR — JS STABILITY / UX PATCH
    ========================================================= */
@@ -10582,10 +10508,10 @@ function installVerticalEvents(){
 function buildDesktopLayout() {
     const cc = document.getElementById("calendar-container");
     if (!cc || document.querySelector(".desktop-calendar-layout")) return;
-
+    
     const wrap = document.createElement("div");
     wrap.className = "desktop-calendar-layout";
-
+    
     // ===== বাম পাশে (সৌরবছরের বিশেষ দিন) =====
     const left = document.createElement("aside");
     left.className = "calendar-side left-side";
@@ -10600,11 +10526,11 @@ function buildDesktopLayout() {
             </div>
         </div>
     `;
-
+    
     // ===== মাঝখানে (ক্যালেন্ডার) =====
     const center = document.createElement("div");
     center.className = "desktop-calendar-main";
-
+    
     // ===== ডান পাশে (চন্দ্রমাসের বিশেষ দিন) =====
     const right = document.createElement("aside");
     right.className = "calendar-side right-side";
@@ -10631,7 +10557,7 @@ function buildDesktopLayout() {
             </div>
         </div>
     `;
-
+    
     // ক্যালেন্ডার র‍্যাপার তৈরি
     cc.parentNode.insertBefore(wrap, cc);
     center.appendChild(cc);
@@ -10669,62 +10595,42 @@ function installDesktopMastheadV5() {
  const h1=document.createElement('h1'); h1.textContent=header.querySelector('h1')?.textContent||'KHERWAR LUNI-SOLAR CALENDAR 5026';
  const st=document.createElement('div'); st.className='santali-title'; st.textContent=header.querySelector('.santali-title')?.textContent||'';
  title.append(h1,st);
- const defaultMonthImages={
-  MAG:'/media/calendar_images/ba128a4c1d4e4ff8ba068fefa71973a2.jpg',
-  FAGUN:'/media/calendar_images/e6776f541b624fb5829c6af28eadd421.jpg',
-  CHAIT:'/media/calendar_images/aeb07e551a9e491d86477b133e4a452c.jpg',
-  BAISAK:'/media/calendar_images/aca9c744645e4cf9a19ff7368ee725e3.png',
-  JHET:'/media/calendar_images/93c70843db3c4bc2b1c8668c03faa8bb.png',
-  BARDHI_JHET:'/media/calendar_images/ba128a4c1d4e4ff8ba068fefa71973a2.jpg',
-  ASAR:'/media/calendar_images/3d8da30e606843a3abba89796ffafc5b.png',
-  SAN:'/media/calendar_images/00f48c8bf03c4909b5496935be97d2d3.jpg',
-  BHADAR:'/media/calendar_images/40f5ef44f83246daaa5604a9d11f4e55.jpg',
-  DANSAY:'/media/calendar_images/dc6d4da338ef410da2f123ef4288b11b.jpg',
-  SOHRAY:'/media/calendar_images/2a458ef985d14b45a4ebddbb17a03450.png',
-  ANGHAR:'/media/calendar_images/cb2e6cb7c7364221921ae8d269800912.jpg',
-  PUS:'/media/calendar_images/d5c50756fdbc403889f3336eb7cf1892.jpg'
- };
- // Resolve image by the actual Santali month name. Order is deliberately never used.
- const monthNameToCode={
-  'ᱢᱟᱜᱽ':'MAG',
-  'ᱯᱷᱟᱹᱜᱩᱱ':'FAGUN',
-  'ᱪᱟᱹᱛ':'CHAIT',
-  'ᱵᱟᱹᱭᱥᱟᱹᱠ':'BAISAK',
-  'ᱡᱷᱮᱸᱴ':'JHET',
-  'ᱵᱟᱺᱰᱭᱟᱹ ᱡᱷᱮᱸᱴ':'BARDHI_JHET',
-  'ᱟᱥᱟᱲ':'ASAR',
-  'ᱥᱟᱱ':'SAN',
-  'ᱵᱷᱟᱫᱚᱨ':'BHADAR',
-  'ᱫᱟᱸᱥᱟᱸᱭ':'DANSAY',
-  'ᱥᱚᱦᱨᱟᱭ':'SOHRAY',
-  'ᱥᱚᱨᱦᱟᱭ':'SOHRAY',
-  'ᱟᱸᱜᱷᱟᱲ':'ANGHAR',
-  'ᱟᱸᱜᱷᱟᱬ':'ANGHAR',
-  'ᱯᱩᱥ':'PUS'
- };
- const legacyMonthSetting={MAG:'month_image_1',FAGUN:'month_image_2',CHAIT:'month_image_3',BAISAK:'month_image_4',JHET:'month_image_5',BARDHI_JHET:'month_image_13',ASAR:'month_image_6',SAN:'month_image_7',BHADAR:'month_image_8',DANSAY:'month_image_9',SOHRAY:'month_image_10',ANGHAR:'month_image_11',PUS:'month_image_12'};
- const getMonthImageByName=(monthName)=>{
+ const defaultMonthImages=[
+  '/media/calendar_images/ba128a4c1d4e4ff8ba068fefa71973a2.jpg',
+  '/media/calendar_images/e6776f541b624fb5829c6af28eadd421.jpg',
+  '/media/calendar_images/aeb07e551a9e491d86477b133e4a452c.jpg',
+  '/media/calendar_images/aca9c744645e4cf9a19ff7368ee725e3.png',
+  '/media/calendar_images/93c70843db3c4bc2b1c8668c03faa8bb.png',
+  '/media/calendar_images/3d8da30e606843a3abba89796ffafc5b.png',
+  '/media/calendar_images/00f48c8bf03c4909b5496935be97d2d3.jpg',
+  '/media/calendar_images/40f5ef44f83246daaa5604a9d11f4e55.jpg',
+  '/media/calendar_images/dc6d4da338ef410da2f123ef4288b11b.jpg',
+  '/media/calendar_images/2a458ef985d14b45a4ebddbb17a03450.png',
+  '/media/calendar_images/cb2e6cb7c7364221921ae8d269800912.jpg',
+  '/media/calendar_images/d5c50756fdbc403889f3336eb7cf1892.jpg',
+  '/media/calendar_images/ba128a4c1d4e4ff8ba068fefa71973a2.jpg'
+ ];
+ const getMonthImages=()=>{
    const settings=(window.KHERWAR_DB&&window.KHERWAR_DB.settings)||{};
-   const normalized=String(monthName||'').trim().replace(/\s+/g,' ');
-   const code=monthNameToCode[normalized];
-   if(!code) return {code:'UNKNOWN',src:defaultMonthImages.MAG};
-   const saved=String(settings['month_image_'+code]||'').trim();
-   // Read old numeric settings as a backward-compatible fallback only; month identity still comes from its name.
-   const legacy=String(settings[legacyMonthSetting[code]]||'').trim();
-   return {code,src:saved||legacy||defaultMonthImages[code]||defaultMonthImages.MAG};
+   const namedKeys=['month_image_MAG','month_image_FAGUN','month_image_CHAIT','month_image_BAISAK','month_image_JHET','month_image_BARDHI_JHET','month_image_ASAR','month_image_SAN','month_image_BHADAR','month_image_DANSAY','month_image_SOHRAY','month_image_ANGHAR','month_image_PUS'];
+   return defaultMonthImages.map((fallback,i)=>String(settings[namedKeys[i]]||settings['month_image_'+(i+1)]||'').trim()||fallback);
  };
  const updateMonthImage=()=>{
-   // Use today's actual Santali month name. No order/index is used to select the image.
-   let monthName='ᱢᱟᱜᱽ';
+   // Use the current real date's Santali lunar month, not the Gregorian month selector.
+   // The image therefore follows the Santali month boundary in getSantaliMonthMap().
+   let order=1, monthName='Santali month';
    try {
      const today=new Date();
      const map=typeof getSantaliMonthMap==='function'?getSantaliMonthMap(today.getFullYear()):[];
      const lunar=typeof getSantaliDate==='function'?getSantaliDate(today,map):null;
-     if(lunar?.month) monthName=String(lunar.month).trim().replace(/\s+/g,' ');
-   } catch(e) { /* use MAG as safe fallback */ }
-   const selected=getMonthImageByName(monthName);
-   const imageKey=selected.code+'|'+selected.src;
-   if(monthImg.dataset.monthImageKey!==imageKey){monthImg.style.opacity='0.35';monthImg.src=selected.src;monthImg.dataset.monthImageKey=imageKey;monthImg.onload=()=>{monthImg.style.opacity='1';};monthImg.onerror=()=>{monthImg.style.opacity='1';};}
+     const entry=lunar&&map.find(x=>x.month===lunar.month && x.year===lunar.year);
+     if(entry) order=Number(entry.order)||1;
+     if(lunar?.month) monthName=lunar.month;
+   } catch(e) { /* retain first image as a safe fallback */ }
+   const monthImages=getMonthImages();
+   const idx=Math.max(0,Math.min(monthImages.length-1,order-1));
+   const imageKey=String(idx)+'|'+monthImages[idx];
+   if(monthImg.dataset.monthImageKey!==imageKey){monthImg.style.opacity='0.35';monthImg.src=monthImages[idx];monthImg.dataset.monthImageKey=imageKey;monthImg.onload=()=>{monthImg.style.opacity='1';};monthImg.onerror=()=>{monthImg.style.opacity='1';};}
    monthImg.alt=monthName+' Kherwar calendar image';
  };
  const updateLeftImage=()=>{
@@ -11533,7 +11439,7 @@ function renderAds() {
     applyAdminUiSettings();
     console.log('Rendering ads...', window.KHERWAR_DB.ads);
     const adSettings=(window.KHERWAR_DB && window.KHERWAR_DB.settings)||{};
-    const extraCount=Math.max(0,Math.min(10,parseInt(adSettings.ad_extra_count??'2',10)||0));
+    const extraCount=Math.max(0,Math.min(10,parseInt(adSettings.ad_extra_count??'10',10)||0));
     const extraWrap=document.querySelector('.additional-ads');
     if(extraWrap){
       extraWrap.innerHTML='';
@@ -11548,7 +11454,7 @@ function renderAds() {
         console.log('No ads to render');
         return;
     }
-
+    
     window.KHERWAR_DB.ads.forEach(function(a) {
         const slot = String(a.slot || "").trim();
         const business = a.business_name || "Advertisement";
@@ -11619,7 +11525,7 @@ function renderAds() {
 function renderCalendarEvents() {
     if (!window.KHERWAR_DB.events || window.KHERWAR_DB.events.length === 0) return;
     console.log('Calendar events loaded:', window.KHERWAR_DB.events.length);
-
+    
     // আপনি এখানে কাস্টম ইভেন্ট রেন্ডার করার কোড যোগ করতে পারেন
     // উদাহরণ: fixedEvents অবজেক্টে নতুন ইভেন্ট যোগ করা
     window.KHERWAR_DB.events.forEach(function(ev) {
@@ -11634,7 +11540,7 @@ function renderCalendarEvents() {
             };
         }
     });
-
+    
     // ক্যালেন্ডার রিফ্রেশ করুন
     if (typeof generateCalendar === 'function') {
         generateCalendar();
@@ -11647,7 +11553,7 @@ function renderCalendarEvents() {
 function renderSolarEvents() {
     if (!window.KHERWAR_DB.solarEvents || window.KHERWAR_DB.solarEvents.length === 0) return;
     console.log('Solar events loaded:', window.KHERWAR_DB.solarEvents.length);
-
+    
     // সোলার কার্ডে আপডেট
     const solarList = document.getElementById('solarList');
     if (solarList) {
@@ -11669,20 +11575,20 @@ window.sync = async function() {
             cache: 'no-store',
             headers: { 'X-Requested-With': 'XMLHttpRequest' }
         });
-
+        
         if (!r.ok) throw Error('Database read failed');
-
+        
         const data = await r.json();
-
+        
         // ডেটা পরিবর্তন হয়েছে কিনা চেক করুন
         const newHash = JSON.stringify(data.ads || []) + JSON.stringify(data.events || []) + JSON.stringify(data.settings || {});
         const oldHash = JSON.stringify(window.KHERWAR_DB.ads || []) + JSON.stringify(window.KHERWAR_DB.events || []) + JSON.stringify(window.KHERWAR_DB.settings || {});
-
+        
         window.KHERWAR_DB = data;
         window.dispatchEvent(new Event("kherwar:settings-updated"));
         lastUpdateTime = new Date();
         applyAdminUiSettings();
-
+        
         // শুধুমাত্র পরিবর্তন হলে রেন্ডার করুন
         if (newHash !== oldHash) {
             console.log('🔄 Data changed! Updating...');
@@ -11690,7 +11596,7 @@ window.sync = async function() {
             renderCalendarEvents();
             renderSolarEvents();
         }
-
+        
     } catch(e) {
         console.warn('Kherwar DB sync failed:', e);
     }
@@ -11702,7 +11608,7 @@ window.sync = async function() {
 function startAutoSync() {
     // প্রথমবার লোড
     window.sync();
-
+    
     // প্রতি ৩০ সেকেন্ডে অটো-সিঙ্ক
     syncIntervalId = setInterval(function() {
         // পেজটি দৃশ্যমান থাকলে তবেই সিঙ্ক করুন (ব্যাটারি সাশ্রয়ের জন্য)
